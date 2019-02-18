@@ -1,4 +1,4 @@
 package com.example.android.Model;
 
-public class FakeModel {
+public class Repository {
 }
