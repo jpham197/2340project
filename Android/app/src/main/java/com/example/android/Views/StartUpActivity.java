@@ -15,7 +15,7 @@ public class StartUpActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTitle("Biiiitch");
+        setTitle("Space Traders");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_up);
         Toolbar toolbar = findViewById(R.id.toolbar);
