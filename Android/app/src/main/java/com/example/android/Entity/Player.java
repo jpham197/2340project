@@ -2,14 +2,62 @@ package com.example.android.Entity;
 
 public class Player {
     private String Name;
-    private int credits = 1000;
+    private int credits;
     private int pilot;
     private int fighter;
     private int trader;
     private int engineer;
-    private int skillpointsavailible = 16;
-    private Ship n;
+    private int skillpointsavailible;
+    private Ship current;
 
+
+    /**
+     *
+     * @param name
+     * @param pilot
+     * @param fighter
+     * @param trader
+     * @param engineer
+     * @param skillpointsavailible
+     * @param current
+     */
+    public Player(String name, int pilot, int fighter, int trader, int engineer
+                  ,int skillpointsavailible, int credits, Ship current) {
+        this.Name = name;
+        this.pilot = pilot;
+        this.fighter = fighter;
+        this.trader = trader;
+        this.engineer = engineer;
+        this.skillpointsavailible = skillpointsavailible;
+        this.credits = credits;
+        this.current = current;
+    }
+
+    /**
+     * this constructor initializes the default values for the player
+     * @param name name of the commander
+     * @param pilot number of skill points in pilot
+     * @param fighter number of skill points in fighter
+     * @param trader number of skill points in trader
+     * @param engineer number of skill points in engineer
+     * @param current the current ship of the player. Default is Gnat
+     */
+    public Player(String name, int pilot, int fighter, int trader, int engineer, Ship current) {
+        this(name, pilot, fighter, trader, engineer, 16, 1000
+                , new Ship(100, ShipType.Gnat));
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Ship getShip() {
+        return this.current;
+    }
+
+    public void setShip(Ship upgrade) {
+        this.current = upgrade;
+    }
 
     /**
      *
