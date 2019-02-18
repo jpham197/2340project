@@ -1,4 +1,4 @@
 package com.example.android.ViewModels;
 
-public class Fakeprogram {
+public class ConfigurationViewModel {
 }
