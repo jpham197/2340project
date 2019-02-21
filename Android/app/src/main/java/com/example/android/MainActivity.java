@@ -36,12 +36,33 @@ public class MainActivity extends AppCompatActivity {
         Spinner s = (Spinner) findViewById(R.id.spinner);
 
         EditText playerName = (EditText) findViewById(R.id.inputPlayerName);
-        TextView skillPilotLevel = (TextView) findViewById(R.id.skillPilotLevel);
+        final TextView skillPilotLevel = (TextView) findViewById(R.id.skillPilotLevel);
         TextView skillFighterLevel = (TextView) findViewById(R.id.skillFighterLevel);
         TextView skillEngineerLevel = (TextView) findViewById(R.id.skillEngineerLevel);
         TextView skillTraderLevel = (TextView) findViewById(R.id.skillTraderLevel);
 
-        final String playerInformation = "Player Name: " + playerName.getText().toString()
+        Button addPilot = (Button) findViewById(R.id.skillPilotIncrease);
+        Button subPilot = (Button) findViewById(R.id.skillPilotDecrease);
+
+        addPilot.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int current = Integer.parseInt(skillPilotLevel.getText().toString());
+                current++;
+                skillPilotLevel.setText(String.valueOf(current));
+            }
+        });
+
+        Button addFighter = (Button) findViewById(R.id.skillFighterIncrease);
+        Button subFighter = (Button) findViewById(R.id.skillFighterDecrease);
+
+        Button addEngineer = (Button) findViewById(R.id.skillFighterIncrease);
+        Button subEngineer = (Button) findViewById(R.id.skillFighterDecrease);
+
+        Button addTrader = (Button) findViewById(R.id.skillTraderIncrease);
+        Button subTrader = (Button) findViewById(R.id.skillTraderDecrease);
+
+        final String playerInformation = "\nPlayer Name: " + playerName.getText().toString()
                 + "\nPilot Skill: " + skillPilotLevel.getText().toString()
                 + "\nFighter Skill: " + skillFighterLevel.getText().toString()
                 + "\nEngineer Skill: " + skillEngineerLevel.getText().toString()
@@ -54,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button createButton = (Button) findViewById(R.id.createButton);
         createButton.setOnClickListener(new OnClickListener() {
+            @Override
             public void onClick(View v) {
                 Log.w(TAG, playerInformation);
             }
