@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintBottom_toTopOf="@+id/include2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/content_main"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/appBarLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout2" />
+
+    <TextView
+        android:id="@+id/titleView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Character Creation"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include2" />
+
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Player Name"
+        app:layout_constraintBottom_toTopOf="@+id/inputPlayerName"
+        app:layout_constraintEnd_toStartOf="@+id/include2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleView" />
+
+    <EditText
+        android:id="@+id/inputPlayerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/include2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleView" />
+
+    <TextView
+        android:id="@+id/skillView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Skills"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPlayerName" />
+
+    <Button
+        android:id="@+id/skillPilotDecrease"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="-"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skillView" />
+
+    <Button
+        android:id="@+id/skillPilotIncrease"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="+"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/skillPilotLevel"
+        app:layout_constraintTop_toBottomOf="@+id/skillView" />
+
+    <TextView
+        android:id="@+id/skillPilotLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/skillPilotDecrease"
+        app:layout_constraintTop_toTopOf="@+id/skillPilotDecrease" />
+
+    <TextView
+        android:id="@+id/skillPilotText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Pilot"
+        app:layout_constraintStart_toEndOf="@+id/skillPilotIncrease"
+        app:layout_constraintTop_toBottomOf="@+id/skillView" />
+
+    <Button
+        android:id="@+id/skillFighterDecrease"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="-"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skillPilotDecrease" />
+
+    <Button
+        android:id="@+id/skillFighterIncrease"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="+"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/skillFighterLevel"
+        app:layout_constraintTop_toBottomOf="@+id/skillPilotIncrease" />
+
+    <TextView
+        android:id="@+id/skillFighterLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/skillFighterDecrease"
+        app:layout_constraintTop_toBottomOf="@+id/skillPilotLevel" />
+
+    <TextView
+        android:id="@+id/skillFighterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="18dp"
+        android:text="Fighter"
+        app:layout_constraintStart_toEndOf="@+id/skillFighterIncrease"
+        app:layout_constraintTop_toBottomOf="@+id/skillPilotText" />
+
+    <Button
+        android:id="@+id/skillTraderDecrease"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="-"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skillFighterDecrease" />
+
+    <Button
+        android:id="@+id/skillTraderIncrease"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="+"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/skillTraderLevel"
+        app:layout_constraintTop_toBottomOf="@+id/skillFighterIncrease" />
+
+    <TextView
+        android:id="@+id/skillTraderLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="17dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/skillTraderDecrease"
+        app:layout_constraintTop_toBottomOf="@+id/skillFighterLevel" />
+
+    <TextView
+        android:id="@+id/skillTraderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="18dp"
+        android:text="Trader"
+        app:layout_constraintStart_toEndOf="@+id/skillTraderIncrease"
+        app:layout_constraintTop_toBottomOf="@+id/skillFighterText" />
+
+    <Button
+        android:id="@+id/skillEngineerDecrease"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="-"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skillTraderDecrease" />
+
+    <Button
+        android:id="@+id/skillEngineerIncrease"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="+"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/skillEngineerLevel"
+        app:layout_constraintTop_toBottomOf="@+id/skillTraderIncrease" />
+
+    <TextView
+        android:id="@+id/skillEngineerLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="17dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/skillEngineerDecrease"
+        app:layout_constraintTop_toBottomOf="@+id/skillTraderLevel" />
+
+    <TextView
+        android:id="@+id/skillTraderText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Engineer"
+        app:layout_constraintStart_toEndOf="@+id/skillEngineerIncrease"
+        app:layout_constraintTop_toBottomOf="@+id/skillTraderText" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="280dp"
+        app:layout_constraintBottom_toBottomOf="@+id/include2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skillEngineerIncrease"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/createButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Create"
+        app:layout_constraintBottom_toBottomOf="@+id/include2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+</android.support.constraint.ConstraintLayout>
