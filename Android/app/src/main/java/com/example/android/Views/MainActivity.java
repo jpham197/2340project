@@ -1,4 +1,4 @@
-package com.example.android;
+package com.example.android.Views;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.view.View.OnClickListener;
 import android.util.Log;
 
+
+import com.example.android.R;
 
 public class MainActivity extends AppCompatActivity {
 
