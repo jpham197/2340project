@@ -2,4 +2,5 @@
     <string name="app_name">Android</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_start_up">StartUpActivity</string>
+    <string name="title_activity_configure_complete">ConfigureCompleteActivity</string>
 </resources>
