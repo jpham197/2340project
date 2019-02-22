@@ -46,6 +46,9 @@ public class Player {
         this(name, pilot, fighter, trader, engineer, 16, 1000
                 , new Ship(100, ShipType.Gnat));
     }
+    public Player() {
+        this(null, 0, 0, 0, 0, 0, 0, null);
+    }
 
     /**
      *
