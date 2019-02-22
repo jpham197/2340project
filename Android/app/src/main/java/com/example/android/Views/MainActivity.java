@@ -193,13 +193,21 @@ public class MainActivity extends AppCompatActivity {
         createButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String playerInformation = "\nPlayer Name: " + playerName.getText().toString()
-                        + "\nDifficulty: " + s.getSelectedItem()
-                        + "\nPilot Skill: " + user.getPilot()
-                        + "\nFighter Skill: " + user.getFighter()
-                        + "\nTrader Skill: " + user.getTrader()
-                        + "\nEngineer Skill: " + user.getEngineer();
-                Log.w(TAG, playerInformation);
+                if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                        != 16) {
+                    Toast.makeText(getApplication(), "You still have " +
+                                    (16 - (user.getPilot() + user.getTrader()
+                                    + user.getEngineer() + user.getFighter())) + " Skill Points left.",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    final String playerInformation = "\nPlayer Name: " + playerName.getText().toString()
+                            + "\nDifficulty: " + s.getSelectedItem()
+                            + "\nPilot Skill: " + user.getPilot()
+                            + "\nFighter Skill: " + user.getFighter()
+                            + "\nTrader Skill: " + user.getTrader()
+                            + "\nEngineer Skill: " + user.getEngineer();
+                    Log.w(TAG, playerInformation);
+                }
             }
         });
     }
