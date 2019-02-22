@@ -301,8 +301,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.091"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/skillEngineerIncrease" />
+=======
+        app:layout_constraintStart_toStartOf="parent" />
+>>>>>>> Stashed changes
+=======
+        app:layout_constraintStart_toStartOf="parent" />
+>>>>>>> Stashed changes
 =======
         app:layout_constraintStart_toStartOf="parent" />
 >>>>>>> Stashed changes
