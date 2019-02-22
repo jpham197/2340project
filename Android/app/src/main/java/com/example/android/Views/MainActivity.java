@@ -53,10 +53,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 subPilot.setEnabled(true);
                 int current = Integer.parseInt(skillPilotLevel.getText().toString());
-                if (Integer.parseInt(skillPilotLevel.getText().toString())
-                        + Integer.parseInt(skillFighterLevel.getText().toString())
-                        + Integer.parseInt(skillEngineerLevel.getText().toString())
-                        + Integer.parseInt(skillTraderLevel.getText().toString()) != 16) {
+                if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                        != 16) {
                     current++;
                     user.setPilot(current);
                 } else {
@@ -73,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 int current = Integer.parseInt(skillPilotLevel.getText().toString());
                 if (current > 0) {
                     current--;
+                    user.setPilot(current);
                 } else {
                     subPilot.setEnabled(false);
                 }
@@ -88,10 +87,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 subFighter.setEnabled(true);
                 int current = Integer.parseInt(skillFighterLevel.getText().toString());
-                if (Integer.parseInt(skillPilotLevel.getText().toString())
-                        + Integer.parseInt(skillFighterLevel.getText().toString())
-                        + Integer.parseInt(skillEngineerLevel.getText().toString())
-                        + Integer.parseInt(skillTraderLevel.getText().toString()) != 16) {
+                if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                        != 16) {
                     current++;
                     user.setFighter(current);
                 } else {
@@ -108,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 int current = Integer.parseInt(skillFighterLevel.getText().toString());
                 if (current > 0) {
                     current--;
+                    user.setFighter(current);
                 } else {
                     subFighter.setEnabled(false);
                 }
@@ -124,10 +122,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 subEngineer.setEnabled(true);
                 int current = Integer.parseInt(skillEngineerLevel.getText().toString());
-                if (Integer.parseInt(skillPilotLevel.getText().toString())
-                        + Integer.parseInt(skillFighterLevel.getText().toString())
-                        + Integer.parseInt(skillEngineerLevel.getText().toString())
-                        + Integer.parseInt(skillTraderLevel.getText().toString()) != 16) {
+                if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                        != 16) {
                     current++;
                     user.setEngineer(current);
                 } else {
@@ -144,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 int current = Integer.parseInt(skillEngineerLevel.getText().toString());
                 if (current > 0) {
                     current--;
+                    user.setEngineer(current);
                 } else {
                     subEngineer.setEnabled(false);
                 }
@@ -159,10 +156,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 subTrader.setEnabled(true);
                 int current = Integer.parseInt(skillTraderLevel.getText().toString());
-                if (Integer.parseInt(skillPilotLevel.getText().toString())
-                        + Integer.parseInt(skillFighterLevel.getText().toString())
-                        + Integer.parseInt(skillEngineerLevel.getText().toString())
-                        + Integer.parseInt(skillTraderLevel.getText().toString()) != 16) {
+                if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                        != 16) {
                     current++;
                     user.setTrader(current);
                 } else {
@@ -179,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
                 int current = Integer.parseInt(skillTraderLevel.getText().toString());
                 if (current > 0) {
                     current--;
+                    user.setTrader(current);
                 } else {
                     subTrader.setEnabled(false);
                 }
@@ -197,13 +193,21 @@ public class MainActivity extends AppCompatActivity {
         createButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String playerInformation = "\nPlayer Name: " + playerName.getText().toString()
-                        + "\nDifficulty: " + s.getSelectedItem()
-                        + "\nPilot Skill: " + user.getPilot()
-                        + "\nFighter Skill: " + user.getFighter()
-                        + "\nTrader Skill: " + user.getTrader()
-                        + "\nEngineer Skill: " + user.getEngineer();
-                Log.w(TAG, playerInformation);
+                if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                        != 16) {
+                    Toast.makeText(getApplication(), "You still have " +
+                                    (16 - (user.getPilot() + user.getTrader()
+                                    + user.getEngineer() + user.getFighter())) + " Skill Points left.",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    final String playerInformation = "\nPlayer Name: " + playerName.getText().toString()
+                            + "\nDifficulty: " + s.getSelectedItem()
+                            + "\nPilot Skill: " + user.getPilot()
+                            + "\nFighter Skill: " + user.getFighter()
+                            + "\nTrader Skill: " + user.getTrader()
+                            + "\nEngineer Skill: " + user.getEngineer();
+                    Log.w(TAG, playerInformation);
+                }
             }
         });
     }
