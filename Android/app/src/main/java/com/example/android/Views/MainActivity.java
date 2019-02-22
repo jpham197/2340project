@@ -5,6 +5,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
@@ -44,9 +46,31 @@ public class MainActivity extends AppCompatActivity {
         final TextView skillFighterLevel = findViewById(R.id.skillFighterLevel);
         final TextView skillEngineerLevel = findViewById(R.id.skillEngineerLevel);
         final TextView skillTraderLevel = findViewById(R.id.skillTraderLevel);
+        final Button createButton = findViewById(R.id.createButton);
 
         Button addPilot = findViewById(R.id.skillPilotIncrease);
         final Button subPilot = findViewById(R.id.skillPilotDecrease);
+        createButton.setEnabled(false);
+        playerName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                createButton.setEnabled(false);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.toString().trim().length() == 0) {
+                    createButton.setEnabled(false);
+                } else {
+                    createButton.setEnabled(true);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         addPilot.setOnClickListener(new OnClickListener() {
             @Override
@@ -193,7 +217,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s.setAdapter(adapter);
 
-        Button createButton = findViewById(R.id.createButton);
+
         createButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
