@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
         String[] arraySpinner = new String[] {
                 "Easy", "Normal", "Hard", "Extreme"
         };
-        Spinner s = findViewById(R.id.spinner);
+        final Spinner s = findViewById(R.id.spinner);
 
-        EditText playerName = findViewById(R.id.inputPlayerName);
+        final EditText playerName = findViewById(R.id.inputPlayerName);
         final TextView skillPilotLevel = findViewById(R.id.skillPilotLevel);
         final TextView skillFighterLevel = findViewById(R.id.skillFighterLevel);
         final TextView skillEngineerLevel = findViewById(R.id.skillEngineerLevel);
@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                         + Integer.parseInt(skillEngineerLevel.getText().toString())
                         + Integer.parseInt(skillTraderLevel.getText().toString()) != 16) {
                     current++;
+                    user.setFighter(current);
                 } else {
                     Toast.makeText(getApplication(), "No more Skill Points left.",
                             Toast.LENGTH_LONG).show();
@@ -128,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
                         + Integer.parseInt(skillEngineerLevel.getText().toString())
                         + Integer.parseInt(skillTraderLevel.getText().toString()) != 16) {
                     current++;
+                    user.setEngineer(current);
                 } else {
                     Toast.makeText(getApplication(), "No more Skill Points left.",
                             Toast.LENGTH_LONG).show();
@@ -162,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
                         + Integer.parseInt(skillEngineerLevel.getText().toString())
                         + Integer.parseInt(skillTraderLevel.getText().toString()) != 16) {
                     current++;
+                    user.setTrader(current);
                 } else {
                     Toast.makeText(getApplication(), "No more Skill Points left.",
                             Toast.LENGTH_LONG).show();
@@ -183,11 +186,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final String playerInformation = "\nPlayer Name: " + playerName.getText().toString()
-                + "\nPilot Skill: " + user.getPilot()
-                + "\nFighter Skill: " + skillFighterLevel.getText().toString()
-                + "\nEngineer Skill: " + skillEngineerLevel.getText().toString()
-                + "\nTrader Skill: " + skillTraderLevel.getText().toString();
+
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, arraySpinner);
@@ -198,6 +197,12 @@ public class MainActivity extends AppCompatActivity {
         createButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                final String playerInformation = "\nPlayer Name: " + playerName.getText().toString()
+                        + "\nDifficulty: " + s.getSelectedItem()
+                        + "\nPilot Skill: " + user.getPilot()
+                        + "\nFighter Skill: " + user.getFighter()
+                        + "\nTrader Skill: " + user.getTrader()
+                        + "\nEngineer Skill: " + user.getEngineer();
                 Log.w(TAG, playerInformation);
             }
         });
