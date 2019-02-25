@@ -1,6 +1,6 @@
 package com.example.android.Entity;
 
-public enum Resources {
+public enum PlanetAttributes {
     NOSPECIALRESOURCES(0, "No Special Resources"),
     MINERALRICH(1, "Mineral Rich"),
     MINERALPOOR(2, "Mineral Poor"),
@@ -16,19 +16,20 @@ public enum Resources {
     WARLIKE(12, "Warlike");
 
     /**
-     * makes Resource types
+     * Constructor for planet attributes
+     *
      * @param index numbers to be randomly chosen
      * @param name name of the resource
      */
-    Resources(int index, String name) {
+    PlanetAttributes(int index, String name) {
 
     }
 
-    public Resources[] getResource() {
-        return Resources.values();
+    public PlanetAttributes[] getResource() {
+        return PlanetAttributes.values();
     }
 
-    public Resources getRandomResource() {
+    public PlanetAttributes getRandomResource() {
         int randomNum = (int) Math.random() * 12;
         return getResource()[randomNum];
     }
