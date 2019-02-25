@@ -1,6 +1,6 @@
 package com.example.android.Entity;
 
-public enum TechLevelEnum {
+public enum TechLevel {
     PREAGRICULTURE(0, "Pre-Agriculture"),
     AGRICULTURE(1, "Agriculture"),
     MEDIEVAL(2, "Medieval"),
@@ -10,13 +10,13 @@ public enum TechLevelEnum {
     POSTINDUSTRIAL(6, "Post-Industrial"),
     HITECH(7, "Hi-Tech");
 
-    TechLevelEnum(int index, String techLV) {
+    TechLevel(int index, String techLV) {
 
     }
-    public TechLevelEnum[] getTechLevel() {
-        return TechLevelEnum.values();
+    public TechLevel[] getTechLevel() {
+        return TechLevel.values();
     }
-    public TechLevelEnum getRandomTechLevel() {
+    public TechLevel getRandomTechLevel() {
         int randomNum = (int) Math.random() * 7;
         return getTechLevel()[randomNum];
     }

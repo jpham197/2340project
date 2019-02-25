@@ -1,6 +1,6 @@
 package com.example.android.Entity;
 
-public enum SolarSystemEnum {
+public enum SolarSystem {
     Acamar(),
     Balosnee(),
     Calondia(),
@@ -11,7 +11,7 @@ public enum SolarSystemEnum {
     KRIOS(),
     BRAZIL(),
     NIX();
-    SolarSystemEnum(TechLevelEnum techLevel, int numOfPlanet){
+    SolarSystem(TechLevelEnum techLevel, int numOfPlanet){
 
     }
 }
