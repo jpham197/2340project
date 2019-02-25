@@ -1,6 +1,6 @@
 package com.example.android.Entity;
 
-public class Player {
+public class usPlayer {
     private String Name;
     private int credits;
     private int pilot;
