@@ -29,7 +29,7 @@ public enum Resources {
     }
 
     public Resources getRandomResource() {
-        int randomNum = (int) Math.random() * 12;
+        int randomNum = (int) Math.random() * 13;
         return getResource()[randomNum];
     }
 
