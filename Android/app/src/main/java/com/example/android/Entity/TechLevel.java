@@ -13,11 +13,11 @@ public enum TechLevel {
     TechLevel(int index, String techLV) {
 
     }
-    public TechLevel[] getTechLevel() {
+    public TechLevel[] getTechLevels() {
         return TechLevel.values();
     }
     public TechLevel getRandomTechLevel() {
         int randomNum = (int) Math.random() * 7;
-        return getTechLevel()[randomNum];
+        return getTechLevels()[randomNum];
     }
 }
