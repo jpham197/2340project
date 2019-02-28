@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed0c2f12-dd67-47ec-8fc1-6063490d5815" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/2340project.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Android/app/src/main/java/com/example/android/Entity/PlanetTypes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Android/app/src/main/java/com/example/android/Entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Android/app/src/main/java/com/example/android/Entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Android/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Android/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Android/app/src/main/gen/com/example/android/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Android/app/src/main/gen/com/example/android/BuildConfig.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,12 +18,12 @@
     <session id="-1096855846">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -92,8 +91,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -114,34 +111,31 @@
             </path>
             <path>
               <item name="2340project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="2340project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="2340project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="ViewModels" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="Pixel_2_API_28" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Android" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunDashboard">
@@ -226,7 +220,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.32662642" />
