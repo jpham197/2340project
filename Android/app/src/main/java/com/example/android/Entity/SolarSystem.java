@@ -6,26 +6,26 @@ public class SolarSystem {
     private TechLevel techLevel;
     private int numOfPlanets;
     private Planet[] planets;
-    private int Xcoordinate;
-    private int Ycoordinate;
+    private int xCoordinate;
+    private int yCoordinate;
 
 
     SolarSystem(String name, TechLevel techLevel, int numOfPlanets, Planet[] planets
-        , int Xcoordinate, int Ycoordinate) {
+        , int xCoordinate, int yCoordinate) {
 
         this.name = name;
         this.techLevel = techLevel;
         this.numOfPlanets = numOfPlanets;
         this.planets = planets;
-        this.Xcoordinate = Xcoordinate;
-        this.Ycoordinate = Ycoordinate;
+        this.xCoordinate = xCoordinate;
+        this.yCoordinate = yCoordinate;
     }
 
     /**
      * Default values if not entered has:
      *          Array of Planets
-     *          Xcoordinate should be between 0 - 100
-     *          Ycoordinate should be between 0 - 100
+     *          xCoordinate should be between 0 - 100
+     *          yCoordinate should be between 0 - 100
      * @param name
      * @param techLevel
      * @param numOfPlanets
