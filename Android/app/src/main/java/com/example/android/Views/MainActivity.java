@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                         != 16) {
                     current++;
                     user.setPilot(current);
+                    user.setName(playerName.getText().toString());
                 } else {
                     Toast.makeText(getApplication(), "No more Skill Points left.",
                             Toast.LENGTH_LONG).show();
@@ -227,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
                                     + user.getEngineer() + user.getFighter())) + " Skill Points left.",
                             Toast.LENGTH_LONG).show();
                 } else {
-                    final String playerInformation = "\nPlayer Name: " + playerName.getText().toString()
+                    final String playerInformation = "\nPlayer Name: " + user.getName()
                             + "\nDifficulty: " + s.getSelectedItem()
                             + "\nPilot Skill: " + user.getPilot()
                             + "\nFighter Skill: " + user.getFighter()
