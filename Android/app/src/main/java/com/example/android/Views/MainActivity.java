@@ -1,5 +1,6 @@
 package com.example.android.Views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -231,6 +232,9 @@ public class MainActivity extends AppCompatActivity {
                             + "\nTrader Skill: " + user.getTrader()
                             + "\nEngineer Skill: " + user.getEngineer();
                     Log.w(TAG, playerInformation);
+                    Intent intent = new Intent (MainActivity.this,
+                            ConfigureCompleteActivity.class);
+                    startActivity(intent);
                 }
             }
         });
