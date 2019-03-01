@@ -1,5 +1,6 @@
 package com.example.android.Views;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -21,12 +22,13 @@ import android.widget.Toast;
 
 import com.example.android.Entity.Player;
 import com.example.android.R;
+//import com.example.android.ViewModels.PlayerViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     Player user = new Player();
-
+//    PlayerViewModel pvm = ViewModelProviders.of(this).get(PlayerViewModel.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
