@@ -10,7 +10,7 @@ public class SolarSystemInteractor extends Interactor {
         super(repo);
     }
 
-    public List<SolarSystem> getSolarSystems() {
+    public List<SolarSystem> getAllSolarSystems() {
         return getRepository().getAllSolarSystems();
     }
 
