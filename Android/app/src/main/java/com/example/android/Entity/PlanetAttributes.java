@@ -1,27 +1,26 @@
 package com.example.android.Entity;
 
 public enum PlanetAttributes {
-    NOSPECIALRESOURCES(0, "No Special Resources"),
-    MINERALRICH(1, "Mineral Rich"),
-    MINERALPOOR(2, "Mineral Poor"),
-    DESERT(3, "Desert"),
-    LOTSOFWATER(4, "Lots of Water"),
-    RICHSOIL(5, "Rich Soil"),
-    POORSOIL(6, "Poor Soil"),
-    RICHFAUNA(7, "Rich Fauna"),
-    LIFELESS(8, "Lifeless"),
-    WEIRDMUSHROOMS(9, "Weird Mushrooms"),
-    LOTSOFHERBS(10, "Lots of Herbs"),
-    ARTISTIC(11, "Artistic"),
-    WARLIKE(12, "Warlike");
+    NOSPECIALRESOURCES("No Special Resources"),
+    MINERALRICH("Mineral Rich"),
+    MINERALPOOR("Mineral Poor"),
+    DESERT("Desert"),
+    LOTSOFWATER("Lots of Water"),
+    RICHSOIL("Rich Soil"),
+    POORSOIL("Poor Soil"),
+    RICHFAUNA("Rich Fauna"),
+    LIFELESS("Lifeless"),
+    WEIRDMUSHROOMS("Weird Mushrooms"),
+    LOTSOFHERBS("Lots of Herbs"),
+    ARTISTIC("Artistic"),
+    WARLIKE("Warlike");
 
     /**
      * Constructor for planet attributes
      *
-     * @param index numbers to be randomly chosen
      * @param name name of the resource
      */
-    PlanetAttributes(int index, String name) {
+    PlanetAttributes(String name) {
 
     }
 
