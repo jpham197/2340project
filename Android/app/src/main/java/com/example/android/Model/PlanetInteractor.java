@@ -14,10 +14,6 @@ public class PlanetInteractor extends Interactor {
         getRepository().addPlanet(p);
     }
 
-    public void updatePlanet(Planet p) {
-        getRepository().updatePlanet(p);
-    }
-
     public void deletePlanet(Planet p) {
         getRepository().deletePlanet(p);
     }

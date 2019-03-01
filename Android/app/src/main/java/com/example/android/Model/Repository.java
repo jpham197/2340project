@@ -31,20 +31,19 @@ public class Repository {
     public void addPlayer(Player input) {
         allPlayers.add(input);
     }
+    public void deletePlayer(Player input) {
+        allPlayers.remove(input);
+    }
     public void addSolarSystem(SolarSystem input) {
         allSolarSystems.add(input);
+    }
+    public void deleteSolarSystem(SolarSystem input) {
+        allSolarSystems.remove(input);
     }
     public void addPlanet(Planet input) {
         allPlanets.add(input);
     }
-    public void updatePlayer(Player p) {
-
+    public void deletePlanet(Planet input) {
+        allPlanets.remove(input);
     }
-    public void updatePlanet(Planet p) {
-
-    }
-    public void deletePlanet(Planet p) {
-
-    }
-
 }
