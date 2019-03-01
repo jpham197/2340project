@@ -37,4 +37,8 @@ public class Repository {
     public void addPlanet(Planet input) {
         allPlanets.add(input);
     }
+    public void updatePlayer(Player p) {
+
+    }
+
 }
