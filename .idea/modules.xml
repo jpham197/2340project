@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Android/app/src/androidTest/androidTest.iml" filepath="$PROJECT_DIR$/Android/app/src/androidTest/androidTest.iml" />
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/Android/app/build/generated/source/buildConfig/buildConfig.iml" filepath="$PROJECT_DIR$/Android/app/build/generated/source/buildConfig/buildConfig.iml" />
       <module fileurl="file://$PROJECT_DIR$/Android/app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/bundle-manifest.iml" filepath="$PROJECT_DIR$/Android/app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/bundle-manifest.iml" />
       <module fileurl="file://$PROJECT_DIR$/Android/app/build/intermediates/merged_manifests/debug/debug.iml" filepath="$PROJECT_DIR$/Android/app/build/intermediates/merged_manifests/debug/debug.iml" />
@@ -22,6 +23,9 @@
       <module fileurl="file://$PROJECT_DIR$/Android/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_7/slice_7.iml" filepath="$PROJECT_DIR$/Android/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_7/slice_7.iml" />
       <module fileurl="file://$PROJECT_DIR$/Android/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_8/slice_8.iml" filepath="$PROJECT_DIR$/Android/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_8/slice_8.iml" />
       <module fileurl="file://$PROJECT_DIR$/Android/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_9/slice_9.iml" filepath="$PROJECT_DIR$/Android/app/build/intermediates/instant_run_split_apk_resources/debug/instantRunSplitApkResourcesDebug/out/slice_9/slice_9.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/Android/app/src/main/main.iml" filepath="$PROJECT_DIR$/Android/app/src/main/main.iml" />
+>>>>>>> bf66923f23e25ac8eba250ff60f09729e39a13d6
       <module fileurl="file://$PROJECT_DIR$/Android/app/src/test/test.iml" filepath="$PROJECT_DIR$/Android/app/src/test/test.iml" />
     </modules>
   </component>
