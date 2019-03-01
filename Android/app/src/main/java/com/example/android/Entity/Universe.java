@@ -1,9 +1,18 @@
 package com.example.android.Entity;
 
 
+import java.util.Arrays;
+
 public class Universe {
 
     private SolarSystem[] solarSystems;
+
+    public Universe() {
+        solarSystems = new SolarSystem[10];
+        for (int a = 0; a < solarSystems.length; a++) {
+            solarSystems[a] = new SolarSystem();
+        }
+    }
 
     /**
      *
@@ -40,6 +49,10 @@ public class Universe {
             }
         }
         return null;
+    }
+
+    public String toString() {
+        return Arrays.toString(solarSystems);
     }
 }
 

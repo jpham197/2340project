@@ -16,8 +16,24 @@ public class Planet {
         PlanetName[] pNames = PlanetName.values();
         Random random = new Random();
         resource = pAS[random.nextInt(pAS.length)];
-        name = valueOf(pNames[random.nextInt(pNames.length)]);
-        xCoordinate = 0;
-        yCoordinate = 0;
+        name = valueOf(pNames[(int)(Math.random() * 11)]);
+        this.xCoordinate = (int) (Math.random() * 1000);
+        this.yCoordinate = (int) (Math.random() * 1000);
+    }
+
+    public PlanetAttributes getResource() {
+        return resource;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getxCoordinate() {
+        return xCoordinate;
+    }
+
+    public int getyCoordinate() {
+        return yCoordinate;
     }
 }
