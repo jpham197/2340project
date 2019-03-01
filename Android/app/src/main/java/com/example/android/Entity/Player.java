@@ -7,7 +7,7 @@ public class Player {
     private int fighter;
     private int trader;
     private int engineer;
-    private int skillpointsavailible;
+    private int skillPointsAvailable;
     private Ship current;
 
 
@@ -18,17 +18,17 @@ public class Player {
      * @param fighter
      * @param trader
      * @param engineer
-     * @param skillpointsavailible
+     * @param skillPointsAvailable
      * @param current
      */
     public Player(String name, int pilot, int fighter, int trader, int engineer
-                  ,int skillpointsavailible, int credits, Ship current) {
+                  , int skillPointsAvailable, int credits, Ship current) {
         this.Name = name;
         this.pilot = pilot;
         this.fighter = fighter;
         this.trader = trader;
         this.engineer = engineer;
-        this.skillpointsavailible = skillpointsavailible;
+        this.skillPointsAvailable = skillPointsAvailable;
         this.credits = credits;
         this.current = current;
     }
@@ -147,6 +147,6 @@ public class Player {
      * @return
      */
     public int getSkillpointsavailible() {
-        return this.skillpointsavailible;
+        return this.skillPointsAvailable;
     }
 }
