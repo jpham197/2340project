@@ -2,6 +2,8 @@ package com.example.android.Model;
 
 import com.example.android.Entity.Planet;
 
+import java.util.List;
+
 public class PlanetInteractor extends Interactor {
 
     public PlanetInteractor(Repository repository) {

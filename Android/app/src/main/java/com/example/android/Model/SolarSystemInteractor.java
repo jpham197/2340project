@@ -4,7 +4,7 @@ import com.example.android.Entity.SolarSystem;
 
 import java.util.List;
 
-public class SolarSystemInteractor extends  {
+public class SolarSystemInteractor extends Interactor {
 
     public SolarSystemInteractor(Repository repo){
         super(repo);
@@ -16,9 +16,5 @@ public class SolarSystemInteractor extends  {
 
     public void addSolarSystem(SolarSystem s) {
         getRepository().addSolarSystem(s);
-    }
-
-    public void updateSolarSystem(SolarSystem s) {
-        getRepository().updateSolarSystem(s);
     }
  }
