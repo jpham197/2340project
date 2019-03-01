@@ -40,5 +40,11 @@ public class Repository {
     public void updatePlayer(Player p) {
 
     }
+    public void updatePlanet(Planet p) {
+
+    }
+    public void deletePlanet(Planet p) {
+
+    }
 
 }
