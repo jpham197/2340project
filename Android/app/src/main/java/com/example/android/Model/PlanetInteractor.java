@@ -2,6 +2,8 @@ package com.example.android.Model;
 
 import com.example.android.Entity.Planet;
 
+import java.util.List;
+
 public class PlanetInteractor extends Interactor {
 
     public PlanetInteractor(Repository repository) {
@@ -10,10 +12,6 @@ public class PlanetInteractor extends Interactor {
 
     public void addPlanet(Planet p) {
         getRepository().addPlanet(p);
-    }
-
-    public void updatePlanet(Planet p) {
-        getRepository().updatePlanet(p);
     }
 
     public void deletePlanet(Planet p) {
