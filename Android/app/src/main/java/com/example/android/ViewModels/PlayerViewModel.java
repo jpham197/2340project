@@ -6,6 +6,7 @@ import android.arch.lifecycle.AndroidViewModel;
 
 import com.example.android.Entity.Player;
 import com.example.android.Entity.Ship;
+import com.example.android.Model.Model;
 import com.example.android.Model.PlayerInteractor;
 
 import java.util.List;

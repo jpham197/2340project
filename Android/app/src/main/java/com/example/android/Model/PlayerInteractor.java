@@ -16,4 +16,8 @@ public class PlayerInteractor extends Interactor{
 
     }
 
+    public void deletePlayer(Player p) {
+        getRepository().deletePlayer(p);
+    }
+
 }
