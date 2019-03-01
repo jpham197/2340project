@@ -13,7 +13,7 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTitle("Space Traders");
+        setTitle("Space Traders: ");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configure_complete);
         Toolbar toolbar = findViewById(R.id.toolbar);

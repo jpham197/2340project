@@ -7,8 +7,8 @@ import static java.lang.String.valueOf;
 public class Planet {
     private PlanetAttributes resource;
     private String name;
-    private int xCor;
-    private int yCor;
+    private int xCoordinate;
+    private int yCoordinate;
 
 
     public Planet() {
@@ -17,7 +17,7 @@ public class Planet {
         Random random = new Random();
         resource = pAS[random.nextInt(pAS.length)];
         name = valueOf(pNames[random.nextInt(pNames.length)]);
-        xCor = 0;
-        yCor = 0;
+        xCoordinate = 0;
+        yCoordinate = 0;
     }
 }
