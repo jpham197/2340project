@@ -22,16 +22,16 @@ import android.widget.Toast;
 
 import com.example.android.Entity.Player;
 import com.example.android.R;
-//import com.example.android.ViewModels.PlayerViewModel;
+import com.example.android.ViewModels.PlayerViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     Player user = new Player();
-//    PlayerViewModel pvm = ViewModelProviders.of(this).get(PlayerViewModel.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final PlayerViewModel pvm = ViewModelProviders.of(this).get(PlayerViewModel.class);
         setTitle("Space Traders");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -221,6 +221,8 @@ public class MainActivity extends AppCompatActivity {
         createButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                user.setName(playerName.getText().toString());
+                pvm.addPlayer(user);
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
                         != 16) {
                     Toast.makeText(getApplication(), "You still have " +
