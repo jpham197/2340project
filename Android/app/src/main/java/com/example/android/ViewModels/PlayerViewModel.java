@@ -6,6 +6,7 @@ import android.arch.lifecycle.AndroidViewModel;
 
 import com.example.android.Entity.Player;
 import com.example.android.Entity.Ship;
+import com.example.android.Model.Model;
 import com.example.android.Model.PlayerInteractor;
 
 import java.util.List;
@@ -20,10 +21,7 @@ public class PlayerViewModel extends AndroidViewModel {
         players = model.getAllPlayers();
     }
 
-    public void addPlayer(String name, int pilot, int fighter, int trader, int engineer
-            , int skillPointsAvailable, int credits, Ship current) {
-        Player player = new Player(name, pilot, fighter, trader, engineer
-                  , skillPointsAvailable, credits, current);
+    public void addPlayer(Player player) {
         players.add(player);
         players = model.getAllPlayers();
     }

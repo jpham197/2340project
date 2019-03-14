@@ -1,7 +1,7 @@
 package com.example.android.Entity;
 
 public class Player {
-    private String Name;
+    private String name;
     private int credits;
     private int pilot;
     private int fighter;
@@ -9,7 +9,7 @@ public class Player {
     private int engineer;
     private int skillPointsAvailable;
     private Ship current;
-
+    private Location location;
 
     /**
      *
@@ -23,7 +23,7 @@ public class Player {
      */
     public Player(String name, int pilot, int fighter, int trader, int engineer
                   , int skillPointsAvailable, int credits, Ship current) {
-        this.Name = name;
+        this.name = name;
         this.pilot = pilot;
         this.fighter = fighter;
         this.trader = trader;
@@ -48,6 +48,22 @@ public class Player {
     }
     public Player() {
         this(null, 0, 0, 0, 0, 0, 0, null);
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
@@ -148,5 +164,13 @@ public class Player {
      */
     public int getSkillpointsavailible() {
         return this.skillPointsAvailable;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public Location getLocation() {
+        return this.location;
     }
 }

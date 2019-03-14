@@ -28,14 +28,6 @@ public enum PlanetAttributes {
         return PlanetAttributes.values();
     }
 
-<<<<<<< HEAD:Android/app/src/main/java/com/example/android/Entity/Resources.java
-    public Resources getRandomResource() {
-        int randomNum = (int) Math.random() * 13;
-=======
-    public PlanetAttributes getRandomResource() {
-        int randomNum = (int) Math.random() * 12;
->>>>>>> 57dece1ad13108e3a7396ddc402415d55ff54ca7:Android/app/src/main/java/com/example/android/Entity/PlanetAttributes.java
-        return getResource()[randomNum];
-    }
+
 
 }

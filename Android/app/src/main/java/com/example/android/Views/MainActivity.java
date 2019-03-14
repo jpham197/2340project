@@ -1,5 +1,6 @@
 package com.example.android.Views;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -20,16 +21,18 @@ import android.widget.Toast;
 
 
 import com.example.android.Entity.Player;
+import com.example.android.Entity.Universe;
 import com.example.android.R;
+import com.example.android.ViewModels.PlayerViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     Player user = new Player();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final PlayerViewModel pvm = ViewModelProviders.of(this).get(PlayerViewModel.class);
         setTitle("Space Traders");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -218,6 +221,9 @@ public class MainActivity extends AppCompatActivity {
         createButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                user.setName(playerName.getText().toString());
+                Log.w(TAG, new Universe().toString());
+                pvm.addPlayer(user);
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
                         != 16) {
                     Toast.makeText(getApplication(), "You still have " +
@@ -225,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
                                     + user.getEngineer() + user.getFighter())) + " Skill Points left.",
                             Toast.LENGTH_LONG).show();
                 } else {
-                    final String playerInformation = "\nPlayer Name: " + playerName.getText().toString()
+                    final String playerInformation = "\nPlayer Name: " + user.getName()
                             + "\nDifficulty: " + s.getSelectedItem()
                             + "\nPilot Skill: " + user.getPilot()
                             + "\nFighter Skill: " + user.getFighter()
