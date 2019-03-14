@@ -9,7 +9,7 @@ public class Player {
     private int engineer;
     private int skillPointsAvailable;
     private Ship current;
-
+    private Location location;
 
     /**
      *
@@ -172,5 +172,13 @@ public class Player {
      */
     public int getSkillpointsavailible() {
         return this.skillPointsAvailable;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public Location getLocation() {
+        return this.location;
     }
 }

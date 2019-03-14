@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 
 import com.example.android.Entity.Player;
+import com.example.android.Entity.Universe;
 import com.example.android.R;
 import com.example.android.ViewModels.PlayerViewModel;
 
@@ -222,6 +223,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 user.setName(playerName.getText().toString());
+                Log.w(TAG, new Universe().toString());
                 pvm.addPlayer(user);
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
                         != 16) {
