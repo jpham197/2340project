@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#fff9d0">
 
     <TextView
         android:id="@+id/PlanetaryMarketplace"
@@ -16,11 +17,16 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
+
         android:gravity="center_horizontal"
+        android:textColor="#ffff"
         android:text="Planetary marketplace"
         android:textSize="25sp"
         android:textAllCaps="true"
         android:textFontWeight="20"
+
+        android:background="#000000"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,34 +36,34 @@
         android:layout_width="130dp"
         android:layout_height="30dp"
         android:ems="10"
-        android:text="Market Items"
-        android:textFontWeight="20"
         android:fontFamily="monospace"
+        android:text="Market Items"
         android:textColorHighlight="@color/colorPrimary"
+        android:textFontWeight="20"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteX="38dp"
         tools:layout_editor_absoluteY="124dp" />
 
     <TextView
         android:id="@+id/Market_Items_Available"
-        android:layout_width="108dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
+        android:layout_width="112dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginLeft="176dp"
         android:ems="10"
         android:fontFamily="monospace"
         android:gravity="center_horizontal"
         android:text="Available"
         android:textColorHighlight="@color/colorPrimary"
         android:textFontWeight="20"
-        android:textSize="12sp"
+        android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="154dp" />
+        tools:layout_editor_absoluteY="124dp" />
 
     <TextView
         android:id="@+id/Market_Items_Selected"
         android:layout_width="108dp"
-        android:layout_height="21dp"
+        android:layout_height="28dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
@@ -68,17 +74,18 @@
         android:text="Selected"
         android:textColorHighlight="@color/colorPrimary"
         android:textFontWeight="20"
-        android:textSize="12sp"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/Market_Items_Available"
-        tools:layout_editor_absoluteY="154dp" />
+        tools:layout_editor_absoluteY="124dp" />
 
     <TextView
         android:id="@+id/Item_water"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginTop="24dp"
         android:gravity="center_horizontal"
         android:text="Water"
@@ -87,11 +94,40 @@
         app:layout_constraintTop_toBottomOf="@+id/Market_Items_Title" />
 
     <TextView
+        android:id="@+id/Item_Water_Available_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Furs_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_water"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available"
+        app:layout_constraintVertical_bias="0.692" />
+
+    <TextView
+        android:id="@+id/Item_Water_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Water_Available_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Selected" />
+
+    <TextView
         android:id="@+id/Item_Furs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:text="Furs"
@@ -100,11 +136,40 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_water" />
 
     <TextView
+        android:id="@+id/Item_Furs_Available_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginLeft="152dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Food_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Furs"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available"
+        app:layout_constraintVertical_bias="0.125" />
+
+    <TextView
+        android:id="@+id/Item_Furs_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Furs_Available_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Water_Selected_counter" />
+
+    <TextView
         android:id="@+id/Item_Food"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:text="Food"
@@ -113,11 +178,40 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Furs" />
 
     <TextView
+        android:id="@+id/Item_Food_Available_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Ore_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Food"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available"
+        app:layout_constraintVertical_bias="0.866" />
+
+    <TextView
+        android:id="@+id/Item_Food_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Food_Available_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Furs_Selected_counter" />
+
+    <TextView
         android:id="@+id/Item_Ore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:text="Ore"
@@ -126,11 +220,39 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Food" />
 
     <TextView
+        android:id="@+id/Item_Ore_Available_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Games_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Ore"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available" />
+
+    <TextView
+        android:id="@+id/Item_Ore_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Ore_Available_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Food_Selected_counter" />
+
+    <TextView
         android:id="@+id/Item_Games"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:text="Games"
@@ -139,11 +261,40 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Ore" />
 
     <TextView
+        android:id="@+id/Item_Games_Available_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Firearms_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Games"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/Item_Games_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Games_Available_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Ore_Selected_counter" />
+
+    <TextView
         android:id="@+id/Item_Firearms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:text="Firearms"
@@ -152,11 +303,42 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Games" />
 
     <TextView
+        android:id="@+id/Item_Firearms_Available_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Medicine_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Firearms"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available"
+        app:layout_constraintVertical_bias="0.125" />
+
+    <TextView
+        android:id="@+id/Item_Firearms_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Firearms_Available_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Games_Selected_counter" />
+
+
+
+    <TextView
         android:id="@+id/Item_Medicine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:text="Medicine"
@@ -165,11 +347,40 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Firearms" />
 
     <TextView
+        android:id="@+id/Item_Medicine_Available_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Machines_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Medicine"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available"
+        app:layout_constraintVertical_bias="0.971" />
+
+    <TextView
+        android:id="@+id/Item_Medicine_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Medicine_Available_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Firearms_Selected_counter" />
+
+    <TextView
         android:id="@+id/Item_Machines"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:text="Machines"
@@ -178,11 +389,40 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Medicine" />
 
     <TextView
+        android:id="@+id/Item_Machines_Available_counter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Narcotics_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Machines"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available"
+        app:layout_constraintVertical_bias="0.975" />
+
+    <TextView
+        android:id="@+id/Item_Machines_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Machines_Available_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Medicine_Selected_counter" />
+
+    <TextView
         android:id="@+id/Item_Narcotics"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:text="Narcotics"
@@ -191,11 +431,40 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Machines" />
 
     <TextView
+        android:id="@+id/Item_Narcotics_Available_counter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="368dp"
+        android:layout_marginBottom="8dp"
+        android:text="0"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Robots_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Narcotics"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available"
+        app:layout_constraintVertical_bias="0.222" />
+
+    <TextView
+        android:id="@+id/Item_Narcotics_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Narcotics_Available_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Machines_Selected_counter" />
+
+    <TextView
         android:id="@+id/Item_Robots"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:text="Robots"
@@ -204,11 +473,40 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Narcotics" />
 
     <TextView
+        android:id="@+id/Item_Robots_Available_counter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="412dp"
+        android:text="0"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toEndOf="@+id/Item_Robots"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available" />
+
+    <TextView
+        android:id="@+id/Item_Robots_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Robots_Available_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Narcotics_Selected_counter" />
+
+
+
+
+    <TextView
         android:id="@+id/Total_Price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:text="Total:"
@@ -222,23 +520,24 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/Total_Price"
-        tools:layout_editor_absoluteY="608dp" />
+        app:layout_constraintTop_toBottomOf="@+id/Item_Robots" />
 
     <TextView
         android:id="@+id/Total_Amount_Items"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="200dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
         android:gravity="center_horizontal"
         android:text="Total Items:"
         android:textSize="20sp"
         app:layout_constraintLeft_toRightOf="@+id/Total_Price"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Total_Price_Show"
         tools:layout_editor_absoluteY="608dp" />
 
     <TextView
@@ -257,13 +556,12 @@
 
 
 
-
     <Button
         android:id="@+id/Marketplace_Player_Inventory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
         android:layout_marginBottom="24dp"
         android:text="Inventory"
         app:layout_constraintBottom_toBottomOf="parent"
