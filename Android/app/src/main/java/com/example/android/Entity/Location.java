@@ -9,6 +9,15 @@ public class Location {
         this.y = y;
     }
 
+    public void setX() {
+
+    }
+
+
+    public void setY() {
+
+    }
+
     @Override
     public String toString() {
         return String.format("(%d, %d)", x, y);

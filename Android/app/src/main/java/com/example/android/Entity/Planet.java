@@ -10,6 +10,7 @@ public class Planet {
     private String name;
     private int xCoordinate;
     private int yCoordinate;
+    private TechLevel techLevel;
     private Market market;
 
     public Planet() {
@@ -20,6 +21,7 @@ public class Planet {
         name = valueOf(pNames[(int)(Math.random() * 11)]);
         this.xCoordinate = (int) (Math.random() * 1000);
         this.yCoordinate = (int) (Math.random() * 1000);
+        market = new Market(techLevel);
     }
 
     public PlanetAttributes getResource() {
@@ -41,4 +43,5 @@ public class Planet {
     public Market getWholeMarket() {
         return market;
     }
+
 }
