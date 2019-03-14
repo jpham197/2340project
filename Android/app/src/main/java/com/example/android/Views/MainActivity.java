@@ -23,7 +23,10 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+import com.example.android.Entity.Location;
 import com.example.android.Entity.Player;
+import com.example.android.Entity.Ship;
+import com.example.android.Entity.ShipType;
 import com.example.android.Entity.Universe;
 import com.example.android.R;
 import com.example.android.ViewModels.PlayerViewModel;
@@ -227,6 +230,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                 user.setName(playerName.getText().toString());
                 Log.w(TAG, new Universe().toString());
                 pvm.addPlayer(user);
+                user.setShip(new Ship(100, ShipType.Gnat));
+                user.setLocation(new Location(0, 0));
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
                         != 16) {
                     Toast.makeText(getApplication(), "You still have " +
@@ -240,10 +245,16 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                             + "\nFighter Skill: " + user.getFighter()
                             + "\nTrader Skill: " + user.getTrader()
                             + "\nEngineer Skill: " + user.getEngineer();
-                    Log.w(TAG, playerInformation);
-                    Intent intent = new Intent (MainActivity.this,
-                            ConfigureCompleteActivity.class);
-                    intent.putExtra("player", user.toString());
+//                    Log.w(TAG, playerInformation);
+                    Intent intent = new Intent(getBaseContext(), ConfigureCompleteActivity.class);
+                    intent.putExtra("playerName", user.getName());
+                    intent.putExtra("playerPilotSkill", user.getPilot());
+                    intent.putExtra("playerFighterSkill", user.getFighter());
+                    intent.putExtra("playerTraderSkill", user.getTrader());
+                    intent.putExtra("playerEngineerSkill", user.getEngineer());
+                    intent.putExtra("playerShip", user.getShip().toString());
+                    intent.putExtra("playerLocation", user.getLocation().toString());
+                    intent.putExtra("playerCredits", user.getCredits());
                     startActivity(intent);
                 }
             }
