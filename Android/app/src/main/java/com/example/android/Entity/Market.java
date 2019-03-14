@@ -60,6 +60,20 @@ public class Market {
     }
 
     /**
+     * Shows all items inside the storage
+     * @return all items, stock, and price as a string
+     */
+    public String toString() {
+        String result = "";
+
+        for (Item i : storage) {
+            result += i.toString() + "\n";
+        }
+
+        return result;
+    }
+
+    /**
      * Gets index of item based on string input
      */
     private int getIndex(String item) {
