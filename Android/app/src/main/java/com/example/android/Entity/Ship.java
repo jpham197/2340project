@@ -11,4 +11,8 @@ public class Ship {
     public ShipType getShipType() {
         return this.type;
     }
+
+    public String toString() {
+        return type + " " + fuel;
+    }
 }

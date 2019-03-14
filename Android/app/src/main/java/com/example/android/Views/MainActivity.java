@@ -19,13 +19,19 @@ import android.view.View.OnClickListener;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
+import com.example.android.Entity.Location;
 import com.example.android.Entity.Player;
+import com.example.android.Entity.Ship;
+import com.example.android.Entity.ShipType;
 import com.example.android.Entity.Universe;
 import com.example.android.R;
 import com.example.android.ViewModels.PlayerViewModel;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Serializable {
 
     private static final String TAG = "MainActivity";
     Player user = new Player();
@@ -225,6 +231,9 @@ public class MainActivity extends AppCompatActivity {
                 user.setName(playerName.getText().toString());
                 Log.w(TAG, new Universe().toString());
                 pvm.addPlayer(user);
+                user.setShip(new Ship(100, ShipType.Gnat));
+                user.setLocation(new Location(0, 0));
+                user.setCredits(5000);
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
                         != 16) {
                     Toast.makeText(getApplication(), "You still have " +
@@ -238,9 +247,16 @@ public class MainActivity extends AppCompatActivity {
                             + "\nFighter Skill: " + user.getFighter()
                             + "\nTrader Skill: " + user.getTrader()
                             + "\nEngineer Skill: " + user.getEngineer();
-                    Log.w(TAG, playerInformation);
-                    Intent intent = new Intent (MainActivity.this,
-                            ConfigureCompleteActivity.class);
+//                    Log.w(TAG, playerInformation);
+                    Intent intent = new Intent(getBaseContext(), ConfigureCompleteActivity.class);
+                    intent.putExtra("playerName", user.getName());
+                    intent.putExtra("playerPilotSkill", user.getPilot());
+                    intent.putExtra("playerFighterSkill", user.getFighter());
+                    intent.putExtra("playerTraderSkill", user.getTrader());
+                    intent.putExtra("playerEngineerSkill", user.getEngineer());
+                    intent.putExtra("playerShip", user.getShip().toString());
+                    intent.putExtra("playerLocation", user.getLocation().toString());
+                    intent.putExtra("playerCredits", user.getCredits());
                     startActivity(intent);
                 }
             }
@@ -256,6 +272,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    void serialize() {
+//        FileOutputStream file = new FileOutputStream("/../entity/player.ser");
     }
 
 }

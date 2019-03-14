@@ -10,6 +10,7 @@ public class Player {
     private int skillPointsAvailable;
     private Ship current;
     private Location location;
+    private Inventory inventory;
 
     /**
      *
@@ -19,6 +20,7 @@ public class Player {
      * @param trader
      * @param engineer
      * @param skillPointsAvailable
+     * @param credits
      * @param current
      */
     public Player(String name, int pilot, int fighter, int trader, int engineer
@@ -31,6 +33,7 @@ public class Player {
         this.skillPointsAvailable = skillPointsAvailable;
         this.credits = credits;
         this.current = current;
+        this.inventory = new Inventory(10);
     }
 
     /**
