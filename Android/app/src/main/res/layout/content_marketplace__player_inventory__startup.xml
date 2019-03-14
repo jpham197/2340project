@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#9ee990"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Marketplace_PlayerInventory_Startup"
+    tools:context=".Views.Marketplace_PlayerInventory_Startup"
     tools:showIn="@layout/activity_marketplace__player_inventory__startup">
 
 

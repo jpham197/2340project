@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Marketplace_Sell_Startup"
+            android:name=".Views.Marketplace_Sell_Startup"
             android:label="@string/title_activity_marketplace__sell__startup"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".Marketplace_PlayerInventory_Startup"
+            android:name=".Views.Marketplace_PlayerInventory_Startup"
             android:label="@string/title_activity_marketplace__player_inventory__startup"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
