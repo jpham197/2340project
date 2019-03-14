@@ -129,31 +129,31 @@ public class SolarSystem {
      * Gets the Xcoordinates of the Solar System
      * @return the X coordinate of the Solar System
      */
-    public int getXcoordinate() {
-        return Xcoordinate;
+    public int getX() {
+        return xCoordinate;
     }
 
     /**
      * Set a new X coordinate for the Solar System
-     * @param xcoordinate new X coordinate, takes in Int
+     * @param xCoordinate new X coordinate, takes in Int
      */
-    public void setXcoordinate(int xcoordinate) {
-        Xcoordinate = xcoordinate;
+    public void setX(int xCordinate) {
+        this.xCoordinate = xCordinate;
     }
 
     /**
      * Gets the Ycoordinates of the Solar System
      * @return the Y coordinate of the Solar System
      */
-    public int getYcoordinate() {
-        return Ycoordinate;
+    public int getY() {
+        return yCoordinate;
     }
 
     /**
      * Set a new Y coordinate for the Solar System
-     * @param ycoordinate new Y coordinate, takes in Int
+     * @param yCoordinate new Y coordinate, takes in Int
      */
-    public void setYcoordinate(int ycoordinate) {
-        Ycoordinate = ycoordinate;
+    public void setY(int yCoordinate) {
+        this.yCoordinate = yCoordinate;
     }
 }
