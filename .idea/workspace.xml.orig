@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< HEAD
+    <list default="true" id="e8766162-586b-488f-9912-715a42c42537" name="Default Changelist" comment="">
+=======
+    <list default="true" id="ed0c2f12-dd67-47ec-8fc1-6063490d5815" name="Default Changelist" comment="">
+<<<<<<< HEAD
 >>>>>>> bf66923f23e25ac8eba250ff60f09729e39a13d6
       <change beforePath="$PROJECT_DIR$/.idea/2340project.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/Android/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Android/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Android/app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Android/app/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Android/app/src/main/java/com/example/android/Entity/PlanetAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Android/app/src/main/java/com/example/android/Entity/PlanetAttributes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Android/app/src/main/java/com/example/android/Entity/Resources.java" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Android/app/src/main/java/com/example/android/Entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Android/app/src/main/java/com/example/android/Entity/Player.java" afterDir="false" />
 >>>>>>> bf66923f23e25ac8eba250ff60f09729e39a13d6
 =======
       <change afterPath="$PROJECT_DIR$/Android/app/src/main/java/com/example/android/Entity/PlanetTypes.java" afterDir="false" />

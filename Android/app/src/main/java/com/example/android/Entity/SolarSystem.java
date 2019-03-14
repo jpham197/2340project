@@ -6,33 +6,54 @@ public class SolarSystem {
     private TechLevel techLevel;
     private int numOfPlanets;
     private Planet[] planets;
-    private int Xcoordinate;
-    private int Ycoordinate;
-
+    private int xCoordinate = 0;
+    private int yCoordinate = 0;
+    static int count = 0;
+    static String[] names = {"Earth" ,"Mars", "Bars", "Stars", "Combinatorics",
+            "Optimus Prime", "BTS", "GOT7", "Qiu", "Hang"};
 
     SolarSystem(String name, TechLevel techLevel, int numOfPlanets, Planet[] planets
-        , int Xcoordinate, int Ycoordinate) {
+        , int xCoordinate, int yCoordinate) {
 
         this.name = name;
         this.techLevel = techLevel;
         this.numOfPlanets = numOfPlanets;
         this.planets = planets;
-        this.Xcoordinate = Xcoordinate;
-        this.Ycoordinate = Ycoordinate;
+
     }
 
     /**
      * Default values if not entered has:
      *          Array of Planets
+<<<<<<< HEAD
      *          Xcoordinate should be between 0 - 100
      *          Ycoordinate should be between 0 - 100
      * @param name name of the Solar System
      * @param techLevel the overall tech level of the solar system
      * @param numOfPlanets the number of planets in the solar system
+=======
+     *          xCoordinate should be between 0 - 100
+     *          yCoordinate should be between 0 - 100
+     * @param name
+     * @param techLevel
+     * @param numOfPlanets
+>>>>>>> a73f59bb8f775b87cc23efe1d817cbfe9af27c57
      */
     SolarSystem(String name, TechLevel techLevel, int numOfPlanets){
         this(name, techLevel, numOfPlanets, new Planet[numOfPlanets]
-                ,(int) Math.random() * 100, (int) Math.random() * 100);
+                ,(int) (Math.random() * 1001), (int) (Math.random() * 1001));
+    }
+
+    public SolarSystem() {
+//        this(new Planet().getName(), TechLevel.values()[(int)Math.random()*8], 1);
+        this(names[count], TechLevel.values()[(int)(Math.random()*8)], 1);
+        count++;
+        this.xCoordinate = (int)(Math.random() * 1001);
+        this.yCoordinate = (int)(Math.random() * 1001);
+    }
+
+    public String toString() {
+        return "\n" + name + " at (" + xCoordinate + ", " + yCoordinate + ")";
     }
 
     //getters and setters for SolarSystem refs

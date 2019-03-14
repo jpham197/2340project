@@ -28,9 +28,6 @@ public enum PlanetAttributes {
         return PlanetAttributes.values();
     }
 
-    public PlanetAttributes getRandomResource() {
-        int randomNum = (int) Math.random() * 12;
-        return getResource()[randomNum];
-    }
+
 
 }
