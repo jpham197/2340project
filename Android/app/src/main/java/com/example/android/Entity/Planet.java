@@ -1,7 +1,8 @@
 package com.example.android.Entity;
 
 import java.util.Random;
-
+import java.util.List;
+import java.util.ArrayList;
 import static java.lang.String.valueOf;
 
 public class Planet {
@@ -9,7 +10,7 @@ public class Planet {
     private String name;
     private int xCoordinate;
     private int yCoordinate;
-
+    private Market market;
 
     public Planet() {
         PlanetAttributes[] pAS = PlanetAttributes.values();
@@ -35,5 +36,9 @@ public class Planet {
 
     public int getyCoordinate() {
         return yCoordinate;
+    }
+
+    public Market getWholeMarket() {
+        return market;
     }
 }
