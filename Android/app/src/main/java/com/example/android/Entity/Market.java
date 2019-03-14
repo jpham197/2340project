@@ -1,60 +1,104 @@
 package com.example.android.Entity;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
-import java.util.Set;
 
 public class Market {
-    //MapEntry is <stock, price>
-    //Hashmap<item name, mapEntry>
-    HashMap<String, Map.Entry<Integer, Integer>> storage;
-
-
+    //Price of items are set to base price
+    private Item[] storage;
+    Item water = new Item("Water", 0, 30);
+    Item furs = new Item("Water", 0, 250);
+    Item food = new Item("Water", 0, 100);
+    Item ores = new Item("Water", 0, 350);
+    Item games = new Item("Water", 0, 250);
+    Item firearms = new Item("Water", 0, 1250);
+    Item medicine = new Item("Water", 0, 650);
+    Item machines = new Item("Water", 0, 900);
+    Item narcotics = new Item("Water", 0, 3500);
+    Item robots = new Item("Water", 0, 9000);
+    /**
+     * Plain constructor for Market, sets everything to base price
+     */
     public Market() {
-        storage = new HashMap<>();
+        storage = new Item[10];
+        storage[0] = water;
+        storage[1] = furs;
+        storage[2] = food;
+        storage[3] = ores;
+        storage[4] = games;
+        storage[5] = firearms;
+        storage[6] = medicine;
+        storage[7] = machines;
+        storage[8] = narcotics;
+        storage[9] = robots;
     }
 
-    //To do: Make constructor to create market from collection
-    //public Market(Collection)
-
     /**
-     * Method within market for market interactor to use in its buy()
-     *
-     * @param item the item looking to be removed
-     * @return the item removed
-     * @throws NoSuchElementException when the item cannot be found
+     * Removes item from the storage
+     * @param item The item to be removed
+     * @return the item that is passed in
+     * @throws java.util.NoSuchElementException when item stock is 0
      */
-    public Map.Entry<Integer, Integer> removeItem(String item) {
-        if (storage.containsKey(item)) {
-            return storage.remove(item);
+    public Item removeItem(String item) {
+        int index = getIndex(item);
+        if (storage[index].getStock() == 0) {
+            throw new NoSuchElementException(storage[index].getName() + " is out of stock.");
         } else {
-            throw new NoSuchElementException("Item not in storage");
+            Item result = storage[getIndex(item)];
+            result.minusStock();
+            storage[index].minusStock();
+            return result;
         }
     }
 
     /**
-     * Method within market for market interactor to use in its sell()
-     * @param item the item being added
+     * Increases the stock of the given item by 1
+     * @param item The item whose stock to increase
      */
     public void addItem(String item) {
-        Map.Entry<Integer,Integer> itemObject = storage.get(item);
-        Integer stock = itemObject.getKey();
-        Integer price = itemObject.getValue();
-        storage.put(item, Map.Entry<stock, price>);
+        storage[getIndex(item)].addStock();
     }
 
     /**
-     * to string all items in market
+     * Gets index of item based on string input
      */
-    public String toString() {
-        String items = "";
-        Object[] keys = storage.keySet().toArray();
-        for (int a = 0; a < storage.size(); a++) {
-            items += "Item: " + keys[a] + ", stock: " + storage.get(keys[a]).getKey() + ", price:"
-                    + storage.get(keys[a]).getValue();
+    private int getIndex(String item) {
+        int index;
+        switch (item) {
+            case "water":
+                index = 0;
+                break;
+            case "furs":
+                index = 1;
+                break;
+            case "food":
+                index = 2;
+                break;
+            case "ore":
+                index = 3;
+                break;
+            case "games":
+                index = 4;
+                break;
+            case "firearms":
+                index = 5;
+                break;
+            case "medicine":
+                index = 6;
+                break;
+            case "machines":
+                index = 7;
+                break;
+            case "narcotics":
+                index = 8;
+                break;
+            case "robots":
+                index = 9;
+                break;
+            default:
+                index = -1;
+                break;
         }
-        return items;
+        return index;
     }
 }
