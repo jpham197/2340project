@@ -232,6 +232,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                 pvm.addPlayer(user);
                 user.setShip(new Ship(100, ShipType.Gnat));
                 user.setLocation(new Location(0, 0));
+                user.setCredits(5000);
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
                         != 16) {
                     Toast.makeText(getApplication(), "You still have " +

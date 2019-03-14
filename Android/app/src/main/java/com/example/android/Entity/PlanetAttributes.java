@@ -15,19 +15,23 @@ public enum PlanetAttributes {
     ARTISTIC("Artistic"),
     WARLIKE("Warlike");
 
+    private final String name;
+
     /**
      * Constructor for planet attributes
      *
      * @param name name of the resource
      */
     PlanetAttributes(String name) {
-
+        this.name = name;
     }
 
     public PlanetAttributes[] getResource() {
         return PlanetAttributes.values();
     }
 
-
-
+    @Override
+    public String toString() {
+        return name();
+    }
 }

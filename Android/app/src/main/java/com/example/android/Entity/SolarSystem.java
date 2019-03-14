@@ -13,11 +13,10 @@ public class SolarSystem {
             "Optimus Prime", "BTS", "GOT7", "Qiu", "Hang"};
     private PlanetAttributes resource;
 
-    SolarSystem(String name, TechLevel techLevel, int numOfPlanets, Planet[] planets
+    SolarSystem(String name, int numOfPlanets, Planet[] planets
         , int xCoordinate, int yCoordinate) {
 
         this.name = name;
-        this.techLevel = techLevel;
         this.numOfPlanets = numOfPlanets;
         this.planets = planets;
         this.resource = PlanetAttributes.values()[(int) (Math.random() * 13)];
@@ -41,7 +40,7 @@ public class SolarSystem {
 >>>>>>> a73f59bb8f775b87cc23efe1d817cbfe9af27c57
      */
     SolarSystem(String name, TechLevel techLevel, int numOfPlanets){
-        this(name, techLevel, numOfPlanets, new Planet[numOfPlanets]
+        this(name, numOfPlanets, new Planet[numOfPlanets]
                 ,(int) (Math.random() * 1001), (int) (Math.random() * 1001));
     }
 
@@ -137,8 +136,8 @@ public class SolarSystem {
      * Set a new X coordinate for the Solar System
      * @param xCoordinate new X coordinate, takes in Int
      */
-    public void setX(int xCordinate) {
-        this.xCoordinate = xCordinate;
+    public void setX(int xCoordinate) {
+        this.xCoordinate = xCoordinate;
     }
 
     /**

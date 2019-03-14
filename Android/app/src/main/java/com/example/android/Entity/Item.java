@@ -1,69 +1,42 @@
 package com.example.android.Entity;
 
 public class Item {
-    private String name;
-    private int stock;
-    private int price;
+    private ItemType name;
 
     /**
      * Main constructor for Item, manually set name, stock, and price
-     * @param name
-     * @param stock
-     * @param price
+     * @param type
      */
-    public Item(String name, int stock, int price) {
-        this.name = name;
-        this.stock = stock;
-        this.price = price;
+    public Item(ItemType type) {
+        this.name = type;
     }
 
-    public Item() {
-        this.name = null;
-        this.stock = 0;
-        this.price = 0;
+    public int getBasePrice() {
+        return name.getBasePrice();
     }
 
-
-    public String getName() {
-        return name;
+    public int getIPL() {
+        return name.getIPL();
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getVariance() {
+        return name.getVariance();
     }
 
-    public int getStock() {
-        return stock;
+    public int getTTP() {
+        return name.getTTP();
     }
 
-    public void setStock(int stock) {
-        this.stock = stock;
+    public int getMTLP() {
+        return name.getMTLP();
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    /**
-     * Decrease stock by 1
-     */
-    public void minusStock() {
-        stock--;
-    }
-
-    /**
-     * Increase stock by 1
-     */
-    public void addStock() {
-        stock++;
+    public int getMTLU() {
+        return name.getMTLU();
     }
 
     @Override
     public String toString() {
-        return String.format("Item: %s, Stock %d, Price %d", name, stock, price);
+        return String.format("Item: %s", name.toString());
     }
 }
