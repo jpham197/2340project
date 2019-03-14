@@ -11,6 +11,7 @@ public class SolarSystem {
     static int count = 0;
     static String[] names = {"Earth" ,"Mars", "Bars", "Stars", "Combinatorics",
             "Optimus Prime", "BTS", "GOT7", "Qiu", "Hang"};
+    private PlanetAttributes resource;
 
     SolarSystem(String name, TechLevel techLevel, int numOfPlanets, Planet[] planets
         , int xCoordinate, int yCoordinate) {
@@ -19,7 +20,7 @@ public class SolarSystem {
         this.techLevel = techLevel;
         this.numOfPlanets = numOfPlanets;
         this.planets = planets;
-
+        this.resource = PlanetAttributes.values()[(int) (Math.random() * 13)];
     }
 
     /**
@@ -50,10 +51,12 @@ public class SolarSystem {
         count++;
         this.xCoordinate = (int)(Math.random() * 1001);
         this.yCoordinate = (int)(Math.random() * 1001);
+        this.techLevel = TechLevel.values()[(int) (Math.random() * 8)];
     }
 
     public String toString() {
-        return "\n" + name + " at (" + xCoordinate + ", " + yCoordinate + ")";
+        return "\nSolar System: " + name + " at (" + xCoordinate + ", " + yCoordinate
+                + ") with planet " + name + " containing resources: " + this.resource + " with tech level: " + techLevel;
     }
 
     //getters and setters for SolarSystem refs
