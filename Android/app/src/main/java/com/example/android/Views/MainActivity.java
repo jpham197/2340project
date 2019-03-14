@@ -19,13 +19,16 @@ import android.view.View.OnClickListener;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 import com.example.android.Entity.Player;
 import com.example.android.Entity.Universe;
 import com.example.android.R;
 import com.example.android.ViewModels.PlayerViewModel;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Serializable {
 
     private static final String TAG = "MainActivity";
     Player user = new Player();
@@ -240,6 +243,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.w(TAG, playerInformation);
                     Intent intent = new Intent (MainActivity.this,
                             ConfigureCompleteActivity.class);
+                    intent.putExtra("player", user.toString());
                     startActivity(intent);
                 }
             }
@@ -255,6 +259,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    void serialize() {
+//        FileOutputStream file = new FileOutputStream("/../entity/player.ser");
     }
 
 }
