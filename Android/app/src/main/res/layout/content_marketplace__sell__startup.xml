@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff9d0">
+    android:background="#9ee990"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Marketplace_Sell_Startup"
+    tools:showIn="@layout/activity_marketplace__sell__startup">
 
     <Button
         android:id="@+id/back_button"
@@ -67,7 +69,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/PlanetaryMarketplace"
+        android:id="@+id/SellMarketplace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -79,7 +81,7 @@
 
         android:gravity="center_horizontal"
         android:textColor="#ffff"
-        android:text="Planetary marketplace"
+        android:text="Sell Inventory"
         android:textSize="25sp"
         android:textAllCaps="true"
         android:textFontWeight="20"
@@ -91,7 +93,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/Market_Items_Title"
+        android:id="@+id/Market_Items_Owned_Title"
         android:layout_width="130dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
@@ -101,17 +103,17 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:fontFamily="monospace"
-        android:text="Market Items"
+        android:text="Owned Items"
         android:textColorHighlight="@color/colorPrimary"
         android:textFontWeight="20"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/Market_Items_Available"
+        app:layout_constraintEnd_toStartOf="@+id/Market_Items_Amount"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PlanetaryMarketplace" />
+        app:layout_constraintTop_toBottomOf="@+id/SellMarketplace" />
 
     <TextView
-        android:id="@+id/Market_Items_Available"
+        android:id="@+id/Market_Items_Amount"
         android:layout_width="112dp"
         android:layout_height="28dp"
         android:layout_marginStart="176dp"
@@ -120,12 +122,12 @@
         android:ems="10"
         android:fontFamily="monospace"
         android:gravity="center_horizontal"
-        android:text="Available"
+        android:text="Amount"
         android:textColorHighlight="@color/colorPrimary"
         android:textFontWeight="20"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PlanetaryMarketplace" />
+        app:layout_constraintTop_toBottomOf="@+id/SellMarketplace" />
 
     <TextView
         android:id="@+id/Market_Items_Selected"
@@ -145,8 +147,8 @@
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/Market_Items_Available"
-        app:layout_constraintTop_toBottomOf="@+id/PlanetaryMarketplace" />
+        app:layout_constraintStart_toEndOf="@+id/Market_Items_Amount"
+        app:layout_constraintTop_toBottomOf="@+id/SellMarketplace" />
 
     <TextView
         android:id="@+id/Item_water"
@@ -159,10 +161,10 @@
         android:text="Water"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Title" />
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Owned_Title" />
 
     <TextView
-        android:id="@+id/Item_Water_Available_counter"
+        android:id="@+id/Item_Water_Amount_counter"
         android:layout_width="9dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="136dp"
@@ -172,9 +174,9 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/Item_Furs_Available_counter"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Furs_Amount_counter"
         app:layout_constraintStart_toEndOf="@+id/Item_water"
-        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount"
         app:layout_constraintVertical_bias="0.692" />
 
     <TextView
@@ -187,7 +189,7 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Item_Water_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Water_Amount_counter"
         app:layout_constraintTop_toBottomOf="@+id/Market_Items_Selected" />
 
     <TextView
@@ -204,7 +206,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_water" />
 
     <TextView
-        android:id="@+id/Item_Furs_Available_counter"
+        android:id="@+id/Item_Furs_Amount_counter"
         android:layout_width="9dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="152dp"
@@ -214,9 +216,9 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/Item_Food_Available_counter"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Food_Amount_counter"
         app:layout_constraintStart_toEndOf="@+id/Item_Furs"
-        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount"
         app:layout_constraintVertical_bias="0.125" />
 
     <TextView
@@ -229,7 +231,7 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Item_Furs_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Furs_Amount_counter"
         app:layout_constraintTop_toBottomOf="@+id/Item_Water_Selected_counter" />
 
     <TextView
@@ -246,7 +248,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Furs" />
 
     <TextView
-        android:id="@+id/Item_Food_Available_counter"
+        android:id="@+id/Item_Food_Amount_counter"
         android:layout_width="9dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="144dp"
@@ -256,9 +258,9 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/Item_Ore_Available_counter"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Ore_Amount_counter"
         app:layout_constraintStart_toEndOf="@+id/Item_Food"
-        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount"
         app:layout_constraintVertical_bias="0.866" />
 
     <TextView
@@ -271,7 +273,7 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Item_Food_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Food_Amount_counter"
         app:layout_constraintTop_toBottomOf="@+id/Item_Furs_Selected_counter" />
 
     <TextView
@@ -288,7 +290,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Food" />
 
     <TextView
-        android:id="@+id/Item_Ore_Available_counter"
+        android:id="@+id/Item_Ore_Amount_counter"
         android:layout_width="9dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
@@ -298,9 +300,9 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/Item_Games_Available_counter"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Games_Amount_counter"
         app:layout_constraintStart_toEndOf="@+id/Item_Ore"
-        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available" />
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount" />
 
     <TextView
         android:id="@+id/Item_Ore_Selected_counter"
@@ -312,7 +314,7 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Item_Ore_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Ore_Amount_counter"
         app:layout_constraintTop_toBottomOf="@+id/Item_Food_Selected_counter" />
 
     <TextView
@@ -329,7 +331,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Ore" />
 
     <TextView
-        android:id="@+id/Item_Games_Available_counter"
+        android:id="@+id/Item_Games_Amount_counter"
         android:layout_width="9dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
@@ -339,9 +341,9 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/Item_Firearms_Available_counter"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Firearms_Amount_counter"
         app:layout_constraintStart_toEndOf="@+id/Item_Games"
-        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -354,7 +356,7 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Item_Games_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Games_Amount_counter"
         app:layout_constraintTop_toBottomOf="@+id/Item_Ore_Selected_counter" />
 
     <TextView
@@ -371,7 +373,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Games" />
 
     <TextView
-        android:id="@+id/Item_Firearms_Available_counter"
+        android:id="@+id/Item_Firearms_Amount_counter"
         android:layout_width="9dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="112dp"
@@ -381,9 +383,9 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/Item_Medicine_Available_counter"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Medicine_Amount_counter"
         app:layout_constraintStart_toEndOf="@+id/Item_Firearms"
-        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount"
         app:layout_constraintVertical_bias="0.125" />
 
     <TextView
@@ -396,7 +398,7 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Item_Firearms_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Firearms_Amount_counter"
         app:layout_constraintTop_toBottomOf="@+id/Item_Games_Selected_counter" />
 
 
@@ -415,7 +417,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Firearms" />
 
     <TextView
-        android:id="@+id/Item_Medicine_Available_counter"
+        android:id="@+id/Item_Medicine_Amount_counter"
         android:layout_width="9dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="112dp"
@@ -425,9 +427,9 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/Item_Machines_Available_counter"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Machines_Amount_counter"
         app:layout_constraintStart_toEndOf="@+id/Item_Medicine"
-        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount"
         app:layout_constraintVertical_bias="0.971" />
 
     <TextView
@@ -440,7 +442,7 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Item_Medicine_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Medicine_Amount_counter"
         app:layout_constraintTop_toBottomOf="@+id/Item_Firearms_Selected_counter" />
 
     <TextView
@@ -457,7 +459,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Medicine" />
 
     <TextView
-        android:id="@+id/Item_Machines_Available_counter"
+        android:id="@+id/Item_Machines_Amount_counter"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
@@ -467,9 +469,9 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/Item_Narcotics_Available_counter"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Narcotics_Amount_counter"
         app:layout_constraintStart_toEndOf="@+id/Item_Machines"
-        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount"
         app:layout_constraintVertical_bias="0.975" />
 
     <TextView
@@ -482,7 +484,7 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Item_Machines_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Machines_Amount_counter"
         app:layout_constraintTop_toBottomOf="@+id/Item_Medicine_Selected_counter" />
 
     <TextView
@@ -499,7 +501,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Machines" />
 
     <TextView
-        android:id="@+id/Item_Narcotics_Available_counter"
+        android:id="@+id/Item_Narcotics_Amount_counter"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
@@ -509,9 +511,9 @@
         android:text="0"
         android:textSize="20sp"
         android:gravity="center_horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/Item_Robots_Available_counter"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Robots_Amount_counter"
         app:layout_constraintStart_toEndOf="@+id/Item_Narcotics"
-        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount"
         app:layout_constraintVertical_bias="0.222" />
 
     <TextView
@@ -524,7 +526,7 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Item_Narcotics_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Narcotics_Amount_counter"
         app:layout_constraintTop_toBottomOf="@+id/Item_Machines_Selected_counter" />
 
     <TextView
@@ -541,7 +543,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Narcotics" />
 
     <TextView
-        android:id="@+id/Item_Robots_Available_counter"
+        android:id="@+id/Item_Robots_Amount_counter"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
@@ -551,7 +553,7 @@
         android:textSize="20sp"
         android:gravity="center_horizontal"
         app:layout_constraintStart_toEndOf="@+id/Item_Robots"
-        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Available" />
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount" />
 
     <TextView
         android:id="@+id/Item_Robots_Selected_counter"
@@ -563,7 +565,7 @@
         android:gravity="center_horizontal"
         android:text="0"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/Item_Robots_Available_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Robots_Amount_counter"
         app:layout_constraintTop_toBottomOf="@+id/Item_Narcotics_Selected_counter" />
 
 
@@ -607,7 +609,7 @@
         android:textSize="20sp"
         app:layout_constraintLeft_toRightOf="@+id/Total_Price"
         app:layout_constraintStart_toEndOf="@+id/Total_Price_Show"
-        app:layout_constraintTop_toTopOf="@+id/Item_Robots_Available_counter" />
+        app:layout_constraintTop_toTopOf="@+id/Item_Robots_Amount_counter" />
 
     <TextView
         android:id="@+id/Total_Amount_Items_Counter"
@@ -624,29 +626,6 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_Robots_Selected_counter" />
 
 
-
-
-    <Button
-        android:id="@+id/Marketplace_Player_Inventory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginBottom="24dp"
-        android:text="Inventory"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/Marketplace_buy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginBottom="24dp"
-        android:text="Buy"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Marketplace_Player_Inventory" />
 
     <Button
         android:id="@+id/Marketplace_sell"
@@ -949,7 +928,5 @@
         android:textSize="8sp"
         app:layout_constraintStart_toEndOf="@+id/Item_Robots_Selected_Dec"
         app:layout_constraintTop_toBottomOf="@+id/Item_Narcotics_Selected_Inc" />
-
-
 
 </android.support.constraint.ConstraintLayout>

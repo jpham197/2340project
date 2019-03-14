@@ -3,4 +3,9 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_start_up">StartUpActivity</string>
     <string name="title_activity_configure_complete">ConfigureCompleteActivity</string>
+    <string name="title_activity_marketplace_startup">MarketplaceStartup</string>
+    <string name="title_activity_marketplace__player_inventory__startup">
+        Marketplace_PlayerInventory_Startup
+    </string>
+    <string name="title_activity_marketplace__sell__startup">Marketplace_Sell_Startup</string>
 </resources>
