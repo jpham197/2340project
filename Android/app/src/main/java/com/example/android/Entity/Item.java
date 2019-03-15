@@ -37,6 +37,6 @@ public class Item {
 
     @Override
     public String toString() {
-        return String.format("Item: %s", name.toString());
+        return String.format("%s", name.toString());
     }
 }
