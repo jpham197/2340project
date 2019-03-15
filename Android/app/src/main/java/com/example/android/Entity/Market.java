@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
 public class Market {
     //Price of items are set to base price
     //<Item, Stock>
-    private HashMap<Item, Integer> storage;
+    private HashMap<String, Integer> storage;
     private TechLevel techLevel;
 
     /**
@@ -19,89 +19,89 @@ public class Market {
         switch (techLevel.ordinal()) {
             case 7:
             case 6:
-                storage.put(new Item(ItemType.water), 100);
-                storage.put(new Item(ItemType.furs), 100);
-                storage.put(new Item(ItemType.food), 100);
-                storage.put(new Item(ItemType.ores), 100);
-                storage.put(new Item(ItemType.games), 100);
-                storage.put(new Item(ItemType.firearms), 100);
-                storage.put(new Item(ItemType.medicine), 100);
-                storage.put(new Item(ItemType.machines), 100);
-                storage.put(new Item(ItemType.narcotics), 100);
-                storage.put(new Item(ItemType.robots), 100);
+                storage.put("water", 100);
+                storage.put("furs", 100);
+                storage.put("food", 100);
+                storage.put("ores", 100);
+                storage.put("games", 100);
+                storage.put("firearms", 100);
+                storage.put("medicine", 100);
+                storage.put("machines", 100);
+                storage.put("narcotics", 100);
+                storage.put("robots", 100);
                 break;
-            case 5:
-                storage.put(new Item(ItemType.water), 100);
-                storage.put(new Item(ItemType.furs), 100);
-                storage.put(new Item(ItemType.food), 100);
-                storage.put(new Item(ItemType.ores), 100);
-                storage.put(new Item(ItemType.games), 100);
-                storage.put(new Item(ItemType.firearms), 100);
-                storage.put(new Item(ItemType.medicine), 100);
-                storage.put(new Item(ItemType.machines), 100);
-                storage.put(new Item(ItemType.narcotics), 100);
-                storage.put(new Item(ItemType.robots), 0);
-                break;
-            case 4:
-                storage.put(new Item(ItemType.water), 100);
-                storage.put(new Item(ItemType.furs), 100);
-                storage.put(new Item(ItemType.food), 100);
-                storage.put(new Item(ItemType.ores), 100);
-                storage.put(new Item(ItemType.games), 100);
-                storage.put(new Item(ItemType.firearms), 100);
-                storage.put(new Item(ItemType.medicine), 100);
-                storage.put(new Item(ItemType.machines), 100);
-                storage.put(new Item(ItemType.narcotics), 0);
-                storage.put(new Item(ItemType.robots), 0);
-                break;
-            case 3:
-                storage.put(new Item(ItemType.water), 100);
-                storage.put(new Item(ItemType.furs), 100);
-                storage.put(new Item(ItemType.food), 100);
-                storage.put(new Item(ItemType.ores), 100);
-                storage.put(new Item(ItemType.games), 100);
-                storage.put(new Item(ItemType.firearms), 100);
-                storage.put(new Item(ItemType.medicine), 0);
-                storage.put(new Item(ItemType.machines), 0);
-                storage.put(new Item(ItemType.narcotics), 0);
-                storage.put(new Item(ItemType.robots), 0);
-                break;
-            case 2:
-                storage.put(new Item(ItemType.water), 100);
-                storage.put(new Item(ItemType.furs), 100);
-                storage.put(new Item(ItemType.food), 100);
-                storage.put(new Item(ItemType.ores), 100);
-                storage.put(new Item(ItemType.games), 0);
-                storage.put(new Item(ItemType.firearms), 0);
-                storage.put(new Item(ItemType.medicine), 0);
-                storage.put(new Item(ItemType.machines), 0);
-                storage.put(new Item(ItemType.narcotics), 0);
-                storage.put(new Item(ItemType.robots), 0);
-                break;
-            case 1:
-                storage.put(new Item(ItemType.water), 100);
-                storage.put(new Item(ItemType.furs), 100);
-                storage.put(new Item(ItemType.food), 100);
-                storage.put(new Item(ItemType.ores), 0);
-                storage.put(new Item(ItemType.games), 0);
-                storage.put(new Item(ItemType.firearms), 0);
-                storage.put(new Item(ItemType.medicine), 0);
-                storage.put(new Item(ItemType.machines), 0);
-                storage.put(new Item(ItemType.narcotics), 0);
-                storage.put(new Item(ItemType.robots), 0);
-                break;
-            case 0:
-                storage.put(new Item(ItemType.water), 100);
-                storage.put(new Item(ItemType.furs), 100);
-                storage.put(new Item(ItemType.food), 0);
-                storage.put(new Item(ItemType.ores), 0);
-                storage.put(new Item(ItemType.games), 0);
-                storage.put(new Item(ItemType.firearms), 0);
-                storage.put(new Item(ItemType.medicine), 0);
-                storage.put(new Item(ItemType.machines), 0);
-                storage.put(new Item(ItemType.narcotics), 0);
-                storage.put(new Item(ItemType.robots), 0);
-                break;
+//            case 5:
+//                storage.put(new Item(ItemType.water), 100);
+//                storage.put(new Item(ItemType.furs), 100);
+//                storage.put(new Item(ItemType.food), 100);
+//                storage.put(new Item(ItemType.ores), 100);
+//                storage.put(new Item(ItemType.games), 100);
+//                storage.put(new Item(ItemType.firearms), 100);
+//                storage.put(new Item(ItemType.medicine), 100);
+//                storage.put(new Item(ItemType.machines), 100);
+//                storage.put(new Item(ItemType.narcotics), 100);
+//                storage.put(new Item(ItemType.robots), 0);
+//                break;
+//            case 4:
+//                storage.put(new Item(ItemType.water), 100);
+//                storage.put(new Item(ItemType.furs), 100);
+//                storage.put(new Item(ItemType.food), 100);
+//                storage.put(new Item(ItemType.ores), 100);
+//                storage.put(new Item(ItemType.games), 100);
+//                storage.put(new Item(ItemType.firearms), 100);
+//                storage.put(new Item(ItemType.medicine), 100);
+//                storage.put(new Item(ItemType.machines), 100);
+//                storage.put(new Item(ItemType.narcotics), 0);
+//                storage.put(new Item(ItemType.robots), 0);
+//                break;
+//            case 3:
+//                storage.put(new Item(ItemType.water), 100);
+//                storage.put(new Item(ItemType.furs), 100);
+//                storage.put(new Item(ItemType.food), 100);
+//                storage.put(new Item(ItemType.ores), 100);
+//                storage.put(new Item(ItemType.games), 100);
+//                storage.put(new Item(ItemType.firearms), 100);
+//                storage.put(new Item(ItemType.medicine), 0);
+//                storage.put(new Item(ItemType.machines), 0);
+//                storage.put(new Item(ItemType.narcotics), 0);
+//                storage.put(new Item(ItemType.robots), 0);
+//                break;
+//            case 2:
+//                storage.put(new Item(ItemType.water), 100);
+//                storage.put(new Item(ItemType.furs), 100);
+//                storage.put(new Item(ItemType.food), 100);
+//                storage.put(new Item(ItemType.ores), 100);
+//                storage.put(new Item(ItemType.games), 0);
+//                storage.put(new Item(ItemType.firearms), 0);
+//                storage.put(new Item(ItemType.medicine), 0);
+//                storage.put(new Item(ItemType.machines), 0);
+//                storage.put(new Item(ItemType.narcotics), 0);
+//                storage.put(new Item(ItemType.robots), 0);
+//                break;
+//            case 1:
+//                storage.put(new Item(ItemType.water), 100);
+//                storage.put(new Item(ItemType.furs), 100);
+//                storage.put(new Item(ItemType.food), 100);
+//                storage.put(new Item(ItemType.ores), 0);
+//                storage.put(new Item(ItemType.games), 0);
+//                storage.put(new Item(ItemType.firearms), 0);
+//                storage.put(new Item(ItemType.medicine), 0);
+//                storage.put(new Item(ItemType.machines), 0);
+//                storage.put(new Item(ItemType.narcotics), 0);
+//                storage.put(new Item(ItemType.robots), 0);
+//                break;
+//            case 0:
+//                storage.put(new Item(ItemType.water), 100);
+//                storage.put(new Item(ItemType.furs), 100);
+//                storage.put(new Item(ItemType.food), 0);
+//                storage.put(new Item(ItemType.ores), 0);
+//                storage.put(new Item(ItemType.games), 0);
+//                storage.put(new Item(ItemType.firearms), 0);
+//                storage.put(new Item(ItemType.medicine), 0);
+//                storage.put(new Item(ItemType.machines), 0);
+//                storage.put(new Item(ItemType.narcotics), 0);
+//                storage.put(new Item(ItemType.robots), 0);
+//                break;
         }
 
     }
@@ -112,7 +112,7 @@ public class Market {
      * @return the item that is passed in
      * @throws java.util.NoSuchElementException when item stock is 0
      */
-    public Item removeItem(Item item, int times) {
+    public String removeItem(String item, int times) {
         if (storage.get(item) <= 0) {
             throw new NoSuchElementException(item + " is not in stock");
         } else {
@@ -121,7 +121,7 @@ public class Market {
         }
     }
 
-    public Item removeItem(Item item) {
+    public String removeItem(String item) {
         return removeItem(item, 1);
     }
 
@@ -129,11 +129,11 @@ public class Market {
      * Increases the stock of the given item by 1
      * @param item The item whose stock to increase
      */
-    public void addItem(Item item, int times) {
+    public void addItem(String item, int times) {
         storage.put(item, storage.get(item) + times);
     }
 
-    public void addItem(Item item) {
+    public void addItem(String item) {
         addItem(item, 1);
     }
 
@@ -151,7 +151,7 @@ public class Market {
         return price;
     }
 
-    public Integer getStock(Item item) {
+    public Integer getStock(String item) {
         return storage.get(item);
     }
 
@@ -162,7 +162,7 @@ public class Market {
     public String toString() {
         String result = "";
 
-        for (Item i : storage.keySet()) {
+        for (String i : storage.keySet()) {
             result += i + " " + storage.get(i).toString() + "\n";
         }
 
