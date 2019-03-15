@@ -18,9 +18,10 @@ public class Planet {
         PlanetName[] pNames = PlanetName.values();
         Random random = new Random();
         resource = pAS[random.nextInt(pAS.length)];
-        name = valueOf(pNames[(int)(Math.random() * 11)]);
+        name = valueOf(pNames[(int)(Math.random() * 10)]);
         this.xCoordinate = (int) (Math.random() * 1000);
         this.yCoordinate = (int) (Math.random() * 1000);
+        techLevel = TechLevel.HITECH;
         market = new Market(techLevel);
     }
 

@@ -26,6 +26,10 @@ public class PlayerViewModel extends AndroidViewModel {
         players = model.getAllPlayers();
     }
 
+    public Player getPlayer() {
+        return model.getPlayer();
+    }
+
     public void deletePlayer(Player player) {
         model.deletePlayer(player);
     }
