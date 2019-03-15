@@ -6,6 +6,7 @@ import java.util.NoSuchElementException;
 
 public class Market {
     //Price of items are set to base price
+    //<Item, Stock>
     private HashMap<Item, Integer> storage;
     private TechLevel techLevel;
 
@@ -16,6 +17,7 @@ public class Market {
         storage = new HashMap<>();
         this.techLevel = techLevel;
         switch (techLevel.ordinal()) {
+            case 7:
             case 6:
                 storage.put(new Item(ItemType.water), 100);
                 storage.put(new Item(ItemType.furs), 100);
@@ -110,21 +112,29 @@ public class Market {
      * @return the item that is passed in
      * @throws java.util.NoSuchElementException when item stock is 0
      */
-    public Item removeItem(Item item) {
+    public Item removeItem(Item item, int times) {
         if (storage.get(item) <= 0) {
             throw new NoSuchElementException(item + " is not in stock");
         } else {
-            storage.put(item, storage.get(item) - 1);
+            storage.put(item, storage.get(item) - times);
             return item;
         }
+    }
+
+    public Item removeItem(Item item) {
+        return removeItem(item, 1);
     }
 
     /**
      * Increases the stock of the given item by 1
      * @param item The item whose stock to increase
      */
+    public void addItem(Item item, int times) {
+        storage.put(item, storage.get(item) + times);
+    }
+
     public void addItem(Item item) {
-        storage.put(item, storage.get(item) + 1);
+        addItem(item, 1);
     }
 
     public int calculatePrice(Item item) {
@@ -139,6 +149,10 @@ public class Market {
                     ((item.getIPL() * (techLevel.ordinal() - item.getMTLP()) - randomizer));
         }
         return price;
+    }
+
+    public Integer getStock(Item item) {
+        return storage.get(item);
     }
 
     /**

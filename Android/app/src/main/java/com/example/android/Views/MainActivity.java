@@ -1,5 +1,6 @@
 package com.example.android.Views;
 
+import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,12 +25,17 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 import com.example.android.Entity.Location;
+import com.example.android.Entity.Planet;
 import com.example.android.Entity.Player;
 import com.example.android.Entity.Ship;
 import com.example.android.Entity.ShipType;
+import com.example.android.Entity.SolarSystem;
 import com.example.android.Entity.Universe;
+import com.example.android.Model.Repository;
 import com.example.android.R;
+import com.example.android.ViewModels.PlanetViewModel;
 import com.example.android.ViewModels.PlayerViewModel;
+import com.example.android.ViewModels.SolarSystemViewModel;
 
 public class MainActivity extends AppCompatActivity implements Serializable {
 
@@ -39,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         final PlayerViewModel pvm = ViewModelProviders.of(this).get(PlayerViewModel.class);
+        final SolarSystemViewModel ssvm = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
+        final PlanetViewModel ppvm = ViewModelProviders.of(this).get(PlanetViewModel.class);
         setTitle("Space Traders");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -228,7 +236,9 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             @Override
             public void onClick(View v) {
                 user.setName(playerName.getText().toString());
-                Log.w(TAG, new Universe().toString());
+                Universe universe = new Universe();
+                ssvm.addSolarSystemList(universe.getSolarSystems());
+                ppvm.setCurrentPlanet(new Planet());
                 pvm.addPlayer(user);
                 user.setShip(new Ship(100, ShipType.Gnat));
                 user.setLocation(new Location(0, 0));

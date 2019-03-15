@@ -19,38 +19,31 @@ public class SolarSystem {
         this.name = name;
         this.numOfPlanets = numOfPlanets;
         this.planets = planets;
+        this.planets[0] = new Planet();
         this.resource = PlanetAttributes.values()[(int) (Math.random() * 13)];
     }
 
     /**
      * Default values if not entered has:
      *          Array of Planets
-<<<<<<< HEAD
      *          Xcoordinate should be between 0 - 100
      *          Ycoordinate should be between 0 - 100
      * @param name name of the Solar System
      * @param techLevel the overall tech level of the solar system
      * @param numOfPlanets the number of planets in the solar system
-=======
-     *          xCoordinate should be between 0 - 100
-     *          yCoordinate should be between 0 - 100
-     * @param name
-     * @param techLevel
-     * @param numOfPlanets
->>>>>>> a73f59bb8f775b87cc23efe1d817cbfe9af27c57
      */
-    SolarSystem(String name, TechLevel techLevel, int numOfPlanets){
-        this(name, numOfPlanets, new Planet[numOfPlanets]
-                ,(int) (Math.random() * 1001), (int) (Math.random() * 1001));
-    }
+//    SolarSystem(String name, TechLevel techLevel, int numOfPlanets){
+//        this(name, numOfPlanets, new Planet[numOfPlanets]
+//                ,(int) (Math.random() * 1001), (int) (Math.random() * 1001));
+//    }
 
     public SolarSystem() {
 //        this(new Planet().getName(), TechLevel.values()[(int)Math.random()*8], 1);
-        this(names[count], TechLevel.values()[(int)(Math.random()*8)], 1);
+        this(names[0], 1, new Planet[1], 0, 0);
         count++;
-        this.xCoordinate = (int)(Math.random() * 1001);
-        this.yCoordinate = (int)(Math.random() * 1001);
-        this.techLevel = TechLevel.values()[(int) (Math.random() * 8)];
+//        this.xCoordinate = (int)(Math.random() * 1001);
+//        this.yCoordinate = (int)(Math.random() * 1001);
+//        this.techLevel = TechLevel.values()[(int) (Math.random() * 8)];
     }
 
     public String toString() {

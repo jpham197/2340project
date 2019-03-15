@@ -1,5 +1,6 @@
 package com.example.android.Views;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
@@ -15,8 +16,11 @@ import com.example.android.Entity.Location;
 import com.example.android.Entity.Planet;
 import com.example.android.Entity.Player;
 import com.example.android.Entity.SolarSystem;
+import com.example.android.Model.PlayerInteractor;
 import com.example.android.Model.Repository;
 import com.example.android.R;
+import com.example.android.ViewModels.PlayerViewModel;
+import com.example.android.ViewModels.SolarSystemViewModel;
 
 import java.util.List;
 
@@ -34,6 +38,8 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final SolarSystemViewModel ssvm = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
+        final PlayerViewModel pvm = ViewModelProviders.of(this).get(PlayerViewModel.class);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configure_complete);
@@ -49,15 +55,15 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
                 Log.w(TAG, "TEST");
                 Log.w(TAG, playerName);
                 Intent intent = new Intent (ConfigureCompleteActivity.this, MarketplaceStartup.class);
-                List list = repo.getAllSolarSystems();
+                List list = ssvm.getSolarSystems();
+                System.out.println((int)Math.random() * list.size());
                 SolarSystem solarSystem = (SolarSystem) list.get((int)Math.random() * list.size());
                 Planet[] planets = solarSystem.getPlanets();
                 Planet planet = planets[0];
                 int x = planet.getxCoordinate();
                 int y = planet.getyCoordinate();
                 Location location = new Location(x, y);
-                List players = repo.getAllPlayers();
-                Player player = (Player) players.get(0);
+                Player player = pvm.getPlayer();
                 player.setLocation(location);
                 repo.setCurrentPlanet(planet);
                 startActivity(intent);
