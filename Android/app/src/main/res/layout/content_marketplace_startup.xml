@@ -772,15 +772,12 @@
         android:id="@+id/Item_Machines_Selected_Dec"
         android:layout_width="31dp"
         android:layout_height="36dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
         android:width="10dp"
         android:height="10dp"
         android:text="-"
         android:textSize="8sp"
-        app:layout_constraintEnd_toStartOf="@+id/Item_Machines_Selected_counter"
-        app:layout_constraintTop_toBottomOf="@+id/Item_Medicine_Selected_Dec" />
+        tools:layout_editor_absoluteX="297dp"
+        tools:layout_editor_absoluteY="475dp" />
 
     <Button
         android:id="@+id/Item_Narcotics_Selected_Dec"
@@ -901,15 +898,12 @@
         android:id="@+id/Item_Medicine_Selected_Inc"
         android:layout_width="31dp"
         android:layout_height="36dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="16dp"
         android:width="10dp"
         android:height="10dp"
         android:text="+"
         android:textSize="8sp"
-        app:layout_constraintStart_toEndOf="@+id/Item_Medicine_Selected_Dec"
-        app:layout_constraintTop_toBottomOf="@+id/Item_Firearms_Selected_Inc" />
+        tools:layout_editor_absoluteX="361dp"
+        tools:layout_editor_absoluteY="435dp" />
 
     <Button
         android:id="@+id/Item_Machines_Selected_Inc"

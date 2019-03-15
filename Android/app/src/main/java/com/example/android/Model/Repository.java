@@ -13,11 +13,13 @@ public class Repository {
     private List<Player> allPlayers;
     private List<SolarSystem> allSolarSystems;
     private List<Planet> allPlanets;
+    private Planet currentPlanet;
 
     public Repository() {
         allPlayers = new ArrayList<>();
         allSolarSystems = new ArrayList<>();
         allPlanets = new ArrayList<>();
+        currentPlanet = null;
     }
 
     public List<Player> getAllPlayers() {return allPlayers;}
@@ -45,5 +47,13 @@ public class Repository {
     }
     public void deletePlanet(Planet input) {
         allPlanets.remove(input);
+    }
+
+    public void setCurrentPlanet(Planet currentPlanet) {
+        this.currentPlanet = currentPlanet;
+    }
+
+    public Planet getCurrentPlanet() {
+        return currentPlanet;
     }
 }
