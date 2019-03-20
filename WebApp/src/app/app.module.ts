@@ -6,16 +6,18 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './layout/home/home.component';
 
 import { ParticlesModule } from "angular-particle";
+import { CreateComponent } from './layout/create/create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ParticlesModule
+    ParticlesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -32,10 +32,10 @@ export class HomeComponent implements OnInit {
           value: 200,
         },
         color: {
-          value: '#ff0000'
+          value: '#000000'
         },
         shape: {
-          type: 'triangle',
+          type: 'circle',
         },
       }
     };

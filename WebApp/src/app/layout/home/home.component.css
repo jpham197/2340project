@@ -1,0 +1,37 @@
+:host .app-home {
+    background-color: black !important;
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin: 5em 0 1em 0;
+    font-size: 3rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin: 1rem auto;
+    padding: 1.5em 1em;
+    width: 6em;
+    height: auto;
+    background-color: transparent;
+    border: black 2px solid;
+    border-radius: 5px;
+    user-select: none;
+    text-align: center;
+    transition: 0.5s;
+}
+
+a:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+a:active {
+    transform: scale(1.0);
+    transition: 0.1s;
+}
