@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { HomeComponent } from './layout/home/home.component';
+import { CreateComponent } from './layout/create/create.component';
 
 import { ParticlesModule } from "angular-particle";
-import { CreateComponent } from './layout/create/create.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CreateComponent } from './layout/create/create.component';
     BrowserModule,
     AppRoutingModule,
     ParticlesModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
