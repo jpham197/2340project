@@ -4,14 +4,29 @@
     <h1>Character Creation</h1>
     <form>
       <input type="text" placeholder="Name">
-      <span>Difficulty: 
+      <p>Difficulty: 
         <select name="difficulty" id="dif">
           <option value="Easy">Easy</option>
           <option value="Medium">Medium</option>
           <option value="Hard">Hard</option>
           <option value="Insane">Insane</option>
         </select>
-      </span>
+      </p>
+      <p>
+        Skill 1: <button type="button" (click)="plusFighter()">+</button> <span>{{ test1 }}</span> <button type="button" (click)="minusFighter()">-</button>
+      </p>
+      <p>
+        Skill 2:
+      </p>
+      <p>
+        Skill 3:
+      </p>
+      <p>
+        Skill 4:
+      </p>
+      <p>
+        Available points: {{ availablePoints }}
+      </p>
     </form>
   </div>
 </div>

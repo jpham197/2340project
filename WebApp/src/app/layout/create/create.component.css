@@ -33,11 +33,16 @@ a:active {
 }
 
 input {
-    height: 2em;
+    height: 1em;
     display: block;
     margin: 1rem 0;
 }
 
-span {
+p {
     display: block;
+    margin: 8px 0;
+}
+
+button {
+    margin: auto 0.5rem;
 }
