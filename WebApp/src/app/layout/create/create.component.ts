@@ -34,17 +34,49 @@ export class CreateComponent implements OnInit {
   ngOnInit() {
   }
 
-  plusFighter() {
+  plusSkill(event) {
     if (this.availablePoints != 0) {
-      this.pilotSkill++;
-      this.availablePoints--;
+      switch(event) {
+        case "pilot":
+        this.pilotSkill++;
+        this.availablePoints--;
+        break;
+        case "fighter":
+        this.fighterSkill++;
+        this.availablePoints--;
+        break;
+        case "trader":
+        this.traderSkill++;
+        this.availablePoints--;
+        break;
+        case "engineer":
+        this.engineerSkill++;
+        this.availablePoints--;
+        break;
+      }
     }
   }
 
-  minusFighter() {
+  minusSkill(event) {
     if (this.pilotSkill > 0) {
-      this.pilotSkill--;
-      this.availablePoints++;
+      switch(event) {
+        case "pilot":
+        this.pilotSkill--;
+        this.availablePoints++;
+        break;
+        case "fighter":
+        this.fighterSkill--;
+        this.availablePoints++;
+        break;
+        case "trader":
+        this.traderSkill--;
+        this.availablePoints++;
+        break;
+        case "engineer":
+        this.engineerSkill--;
+        this.availablePoints++;
+        break;
+      }
     }
   }
 

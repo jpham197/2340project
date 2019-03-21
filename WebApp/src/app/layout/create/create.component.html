@@ -13,16 +13,16 @@
         </select>
       </p>
       <p>
-        Pilot Skill: <button type="button" (click)="minusFighter()">-</button> <span>{{ pilotSkill }}</span> <button type="button" (click)="plusFighter()">+</button>
+        Pilot Skill: <button type="button" (click)="minusSkill('pilot')">-</button> <span>{{ pilotSkill }}</span> <button type="button" (click)="plusSkill('pilot')">+</button>
       </p>
       <p>
-        Fighter Skill:
+        Fighter Skill: <button type="button" (click)="minusSkill('fighter')">-</button> <span>{{ fighterSkill }}</span> <button type="button" (click)="plusSkill('fighter')">+</button>
       </p>
       <p>
-        Trader Skill:
+        Trader Skill: <button type="button" (click)="minusSkill('trader')">-</button> <span>{{ traderSkill }}</span> <button type="button" (click)="plusSkill('trader')">+</button>
       </p>
       <p>
-        Engineer Skill:
+        Engineer Skill: <button type="button" (click)="minusSkill('engineer')">-</button> <span>{{ engineerSkill }}</span> <button type="button" (click)="plusSkill('engineer')">+</button>
       </p>
       <p>
         Available points: {{ availablePoints }}
