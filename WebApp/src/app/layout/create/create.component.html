@@ -2,10 +2,10 @@
   <a routerLink="/home">Back</a>
   <div class="center">
     <h1>Character Creation</h1>
-    <form>
-      <input type="text" placeholder="Name">
+    <form [formGroup]="characterForm">
+      <input type="text" placeholder="Name" formControlName="name">
       <p>Difficulty: 
-        <select name="difficulty" id="dif">
+        <select name="difficulty" id="dif" formControlName="difficulty">
           <option value="Easy">Easy</option>
           <option value="Medium">Medium</option>
           <option value="Hard">Hard</option>
@@ -13,7 +13,7 @@
         </select>
       </p>
       <p>
-        Pilot Skill: <button type="button" (click)="minusFighter()">-</button> <span>{{ test1 }}</span> <button type="button" (click)="plusFighter()">+</button>
+        Pilot Skill: <button type="button" (click)="minusFighter()">-</button> <span>{{ pilotSkill }}</span> <button type="button" (click)="plusFighter()">+</button>
       </p>
       <p>
         Fighter Skill:
@@ -27,6 +27,7 @@
       <p>
         Available points: {{ availablePoints }}
       </p>
+      <button style="margin: auto" (click)="log()">Submit</button>
     </form>
   </div>
 </div>

@@ -8,6 +8,7 @@ import { HomeComponent } from './layout/home/home.component';
 import { CreateComponent } from './layout/create/create.component';
 
 import { ParticlesModule } from "angular-particle";
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { ParticlesModule } from "angular-particle";
     BrowserModule,
     AppRoutingModule,
     ParticlesModule,
-    
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-export class character {
+export interface Character {
     name: string;
     difficulty: string;
     pilot: number;
