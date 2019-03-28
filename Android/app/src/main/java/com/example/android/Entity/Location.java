@@ -26,9 +26,14 @@ public class Location {
         this.y = y;
     }
 
-    public int calcDistance(Location LOne, Location LTwo) {
-        int distX = (LOne.getX() - LTwo.getX()) * (LOne.getX() - LTwo.getX());
-        int distY = (LOne.getY() - LTwo.getY()) * (LOne.getY() - LTwo.getY());
+    /**
+     * Calculates distance of current location and a given destination
+     * @param destination where you're going
+     * @return the distance but all the decimals are chopped off, not rounded
+     */
+    public int calcDistance(Location destination) {
+        int distX = (this.x - destination.getX()) * (this.x - destination.getX());
+        int distY = (this.y - destination.getY()) * (this.y - destination.getY());
         return (int) Math.floor(Math.sqrt(distX + distY));
     }
 
