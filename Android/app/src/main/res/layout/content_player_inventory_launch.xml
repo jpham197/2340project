@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Views.PlayerInventoryLaunch"
+    tools:showIn="@layout/activity_player_inventory_launch">
+
+    <TextView
+        android:id="@+id/Player_Inventory_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="16dp"
+        android:text="Player Inventory"
+        android:textSize="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:text="back"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Player_Inventory_Items_Owned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Items Owned"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Title" />
+
+    <TextView
+        android:id="@+id/Player_Inventory_Amount_Owned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Amount Owned"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Title" />
+
+    <!--Items Owned Section-->
+
+    <TextView
+        android:id="@+id/Player_Inventory_Items_Owned_Water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Water"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Items_Owned"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Items_Owned"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Items_Owned" />
+
+    <TextView
+        android:id="@+id/Player_Inventory_Items_Owned_Furs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Furs"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/Player_Inventory_Items_Owned_Food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Food"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/Player_Inventory_Items_Owned_Ore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Ore"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/Player_Inventory_Items_Owned_Games"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Games"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/Player_Inventory_Items_Owned_Firearms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Firearms"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/Player_Inventory_Items_Owned_Medicine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Medicine"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/Player_Inventory_Items_Owned_Machines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Machines"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/Player_Inventory_Items_Owned_Narcotics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Narcotics"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/Player_Inventory_Items_Owned_Robots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Robots"
+        android:textSize="18dp"/>
+
+    <!--Amount Owned Section-->
+
+
+</android.support.constraint.ConstraintLayout>
