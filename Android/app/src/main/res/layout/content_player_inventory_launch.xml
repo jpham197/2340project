@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e4f4fe"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Views.PlayerInventoryLaunch"
     tools:showIn="@layout/activity_player_inventory_launch">
@@ -59,7 +60,7 @@
         android:id="@+id/Player_Inventory_Items_Owned_Water"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="Water"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Items_Owned"
@@ -70,75 +71,226 @@
         android:id="@+id/Player_Inventory_Items_Owned_Furs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="Furs"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Items_Owned_Water"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Items_Owned_Water"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Items_Owned_Water" />
 
     <TextView
         android:id="@+id/Player_Inventory_Items_Owned_Food"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="Food"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Items_Owned_Furs"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Items_Owned_Furs"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Items_Owned_Furs" />
 
     <TextView
         android:id="@+id/Player_Inventory_Items_Owned_Ore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="Ore"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Items_Owned_Food"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Items_Owned_Food"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Items_Owned_Food" />
 
     <TextView
         android:id="@+id/Player_Inventory_Items_Owned_Games"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="Games"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Items_Owned_Ore"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Items_Owned_Ore"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Items_Owned_Ore" />
 
     <TextView
         android:id="@+id/Player_Inventory_Items_Owned_Firearms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="Firearms"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Items_Owned_Games"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Items_Owned_Games"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Items_Owned_Games" />
 
     <TextView
         android:id="@+id/Player_Inventory_Items_Owned_Medicine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="Medicine"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Items_Owned_Firearms"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Items_Owned_Firearms"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Items_Owned_Firearms" />
 
     <TextView
         android:id="@+id/Player_Inventory_Items_Owned_Machines"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="Machines"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Items_Owned_Medicine"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Items_Owned_Medicine"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Items_Owned_Medicine" />
 
     <TextView
         android:id="@+id/Player_Inventory_Items_Owned_Narcotics"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="Narcotics"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Items_Owned_Machines"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Items_Owned_Machines"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Items_Owned_Machines" />
 
     <TextView
         android:id="@+id/Player_Inventory_Items_Owned_Robots"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="Robots"
-        android:textSize="18dp"/>
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Items_Owned_Narcotics"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Items_Owned_Narcotics"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Items_Owned_Narcotics" />
 
     <!--Amount Owned Section-->
+
+    <TextView
+        android:id="@+id/Player_Inventory_Amount_Owned_Water"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Amount_Owned"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Amount_Owned"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Amount_Owned" />
+
+    <TextView
+        android:id="@+id/Player_Inventory_Amount_Owned_Furs"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Amount_Owned_Water"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Amount_Owned_Water"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Amount_Owned_Water" />
+
+    <TextView
+        android:id="@+id/Player_Inventory_Amount_Owned_Food"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Amount_Owned_Furs"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Amount_Owned_Furs"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Amount_Owned_Furs" />
+
+    <TextView
+        android:id="@+id/Player_Inventory_Amount_Owned_Ore"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Amount_Owned_Food"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Amount_Owned_Food"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Amount_Owned_Food" />
+
+    <TextView
+        android:id="@+id/Player_Inventory_Amount_Owned_Games"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Amount_Owned_Ore"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Amount_Owned_Ore"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Amount_Owned_Ore" />
+
+    <TextView
+        android:id="@+id/Player_Inventory_Amount_Owned_Firearms"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Amount_Owned_Games"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Amount_Owned_Games"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Amount_Owned_Games" />
+
+    <TextView
+        android:id="@+id/Player_Inventory_Amount_Owned_Medicine"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Amount_Owned_Firearms"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Amount_Owned_Firearms"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Amount_Owned_Firearms" />
+
+    <TextView
+        android:id="@+id/Player_Inventory_Amount_Owned_Machines"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Amount_Owned_Medicine"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Amount_Owned_Medicine"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Amount_Owned_Medicine" />
+
+    <TextView
+        android:id="@+id/Player_Inventory_Amount_Owned_Narcotics"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Amount_Owned_Machines"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Amount_Owned_Machines"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Amount_Owned_Machines" />
+
+    <TextView
+        android:id="@+id/Player_Inventory_Amount_Owned_Robots"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/Player_Inventory_Amount_Owned_Narcotics"
+        app:layout_constraintStart_toStartOf="@+id/Player_Inventory_Amount_Owned_Narcotics"
+        app:layout_constraintTop_toBottomOf="@+id/Player_Inventory_Amount_Owned_Narcotics" />
+
+
 
 
 </android.support.constraint.ConstraintLayout>
