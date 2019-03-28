@@ -52,11 +52,10 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         trade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.w(TAG, "TEST");
-                Log.w(TAG, playerName);
+//                Log.w(TAG, "TEST");
+//                Log.w(TAG, playerName);
                 Intent intent = new Intent (ConfigureCompleteActivity.this, MarketplaceStartup.class);
                 List list = ssvm.getSolarSystems();
-                System.out.println((int)Math.random() * list.size());
                 SolarSystem solarSystem = (SolarSystem) list.get((int)Math.random() * list.size());
                 Planet[] planets = solarSystem.getPlanets();
                 Planet planet = planets[0];
