@@ -433,8 +433,8 @@ public class MarketplaceStartup extends AppCompatActivity {
         buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int x = Integer.parseInt(credits.getText().toString());
-                int y = Integer.parseInt(cargoSpace.getText().toString());
+                int playerAvailableCredits = Integer.parseInt(credits.getText().toString());
+                int playerInventorySpace = Integer.parseInt(cargoSpace.getText().toString());
                 int totalSelected = Integer.parseInt(selectedWater.getText().toString())
                                 + Integer.parseInt(selectedFurs.getText().toString())
                                 + Integer.parseInt(selectedFood.getText().toString())
@@ -445,13 +445,13 @@ public class MarketplaceStartup extends AppCompatActivity {
                                 + Integer.parseInt(selectedNaroctics.getText().toString())
                                 + Integer.parseInt(selectedRobots.getText().toString());
 
-                if (Integer.parseInt(total.getText().toString()) < x && y > totalSelected) {
-                    x-=Integer.parseInt(total.getText().toString());
-                    credits.setText(String.valueOf(x));
-                    y-= totalSelected;
-                    cargoSpace.setText(String.valueOf(y));
+                if (Integer.parseInt(total.getText().toString()) < playerAvailableCredits && playerInventorySpace > totalSelected) {
+                    playerAvailableCredits -= Integer.parseInt(total.getText().toString());
+                    credits.setText(String.valueOf(playerAvailableCredits));
+                    playerInventorySpace -= totalSelected;
+                    cargoSpace.setText(String.valueOf(playerInventorySpace));
                 } else {
-                    if (y > totalSelected) {
+                    if (playerInventorySpace > totalSelected) {
                         Toast.makeText(getApplication(), "Insufficient Purchase!",
                                 Toast.LENGTH_LONG).show();
                     } else {
