@@ -1,22 +1,27 @@
 package com.example.android.Views;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.View.OnClickListener;
 
 import com.example.android.Entity.Planet;
 import com.example.android.Entity.Player;
+import com.example.android.Entity.SolarSystem;
 import com.example.android.Model.Repository;
 import com.example.android.R;
 import com.example.android.ViewModels.PlanetViewModel;
 import com.example.android.ViewModels.PlayerViewModel;
+import com.example.android.ViewModels.SolarSystemViewModel;
 
 public class Travel_Launch extends AppCompatActivity {
 
@@ -24,40 +29,59 @@ public class Travel_Launch extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         final PlayerViewModel pvm = ViewModelProviders.of(this).get(PlayerViewModel.class);
+        final SolarSystemViewModel ssvm = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
         final PlanetViewModel planetViewModel
                 = ViewModelProviders.of(this).get(PlanetViewModel.class);
         final Player player = pvm.getPlayer();
+//        LayoutInflater layoutInflater = LayoutInflater.from(this);
+//        View rootView = layoutInflater.inflate(R.layout.activity_travel__launch, null);
+        setContentView(R.layout.content_travel__launch);
 
-        final TextView distance1 = findViewById(R.id.Travel_Destination1);
-        final TextView fuel1 = findViewById(R.id.Fuel_Used1);
 
-        final TextView distance2 = findViewById(R.id.Travel_Destination2);
-        final TextView fuel2 = findViewById(R.id.Fuel_Used2);
-
-        final TextView distance3 = findViewById(R.id.Travel_Destination3);
-        final TextView fuel3 = findViewById(R.id.Fuel_Used3);
-
-        final TextView distance4 = findViewById(R.id.Travel_Destination4);
-        final TextView fuel4 = findViewById(R.id.Fuel_Used4);
-
-        final TextView distance5 = findViewById(R.id.Travel_Destination5);
-        final TextView fuel5 = findViewById(R.id.Fuel_Used5);
-
-        final TextView distance6 = findViewById(R.id.Travel_Destination6);
-        final TextView fuel6 = findViewById(R.id.Fuel_Used6);
-
-        final TextView distance7 = findViewById(R.id.Travel_Destination7);
-        final TextView fuel7 = findViewById(R.id.Fuel_Used7);
-
-//        final TextView distance8 = findViewById(R.id.Travel_Destination8);
-//        final TextView fuel8 = findViewById(R.id.Fuel_Used8);
+//        final TextView distance1 = rootView.findViewById(R.id.Travel_Destination1);
+//        final TextView fuel1 = rootView.findViewById(R.id.Fuel_Used1);
 //
-//        final TextView distance9 = findViewById(R.id.Travel_Destination9);
-//        final TextView fuel9 = findViewById(R.id.Fuel_Used9);
+//        final TextView distance2 = rootView.findViewById(R.id.Travel_Destination2);
+//        final TextView fuel2 = rootView.findViewById(R.id.Fuel_Used2);
 //
-//        final TextView distance10 = findViewById(R.id.Travel_Destination10);
-//        final TextView fuel10 = findViewById(R.id.Fuel_Used10);
+//        final TextView distance3 = rootView.findViewById(R.id.Travel_Destination3);
+//        final TextView fuel3 = rootView.findViewById(R.id.Fuel_Used3);
+//
+//        final TextView distance4 = rootView.findViewById(R.id.Travel_Destination4);
+//        final TextView fuel4 = rootView.findViewById(R.id.Fuel_Used4);
+//
+//        final TextView distance5 = rootView.findViewById(R.id.Travel_Destination5);
+//        final TextView fuel5 = rootView.findViewById(R.id.Fuel_Used5);
+//
+//        final TextView distance6 = rootView.findViewById(R.id.Travel_Destination6);
+//        final TextView fuel6 = rootView.findViewById(R.id.Fuel_Used6);
+//
+//        final TextView distance7 = rootView.findViewById(R.id.Travel_Destination7);
+//        final TextView fuel7 = rootView.findViewById(R.id.Fuel_Used7);
 
+//        final TextView distance8 = rootView.findViewById(R.id.Travel_Destination8);
+//        final TextView fuel8 = rootView.findViewById(R.id.Fuel_Used8);
+//
+//        final TextView distance9 = rootView.findViewById(R.id.Travel_Destination9);
+//        final TextView fuel9 = rootView.findViewById(R.id.Fuel_Used9);
+//
+//        final TextView distance10 = rootView.findViewById(R.id.Travel_Destination10);
+//        final TextView fuel10 = rootView.findViewById(R.id.Fuel_Used10);
+
+//        final Button go2 = rootView.findViewById(R.id.Travel_Destination2_button);
+//        final Button go3 = rootView.findViewById(R.id.Travel_Destination3_button);
+//        final Button go4 = rootView.findViewById(R.id.Travel_Destination4_button);
+//        final Button go5 = rootView.findViewById(R.id.Travel_Destination5_button);
+//        final Button go6 = rootView.findViewById(R.id.Travel_Destination6_button);
+//        final Button go7 = rootView.findViewById(R.id.Travel_Destination7_button);
+//        final Button go8 = rootView.findViewById(R.id.Travel_Destination8_button);
+//        final Button go9 = rootView.findViewById(R.id.Travel_Destination9_button);
+//        final Button go10 = rootView.findViewById(R.id.Travel_Destination10_button);
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_travel__launch);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         final Button go1 = findViewById(R.id.Travel_Destination1_button);
         final Button go2 = findViewById(R.id.Travel_Destination2_button);
         final Button go3 = findViewById(R.id.Travel_Destination3_button);
@@ -65,30 +89,21 @@ public class Travel_Launch extends AppCompatActivity {
         final Button go5 = findViewById(R.id.Travel_Destination5_button);
         final Button go6 = findViewById(R.id.Travel_Destination6_button);
         final Button go7 = findViewById(R.id.Travel_Destination7_button);
-//        final Button go8 = findViewById(R.id.Travel_Destination8_button);
-//        final Button go9 = findViewById(R.id.Travel_Destination9_button);
-//        final Button go10 = findViewById(R.id.Travel_Destination10_button);
+        final Button go8 = findViewById(R.id.Travel_Destination8_button);
+        final Button go9 = findViewById(R.id.Travel_Destination9_button);
+        final Button go10 = findViewById(R.id.Travel_Destination10_button);
+        final Intent moved = new Intent(Travel_Launch.this, ConfigureCompleteActivity.class);
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_travel__launch);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        go1.setOnClickListener(new View.OnClickListener() {
+        go1.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(1).getLocation())) {
+                if (player.travel(planetViewModel.getAllPlanets().get(0).getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
+                    moved.putExtra("x", player.getLocation().getX());
+                    moved.putExtra("y", player.getLocation().getY());
+                    moved.putExtra("fuel", player.getShip().getFuel());
+                    startActivity(moved);
                 } else {
                     Toast.makeText(getApplication(), "You're haven't moved....",
                             Toast.LENGTH_LONG).show();
@@ -99,14 +114,29 @@ public class Travel_Launch extends AppCompatActivity {
         go2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                player.travel(planetViewModel.getAllPlanets().get(2).getLocation());
+//                if (player.travel(planetViewModel.getAllPlanets().get(1).getLocation())) {
+////                    Toast.makeText(getApplication(), "You have traveled successfully!",
+////                            Toast.LENGTH_LONG).show();
+//                } else {
+//                    Toast.makeText(getApplication(), "You're haven't moved....",
+//                            Toast.LENGTH_LONG).show();
+//                }
+                if (player.travel(ssvm.getSolarSystems().get(1).getPlanets()[0].getLocation())) {
+                    Toast.makeText(getApplication(), "Good job", Toast.LENGTH_LONG).show();
+                    moved.putExtra("x", player.getLocation().getX());
+                    moved.putExtra("y", player.getLocation().getY());
+                    moved.putExtra("fuel", player.getShip().getFuel());
+                    startActivity(moved);
+                } else {
+                    Toast.makeText(getApplication(), "very bad", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
         go3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(3).getLocation())) {
+                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(2).getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
                 } else {
@@ -119,7 +149,7 @@ public class Travel_Launch extends AppCompatActivity {
         go4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(4).getLocation())) {
+                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(3).getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
                 } else {
@@ -132,7 +162,7 @@ public class Travel_Launch extends AppCompatActivity {
         go5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(5).getLocation())) {
+                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(4).getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
                 } else {
@@ -145,7 +175,7 @@ public class Travel_Launch extends AppCompatActivity {
         go6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (player.travel(planetViewModel.getAllPlanets().get(6).getLocation())) {
+                if (player.travel(planetViewModel.getAllPlanets().get(5).getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
                 } else {
@@ -159,6 +189,19 @@ public class Travel_Launch extends AppCompatActivity {
         go7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(6).getLocation())) {
+                    Toast.makeText(getApplication(), "You have traveled successfully!",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplication(), "You're haven't moved....",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        go8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(7).getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
@@ -169,45 +212,31 @@ public class Travel_Launch extends AppCompatActivity {
             }
         });
 
-//        go8.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(8).getLocation())) {
-//                    Toast.makeText(getApplication(), "You have traveled successfully!",
-//                            Toast.LENGTH_LONG).show();
-//                } else {
-//                    Toast.makeText(getApplication(), "You're haven't moved....",
-//                            Toast.LENGTH_LONG).show();
-//                }
-//            }
-//        });
-//
-//        go9.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(9).getLocation())) {
-//                    Toast.makeText(getApplication(), "You have traveled successfully!",
-//                            Toast.LENGTH_LONG).show();
-//                } else {
-//                    Toast.makeText(getApplication(), "You're haven't moved....",
-//                            Toast.LENGTH_LONG).show();
-//                }
-//            }
-//        });
-//
-//        go10.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(10).getLocation())) {
-//                    Toast.makeText(getApplication(), "You have traveled successfully!",
-//                            Toast.LENGTH_LONG).show();
-//                } else {
-//                    Toast.makeText(getApplication(), "You're haven't moved....",
-//                            Toast.LENGTH_LONG).show();
-//                }
-//            }
-//        });
+        go9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(8).getLocation())) {
+                    Toast.makeText(getApplication(), "You have traveled successfully!",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplication(), "You're haven't moved....",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
+        go10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(9).getLocation())) {
+                    Toast.makeText(getApplication(), "You have traveled successfully!",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplication(), "You're haven't moved....",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
 }

@@ -39,6 +39,7 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         final SolarSystemViewModel ssvm = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
         final PlayerViewModel pvm = ViewModelProviders.of(this).get(PlayerViewModel.class);
 
@@ -50,9 +51,15 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         repo = new Repository();
         Button trade = findViewById(R.id.PlanetTradeButton);
         Button inventory = findViewById(R.id.PlayerInventoryButton);
+        int xPos = getIntent().getExtras().getInt("x");
+        int yPos = getIntent().getExtras().getInt("y");
+        int fuel = getIntent().getExtras().getInt("fuel");
+        Log.w(TAG, String.valueOf(xPos));
+        Log.w(TAG, String.valueOf(yPos));
         TextView xCor = findViewById(R.id.Xoutput);
         TextView yCor = findViewById(R.id.Youtput);
         TextView currPlanetName = findViewById(R.id.PlanetScreen_PlanetName);
+        TextView fuelView = findViewById(R.id.FuelRemaining);
 
         List list = ssvm.getSolarSystems();
         SolarSystem solarSystem = (SolarSystem) list.get((int)Math.random() * list.size());
@@ -67,6 +74,12 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         xCor.setText(String.valueOf(player.getLocation().getX()));
         yCor.setText(String.valueOf(player.getLocation().getY()));
         currPlanetName.setText("Current Planet name: " + planet.getName());
+
+        if (xPos != 0 && yPos != 0) {
+            xCor.setText(String.valueOf(xPos));
+            yCor.setText(String.valueOf(yPos));
+            fuelView.setText(String.valueOf(fuel));
+        }
 
         trade.setOnClickListener(new View.OnClickListener() {
             @Override
