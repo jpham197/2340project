@@ -463,6 +463,201 @@
             />
 
     </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/Travel_Holder_Destination8"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        app:cardBackgroundColor="#b1caf6"
+        app:layout_constraintTop_toBottomOf="@id/Travel_Holder_Destination7">
+
+        <TextView
+            android:id="@+id/Travel_Destination8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Destination8"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+        <TextView
+            android:id="@+id/Travel_Distance8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="150dp"
+            android:text="Distance"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="210dp"
+            android:layout_marginLeft="210dp"
+            android:text="frops"
+            android:textColor="@android:color/holo_orange_dark"
+            />
+
+        <TextView
+            android:id="@+id/Fuel_Used8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginLeft="250dp"
+            android:text="Fuel"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginLeft="280dp"
+            android:text="Kgal"
+            android:textColor="@android:color/holo_orange_dark"/>
+
+        <Button
+            android:id="@+id/Travel_Destination8_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
+            android:layout_marginLeft="350dp"
+            android:text="go"
+            />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/Travel_Holder_Destination9"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        app:cardBackgroundColor="#b1caf6"
+        app:layout_constraintTop_toBottomOf="@id/Travel_Holder_Destination8">
+
+        <TextView
+            android:id="@+id/Travel_Destination9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Destination9"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+        <TextView
+            android:id="@+id/Travel_Distance9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="150dp"
+            android:text="Distance"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="210dp"
+            android:layout_marginLeft="210dp"
+            android:text="frops"
+            android:textColor="@android:color/holo_orange_dark"
+            />
+
+        <TextView
+            android:id="@+id/Fuel_Used9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginLeft="250dp"
+            android:text="Fuel"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginLeft="280dp"
+            android:text="Kgal"
+            android:textColor="@android:color/holo_orange_dark"/>
+
+        <Button
+            android:id="@+id/Travel_Destination9_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
+            android:layout_marginLeft="350dp"
+            android:text="go"
+            />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/Travel_Holder_Destination10"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        app:cardBackgroundColor="#b1caf6"
+        app:layout_constraintTop_toBottomOf="@id/Travel_Holder_Destination9">
+
+        <TextView
+            android:id="@+id/Travel_Destination10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Destination10"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+        <TextView
+            android:id="@+id/Travel_Distance10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="150dp"
+            android:text="Distance"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="210dp"
+            android:layout_marginLeft="210dp"
+            android:text="frops"
+            android:textColor="@android:color/holo_orange_dark"
+            />
+
+        <TextView
+            android:id="@+id/Fuel_Used10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginLeft="250dp"
+            android:text="Fuel"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginLeft="280dp"
+            android:text="Kgal"
+            android:textColor="@android:color/holo_orange_dark"/>
+
+        <Button
+            android:id="@+id/Travel_Destination10_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
+            android:layout_marginLeft="350dp"
+            android:text="go"
+            />
+
+    </android.support.v7.widget.CardView>
         <!--<TextView-->
             <!--android:id="@+id/Travel_To_Planet_Name"-->
             <!--android:layout_width="wrap_content"-->
