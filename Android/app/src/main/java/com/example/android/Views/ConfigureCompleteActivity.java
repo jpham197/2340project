@@ -59,9 +59,8 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
                 SolarSystem solarSystem = (SolarSystem) list.get((int)Math.random() * list.size());
                 Planet[] planets = solarSystem.getPlanets();
                 Planet planet = planets[0];
-                int x = planet.getxCoordinate();
-                int y = planet.getyCoordinate();
-                Location location = new Location(x, y);
+                Location planetLocation = planet.getLocation();
+                Location location = new Location(planetLocation.getX(), planetLocation.getY());
                 Player player = pvm.getPlayer();
                 player.setLocation(location);
                 repo.setCurrentPlanet(planet);
