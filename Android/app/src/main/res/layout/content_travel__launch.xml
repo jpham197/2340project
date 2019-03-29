@@ -5,58 +5,109 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Travel_Launch"
+    tools:context=".Views.Travel_Launch"
     tools:showIn="@layout/activity_travel__launch">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="55dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="#767f"
-        android:padding="8dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/Travel_Holder_Destination1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="0dp"
+        app:cardBackgroundColor="#b1caf6"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/Travel_To_Planet_Name"
+            android:id="@+id/Travel_Destination1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:text="Destination"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+        <TextView
+            android:id="@+id/Travel_Distance1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginLeft="150dp"
+            android:text="Distance"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="210dp"
+            android:layout_marginLeft="210dp"
+            android:text="frops"
+            android:textColor="@android:color/holo_orange_dark"
+            />
+
+        <TextView
+            android:id="@+id/Fuel_Used1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginLeft="250dp"
+            android:text="Fuel"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginLeft="280dp"
+            android:text="Kgal"
+            android:textColor="@android:color/holo_orange_dark"/>
+
+        <Button
+            android:id="@+id/Travel_Destination1_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="350dp"
+            android:layout_marginLeft="350dp"
+            android:text="go"
+            />
+
+    </android.support.v7.widget.CardView>
+        <!--<TextView-->
+            <!--android:id="@+id/Travel_To_Planet_Name"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:textAppearance="@style/TextAppearance.AppCompat.Large" />-->
+
+        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/Travel_To_Planet_Fuel_Needed"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:maxLines="1"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:paddingEnd="8dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:paddingRight="8dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_alignParentEnd="true"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_alignParentRight="true"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_alignTop="@+id/Travel_To_Planet_Distance"/>&ndash;&gt;-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/Travel_To_Planet_Distance"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:maxLines="1"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_alignParentTop="true"/>-->
 
         <!--<TextView-->
             <!--android:id="@+id/Travel_To_Planet_Fuel_Needed"-->
             <!--android:layout_width="wrap_content"-->
             <!--android:layout_height="wrap_content"-->
             <!--android:maxLines="1"-->
-            <!--android:paddingEnd="8dp"-->
-            <!--android:paddingRight="8dp"-->
             <!--android:layout_alignParentEnd="true"-->
             <!--android:layout_alignParentRight="true"-->
-            <!--android:layout_alignTop="@+id/Travel_To_Planet_Distance"/>-->
-
-        <TextView
-            android:id="@+id/Travel_To_Planet_Distance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:paddingEnd="8dp"
-            android:paddingRight="8dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"/>
-
-        <TextView
-            android:id="@+id/Travel_To_Planet_Fuel_Needed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"/>
-
-
-
-    </RelativeLayout>
+            <!--android:layout_alignParentBottom="true"/>-->
 
 </android.support.constraint.ConstraintLayout>
