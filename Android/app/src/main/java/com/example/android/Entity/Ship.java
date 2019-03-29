@@ -16,6 +16,10 @@ public class Ship {
         return type + " " + fuel;
     }
 
+    public int getFuel() {
+        return this.fuel;
+    }
+
     /**
      * @param origin Where you're leaving from
      * @param destination Where you're going to
@@ -23,8 +27,8 @@ public class Ship {
      */
     public Location travel(Location origin, Location destination) {
         int distance = origin.calcDistance(destination);
-        if (fuel >= distance) {
-            fuel -= distance;
+        if (fuel >= (distance/fuel)) {
+            fuel -= 5;
             return destination;
         } else {
             return null;
