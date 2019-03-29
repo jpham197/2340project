@@ -45,8 +45,7 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_configure_complete);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        final String playerName = getIntent().getExtras().getString("playerName");
-        setTitle("Space Traders: " + playerName);
+        setTitle("Space Traders: " + pvm.getPlayer().getName());
         repo = new Repository();
         Button trade = findViewById(R.id.PlanetTradeButton);
         trade.setOnClickListener(new View.OnClickListener() {
