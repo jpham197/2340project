@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                         != 16) {
                     current++;
                     user.setPilot(current);
+                    user.setName(playerName.getText().toString());
                 } else {
                     Toast.makeText(getApplication(), "No more Skill Points left.",
                             Toast.LENGTH_LONG).show();
