@@ -87,7 +87,7 @@ public class Travel_Launch extends AppCompatActivity {
         go6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                player.travel(repo.getAllPlanets().get(6).getLocation());
+//                player.travel(repo.getAllPlanets().get(6).getLocation());
                 player.travel(planetViewModel.getAllPlanets().get(6).getLocation());
             }
         });
@@ -95,7 +95,7 @@ public class Travel_Launch extends AppCompatActivity {
         go1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (repo.getPlayer().travel(repo.getAllPlanets().get(0).getLocation())) {
+                if (player.travel(planetViewModel.getAllPlanets().get(0).getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
                 } else {
