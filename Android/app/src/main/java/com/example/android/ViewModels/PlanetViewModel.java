@@ -8,6 +8,7 @@ import com.example.android.Entity.Planet;
 import com.example.android.Model.Model;
 import com.example.android.Model.PlanetInteractor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PlanetViewModel extends AndroidViewModel {
@@ -32,6 +33,10 @@ public class PlanetViewModel extends AndroidViewModel {
     public void addPlanet(Planet planet) {
         planets.add(planet);
         planets = interactor.getAllPlanets();
+    }
+
+    public List<Planet> getAllPlanets() {
+        return planets;
     }
 
 }

@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android.Entity.Planet;
 import com.example.android.Entity.Player;
 import com.example.android.Model.Repository;
 import com.example.android.R;
@@ -23,7 +24,9 @@ public class Travel_Launch extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         final PlayerViewModel pvm = ViewModelProviders.of(this).get(PlayerViewModel.class);
-        Player player = pvm.getPlayer();
+        final PlanetViewModel planetViewModel
+                = ViewModelProviders.of(this).get(PlanetViewModel.class);
+        final Player player = pvm.getPlayer();
 
         final TextView distance1 = findViewById(R.id.Travel_Destination1);
         final TextView fuel1 = findViewById(R.id.Fuel_Used1);
@@ -65,7 +68,6 @@ public class Travel_Launch extends AppCompatActivity {
 //        final Button go8 = findViewById(R.id.Travel_Destination8_button);
 //        final Button go9 = findViewById(R.id.Travel_Destination9_button);
 //        final Button go10 = findViewById(R.id.Travel_Destination10_button);
-        final Repository repo = new Repository();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travel__launch);
@@ -85,7 +87,8 @@ public class Travel_Launch extends AppCompatActivity {
         go6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (player)
+                player.travel(repo.getAllPlanets().get(6).getLocation());
+                player.travel(planetViewModel.getAllPlanets().get(6).getLocation());
             }
         });
 
