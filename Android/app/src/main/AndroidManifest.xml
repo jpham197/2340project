@@ -10,9 +10,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Travel_Launch"
+            android:label="@string/title_activity_travel__launch"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Views.PlayerInventoryLaunch"
+            android:label="@string/title_activity_player_inventory_launch"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Views.Marketplace_Sell_Startup"
+            android:label="@string/title_activity_marketplace__sell__startup"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Views.Marketplace_PlayerInventory_Startup"
+            android:label="@string/title_activity_marketplace__player_inventory__startup"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Views.MarketplaceStartup"
+            android:label="@string/title_activity_marketplace_startup"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".Views.ConfigureCompleteActivity"
             android:label="@string/title_activity_configure_complete"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Views.StartUpActivity"
             android:label="@string/title_activity_start_up"

@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9ee990"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Views.Marketplace_Sell_Startup"
+    tools:showIn="@layout/activity_marketplace__sell__startup">
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="77dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="4sp"
+        android:layout_marginLeft="4sp"
+        android:layout_marginTop="4sp"
+        android:text="back"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Marketplace_Player_Credits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="12sp"
+        android:text="Credits:"
+        app:layout_constraintStart_toEndOf="@+id/back_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Marketplace_Player_Credits_Num"
+        android:layout_width="52dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="12dp"
+        android:text="0"
+        android:gravity="center_horizontal"
+        android:background="#e1ef11"
+        app:layout_constraintStart_toEndOf="@+id/Marketplace_Player_Credits"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Marketplace_Player_Inventory_Space"
+        android:layout_width="137dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="4sp"
+        android:layout_marginLeft="4sp"
+        android:layout_marginTop="12dp"
+        android:text="Inventory Space Left:"
+        app:layout_constraintStart_toEndOf="@+id/Marketplace_Player_Credits_Num"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="52dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="12dp"
+        android:text="0"
+        android:gravity="center_horizontal"
+        android:background="#e1ef11"
+        app:layout_constraintStart_toEndOf="@+id/Marketplace_Player_Inventory_Space"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/SellMarketplace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+
+        android:gravity="center_horizontal"
+        android:textColor="#ffff"
+        android:text="Sell Inventory"
+        android:textSize="25sp"
+        android:textAllCaps="true"
+        android:textFontWeight="20"
+
+        android:background="#000000"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Market_Items_Owned_Title"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:text="Owned Items"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textFontWeight="20"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/Market_Items_Amount"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SellMarketplace" />
+
+    <TextView
+        android:id="@+id/Market_Items_Amount"
+        android:layout_width="112dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:gravity="center_horizontal"
+        android:text="Amount"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textFontWeight="20"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SellMarketplace" />
+
+    <TextView
+        android:id="@+id/Market_Items_Selected"
+        android:layout_width="108dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:gravity="center_horizontal"
+        android:text="Selected"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textFontWeight="20"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/Market_Items_Amount"
+        app:layout_constraintTop_toBottomOf="@+id/SellMarketplace" />
+
+    <TextView
+        android:id="@+id/Item_water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center_horizontal"
+        android:text="Water"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Owned_Title" />
+
+    <TextView
+        android:id="@+id/Item_Water_Amount_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Furs_Amount_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_water"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount"
+        app:layout_constraintVertical_bias="0.692" />
+
+    <TextView
+        android:id="@+id/Item_Water_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Water_Amount_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Selected" />
+
+    <TextView
+        android:id="@+id/Item_Furs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="Furs"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Item_water" />
+
+    <TextView
+        android:id="@+id/Item_Furs_Amount_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginLeft="152dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Food_Amount_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Furs"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount"
+        app:layout_constraintVertical_bias="0.125" />
+
+    <TextView
+        android:id="@+id/Item_Furs_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Furs_Amount_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Water_Selected_counter" />
+
+    <TextView
+        android:id="@+id/Item_Food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="Food"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Furs" />
+
+    <TextView
+        android:id="@+id/Item_Food_Amount_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Ore_Amount_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Food"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount"
+        app:layout_constraintVertical_bias="0.866" />
+
+    <TextView
+        android:id="@+id/Item_Food_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Food_Amount_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Furs_Selected_counter" />
+
+    <TextView
+        android:id="@+id/Item_Ore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="Ore"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Food" />
+
+    <TextView
+        android:id="@+id/Item_Ore_Amount_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Games_Amount_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Ore"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount" />
+
+    <TextView
+        android:id="@+id/Item_Ore_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Ore_Amount_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Food_Selected_counter" />
+
+    <TextView
+        android:id="@+id/Item_Games"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="Games"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Ore" />
+
+    <TextView
+        android:id="@+id/Item_Games_Amount_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Firearms_Amount_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Games"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/Item_Games_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Games_Amount_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Ore_Selected_counter" />
+
+    <TextView
+        android:id="@+id/Item_Firearms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="Firearms"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Games" />
+
+    <TextView
+        android:id="@+id/Item_Firearms_Amount_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Medicine_Amount_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Firearms"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount"
+        app:layout_constraintVertical_bias="0.125" />
+
+    <TextView
+        android:id="@+id/Item_Firearms_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Firearms_Amount_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Games_Selected_counter" />
+
+
+
+    <TextView
+        android:id="@+id/Item_Medicine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="Medicine"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Firearms" />
+
+    <TextView
+        android:id="@+id/Item_Medicine_Amount_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Machines_Amount_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Medicine"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount"
+        app:layout_constraintVertical_bias="0.971" />
+
+    <TextView
+        android:id="@+id/Item_Medicine_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Medicine_Amount_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Firearms_Selected_counter" />
+
+    <TextView
+        android:id="@+id/Item_Machines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="Machines"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Medicine" />
+
+    <TextView
+        android:id="@+id/Item_Machines_Amount_counter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Narcotics_Amount_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Machines"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount"
+        app:layout_constraintVertical_bias="0.975" />
+
+    <TextView
+        android:id="@+id/Item_Machines_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Machines_Amount_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Medicine_Selected_counter" />
+
+    <TextView
+        android:id="@+id/Item_Narcotics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="Narcotics"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Machines" />
+
+    <TextView
+        android:id="@+id/Item_Narcotics_Amount_counter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginTop="368dp"
+        android:layout_marginBottom="8dp"
+        android:text="0"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/Item_Robots_Amount_counter"
+        app:layout_constraintStart_toEndOf="@+id/Item_Narcotics"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount"
+        app:layout_constraintVertical_bias="0.222" />
+
+    <TextView
+        android:id="@+id/Item_Narcotics_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Narcotics_Amount_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Machines_Selected_counter" />
+
+    <TextView
+        android:id="@+id/Item_Robots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="Robots"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Narcotics" />
+
+    <TextView
+        android:id="@+id/Item_Robots_Amount_counter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="412dp"
+        android:text="0"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toEndOf="@+id/Item_Robots"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Amount" />
+
+    <TextView
+        android:id="@+id/Item_Robots_Selected_counter"
+        android:layout_width="9dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Robots_Amount_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Narcotics_Selected_counter" />
+
+
+
+
+    <TextView
+        android:id="@+id/Total_Price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="Total:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Robots" />
+
+    <TextView
+        android:id="@+id/Total_Price_Show"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/Total_Price"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Robots" />
+
+    <TextView
+        android:id="@+id/Total_Amount_Items"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="44dp"
+        android:gravity="center_horizontal"
+        android:text="Total Items:"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@+id/Total_Price"
+        app:layout_constraintStart_toEndOf="@+id/Total_Price_Show"
+        app:layout_constraintTop_toTopOf="@+id/Item_Robots_Amount_counter" />
+
+    <TextView
+        android:id="@+id/Total_Amount_Items_Counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toRightOf="@+id/Total_Amount_Items"
+        app:layout_constraintStart_toEndOf="@+id/Total_Amount_Items"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Robots_Selected_counter" />
+
+
+
+    <Button
+        android:id="@+id/Marketplace_sell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="Sell"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toEndOf="@+id/Marketplace_buy" />
+
+
+    <!--This section is the Decrements and increments for selected column in PlanetaryMarketplace-->
+
+    <!--decrement buttons-->
+    <Button
+        android:id="@+id/Item_Water_Selected_Dec"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="-"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/Item_Water_Selected_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Selected" />
+
+    <Button
+        android:id="@+id/Item_Furs_Selected_Dec"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="-"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/Item_Furs_Selected_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Water_Selected_Dec" />
+
+    <Button
+        android:id="@+id/Item_Food_Selected_Dec"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="-"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/Item_Food_Selected_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Furs_Selected_Dec" />
+
+    <Button
+        android:id="@+id/Item_Ore_Selected_Dec"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="-"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/Item_Ore_Selected_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Food_Selected_Dec" />
+
+    <Button
+        android:id="@+id/Item_Games_Selected_Dec"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="-"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/Item_Games_Selected_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Ore_Selected_Dec" />
+
+    <Button
+        android:id="@+id/Item_Firearms_Selected_Dec"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="-"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/Item_Firearms_Selected_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Games_Selected_Dec" />
+
+    <Button
+        android:id="@+id/Item_Medicine_Selected_Dec"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="-"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/Item_Medicine_Selected_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Firearms_Selected_Dec" />
+
+    <Button
+        android:id="@+id/Item_Machines_Selected_Dec"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="-"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/Item_Machines_Selected_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Medicine_Selected_Dec" />
+
+    <Button
+        android:id="@+id/Item_Narcotics_Selected_Dec"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="-"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/Item_Narcotics_Selected_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Machines_Selected_Dec" />
+
+    <Button
+        android:id="@+id/Item_Robots_Selected_Dec"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="-"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/Item_Robots_Selected_counter"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Narcotics_Selected_Dec" />
+
+
+    <!--increment buttons-->
+
+    <Button
+        android:id="@+id/Item_Water_Selected_Inc"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="24dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="+"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Water_Selected_Dec"
+        app:layout_constraintTop_toBottomOf="@+id/Market_Items_Selected" />
+
+    <Button
+        android:id="@+id/Item_Furs_Selected_Inc"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="8dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="+"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Furs_Selected_Dec"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Water_Selected_Inc" />
+
+    <Button
+        android:id="@+id/Item_Food_Selected_Inc"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="4dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="+"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Food_Selected_Dec"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Furs_Selected_Inc" />
+
+    <Button
+        android:id="@+id/Item_Ore_Selected_Inc"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="4dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="+"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Ore_Selected_Dec"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Food_Selected_Inc" />
+
+    <Button
+        android:id="@+id/Item_Games_Selected_Inc"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="4dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="+"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Games_Selected_Dec"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Ore_Selected_Inc" />
+
+    <Button
+        android:id="@+id/Item_Firearms_Selected_Inc"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="4dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="+"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Firearms_Selected_Dec"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Games_Selected_Inc" />
+
+    <Button
+        android:id="@+id/Item_Medicine_Selected_Inc"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="+"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Medicine_Selected_Dec"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Firearms_Selected_Inc" />
+
+    <Button
+        android:id="@+id/Item_Machines_Selected_Inc"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="4dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="+"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Machines_Selected_Dec"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Medicine_Selected_Inc" />
+
+    <Button
+        android:id="@+id/Item_Narcotics_Selected_Inc"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="4dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="+"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Narcotics_Selected_Dec"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Machines_Selected_Inc" />
+
+    <Button
+        android:id="@+id/Item_Robots_Selected_Inc"
+        android:layout_width="31dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="4dp"
+        android:width="10dp"
+        android:height="10dp"
+        android:text="+"
+        android:textSize="8sp"
+        app:layout_constraintStart_toEndOf="@+id/Item_Robots_Selected_Dec"
+        app:layout_constraintTop_toBottomOf="@+id/Item_Narcotics_Selected_Inc" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,15 +1,16 @@
 package com.example.android.Entity;
 
 public class Player {
-    private String Name;
+    private String name;
     private int credits;
     private int pilot;
     private int fighter;
     private int trader;
     private int engineer;
-    private int skillpointsavailible;
-    private Ship current;
-
+    private int skillPointsAvailable;
+    private Ship ship;
+    private Location location;
+    private Inventory inventory;
 
     /**
      *
@@ -18,19 +19,21 @@ public class Player {
      * @param fighter
      * @param trader
      * @param engineer
-     * @param skillpointsavailible
-     * @param current
+     * @param skillPointsAvailable
+     * @param credits
+     * @param ship
      */
     public Player(String name, int pilot, int fighter, int trader, int engineer
-                  ,int skillpointsavailible, int credits, Ship current) {
-        this.Name = name;
+                  , int skillPointsAvailable, int credits, Ship ship) {
+        this.name = name;
         this.pilot = pilot;
         this.fighter = fighter;
         this.trader = trader;
         this.engineer = engineer;
-        this.skillpointsavailible = skillpointsavailible;
+        this.skillPointsAvailable = skillPointsAvailable;
         this.credits = credits;
-        this.current = current;
+        this.ship = ship;
+        this.inventory = new Inventory(10);
     }
 
     /**
@@ -40,9 +43,9 @@ public class Player {
      * @param fighter number of skill points in fighter
      * @param trader number of skill points in trader
      * @param engineer number of skill points in engineer
-     * @param current the current ship of the player. Default is Gnat
+     * @param ship the ship ship of the player. Default is Gnat
      */
-    public Player(String name, int pilot, int fighter, int trader, int engineer, Ship current) {
+    public Player(String name, int pilot, int fighter, int trader, int engineer, Ship ship) {
         this(name, pilot, fighter, trader, engineer, 16, 1000
                 , new Ship(100, ShipType.Gnat));
     }
@@ -54,12 +57,28 @@ public class Player {
      *
      * @return
      */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     *
+     * @return
+     */
     public Ship getShip() {
-        return this.current;
+        return this.ship;
     }
 
     public void setShip(Ship upgrade) {
-        this.current = upgrade;
+        this.ship = upgrade;
     }
 
     /**
@@ -147,6 +166,23 @@ public class Player {
      * @return
      */
     public int getSkillpointsavailible() {
-        return this.skillpointsavailible;
+        return this.skillPointsAvailable;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public Location getLocation() {
+        return this.location;
+    }
+
+    public boolean travel(Location destination) {
+        if (ship.travel(this.location, destination) != null) {
+            location = destination;
+            return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed0c2f12-dd67-47ec-8fc1-6063490d5815" name="Default Changelist" comment="">
+<<<<<<< HEAD
+>>>>>>> bf66923f23e25ac8eba250ff60f09729e39a13d6
+      <change beforePath="$PROJECT_DIR$/.idea/2340project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> bf66923f23e25ac8eba250ff60f09729e39a13d6
+=======
       <change afterPath="$PROJECT_DIR$/Android/app/src/main/java/com/example/android/Entity/PlanetTypes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Android/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Android/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Android/app/src/main/gen/com/example/android/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Android/app/src/main/gen/com/example/android/BuildConfig.java" afterDir="false" />
+>>>>>>> 37107dd55695484ec46f63be2a72ca538338a3fb
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,6 +23,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
+<<<<<<< HEAD
+    <session id="-1773325675">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+=======
     <session id="-1096855846">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
@@ -44,6 +60,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="2" />
+>>>>>>> bf66923f23e25ac8eba250ff60f09729e39a13d6
         </counts>
       </usages-collector>
     </session>
@@ -73,6 +90,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+=======
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -83,14 +105,41 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="3840" />
     <option name="height" value="2160" />
+>>>>>>> bf66923f23e25ac8eba250ff60f09729e39a13d6
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+<<<<<<< HEAD
+      <pane id="Scope" />
+<<<<<<< HEAD
+      <pane id="ProjectPane" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="2340project" type="1abcf292:AndroidViewProjectNode" />
+              <item name="androidTest" type="e9137016:NonAndroidModuleNode" />
+            </path>
+            <path>
+              <item name="2340project" type="1abcf292:AndroidViewProjectNode" />
+              <item name="androidTest" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="2340project" type="1abcf292:AndroidViewProjectNode" />
+              <item name="androidTest" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+            </path>
+=======
+      <pane id="AndroidView" />
+=======
+>>>>>>> 37107dd55695484ec46f63be2a72ca538338a3fb
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -124,6 +173,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="android" type="462c0819:PsiDirectoryNode" />
             </path>
+>>>>>>> bf66923f23e25ac8eba250ff60f09729e39a13d6
           </expand>
           <select />
         </subPane>
@@ -133,10 +183,15 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+=======
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="Pixel_2_API_28" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Android" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+>>>>>>> bf66923f23e25ac8eba250ff60f09729e39a13d6
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -210,17 +265,45 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
+      <changelist id="e8766162-586b-488f-9912-715a42c42537" name="Default Changelist" comment="" />
+      <created>1551134053820</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1551134053820</updated>
+=======
       <changelist id="ed0c2f12-dd67-47ec-8fc1-6063490d5815" name="Default Changelist" comment="" />
       <created>1551133868280</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1551133868280</updated>
+>>>>>>> bf66923f23e25ac8eba250ff60f09729e39a13d6
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <layout>
+<<<<<<< HEAD
+      <window_info id="Capture Tool" />
+      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.3297568" />
+      <window_info id="Structure" side_tool="true" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Build Variants" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Logcat" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
+      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Palette&#9;" />
+=======
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.32662642" />
       <window_info id="Structure" order="2" side_tool="true" />
@@ -245,6 +328,7 @@
       <window_info anchor="right" id="Flutter Inspector" order="3" />
       <window_info anchor="right" id="Flutter Outline" order="4" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
+>>>>>>> bf66923f23e25ac8eba250ff60f09729e39a13d6
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">

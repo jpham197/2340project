@@ -1,5 +1,8 @@
 package com.example.android.Views;
 
+import android.arch.lifecycle.ViewModel;
+import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,18 +20,33 @@ import android.view.View.OnClickListener;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
+import com.example.android.Entity.Location;
+import com.example.android.Entity.Planet;
 import com.example.android.Entity.Player;
+import com.example.android.Entity.Ship;
+import com.example.android.Entity.ShipType;
+import com.example.android.Entity.SolarSystem;
+import com.example.android.Entity.Universe;
+import com.example.android.Model.Repository;
 import com.example.android.R;
+import com.example.android.ViewModels.PlanetViewModel;
+import com.example.android.ViewModels.PlayerViewModel;
+import com.example.android.ViewModels.SolarSystemViewModel;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Serializable {
 
     private static final String TAG = "MainActivity";
     Player user = new Player();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final PlayerViewModel pvm = ViewModelProviders.of(this).get(PlayerViewModel.class);
+        final SolarSystemViewModel ssvm = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
+        final PlanetViewModel ppvm = ViewModelProviders.of(this).get(PlanetViewModel.class);
         setTitle("Space Traders");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -217,6 +235,14 @@ public class MainActivity extends AppCompatActivity {
         createButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                user.setName(playerName.getText().toString());
+                Universe universe = new Universe();
+                ssvm.addSolarSystemList(universe.getSolarSystems());
+                ppvm.setCurrentPlanet(new Planet());
+                pvm.addPlayer(user);
+                user.setShip(new Ship(100, ShipType.Gnat));
+                user.setLocation(new Location(0, 0));
+                user.setCredits(5000);
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
                         != 16) {
                     Toast.makeText(getApplication(), "You still have " +
@@ -224,13 +250,23 @@ public class MainActivity extends AppCompatActivity {
                                     + user.getEngineer() + user.getFighter())) + " Skill Points left.",
                             Toast.LENGTH_LONG).show();
                 } else {
-                    final String playerInformation = "\nPlayer Name: " + playerName.getText().toString()
+                    final String playerInformation = "\nPlayer Name: " + user.getName()
                             + "\nDifficulty: " + s.getSelectedItem()
                             + "\nPilot Skill: " + user.getPilot()
                             + "\nFighter Skill: " + user.getFighter()
                             + "\nTrader Skill: " + user.getTrader()
                             + "\nEngineer Skill: " + user.getEngineer();
-                    Log.w(TAG, playerInformation);
+//                    Log.w(TAG, playerInformation);
+                    Intent intent = new Intent(getBaseContext(), ConfigureCompleteActivity.class);
+                    intent.putExtra("playerName", user.getName());
+                    intent.putExtra("playerPilotSkill", user.getPilot());
+                    intent.putExtra("playerFighterSkill", user.getFighter());
+                    intent.putExtra("playerTraderSkill", user.getTrader());
+                    intent.putExtra("playerEngineerSkill", user.getEngineer());
+                    intent.putExtra("playerShip", user.getShip().toString());
+                    intent.putExtra("playerLocation", user.getLocation().toString());
+                    intent.putExtra("playerCredits", user.getCredits());
+                    startActivity(intent);
                 }
             }
         });
@@ -245,6 +281,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    void serialize() {
+//        FileOutputStream file = new FileOutputStream("/../entity/player.ser");
     }
 
 }
