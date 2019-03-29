@@ -66,9 +66,21 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         final TextView skillTraderLevel = findViewById(R.id.skillTraderLevel);
         final Button createButton = findViewById(R.id.createButton);
 
-        Button addPilot = findViewById(R.id.skillPilotIncrease);
+        final Button addPilot = findViewById(R.id.skillPilotIncrease);
         final Button subPilot = findViewById(R.id.skillPilotDecrease);
+        final Button addFighter = findViewById(R.id.skillFighterIncrease);
+        final Button subFighter = findViewById(R.id.skillFighterDecrease);
+        final Button addEngineer = findViewById(R.id.skillEngineerIncrease);
+        final Button subEngineer = findViewById(R.id.skillEngineerDecrease);
+        final Button addTrader = findViewById(R.id.skillTraderIncrease);
+        final Button subTrader = findViewById(R.id.skillTraderDecrease);
+        subPilot.setEnabled(false);
+        subEngineer.setEnabled(false);
+        subFighter.setEnabled(false);
+        subTrader.setEnabled(false);
+
         createButton.setEnabled(false);
+
         playerName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -96,13 +108,19 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                 subPilot.setEnabled(true);
                 int current = Integer.parseInt(skillPilotLevel.getText().toString());
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                        != 16) {
+                        < 16) {
                     current++;
                     user.setPilot(current);
-                    user.setName(playerName.getText().toString());
-                } else {
-                    Toast.makeText(getApplication(), "No more Skill Points left.",
-                            Toast.LENGTH_LONG).show();
+//                    user.setName(playerName.getText().toString());
+                    if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                            == 16) {
+                        addPilot.setEnabled(false);
+                        addFighter.setEnabled(false);
+                        addEngineer.setEnabled(false);
+                        addTrader.setEnabled(false);
+                        Toast.makeText(getApplication(), "No more Skill Points left",
+                                Toast.LENGTH_LONG).show();
+                    }
                 }
                 skillPilotLevel.setText(String.valueOf(current));
             }
@@ -111,19 +129,21 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         subPilot.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                addEngineer.setEnabled(true);
+                addFighter.setEnabled(true);
+                addPilot.setEnabled(true);
+                addTrader.setEnabled(true);
                 int current = Integer.parseInt(skillPilotLevel.getText().toString());
                 if (current > 0) {
                     current--;
                     user.setPilot(current);
-                } else {
-                    subPilot.setEnabled(false);
+                    if (current == 0) {
+                        subPilot.setEnabled(false);
+                    }
                 }
                 skillPilotLevel.setText(String.valueOf(current));
             }
         });
-
-        Button addFighter = findViewById(R.id.skillFighterIncrease);
-        final Button subFighter = findViewById(R.id.skillFighterDecrease);
 
         addFighter.setOnClickListener(new OnClickListener() {
             @Override
@@ -131,12 +151,18 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                 subFighter.setEnabled(true);
                 int current = Integer.parseInt(skillFighterLevel.getText().toString());
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                        != 16) {
+                        < 16) {
                     current++;
                     user.setFighter(current);
-                } else {
-                    Toast.makeText(getApplication(), "No more Skill Points left.",
-                            Toast.LENGTH_LONG).show();
+                    if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                            == 16) {
+                        addPilot.setEnabled(false);
+                        addFighter.setEnabled(false);
+                        addEngineer.setEnabled(false);
+                        addTrader.setEnabled(false);
+                        Toast.makeText(getApplication(), "No more Skill Points left",
+                                Toast.LENGTH_LONG).show();
+                    }
                 }
                 skillFighterLevel.setText(String.valueOf(current));
             }
@@ -145,20 +171,21 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         subFighter.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                addEngineer.setEnabled(true);
+                addFighter.setEnabled(true);
+                addPilot.setEnabled(true);
+                addTrader.setEnabled(true);
                 int current = Integer.parseInt(skillFighterLevel.getText().toString());
                 if (current > 0) {
                     current--;
                     user.setFighter(current);
-                } else {
-                    subFighter.setEnabled(false);
+                    if (current == 0) {
+                        subFighter.setEnabled(false);
+                    }
                 }
                 skillFighterLevel.setText(String.valueOf(current));
             }
         });
-
-
-        Button addEngineer = findViewById(R.id.skillEngineerIncrease);
-        final Button subEngineer = findViewById(R.id.skillEngineerDecrease);
 
         addEngineer.setOnClickListener(new OnClickListener() {
             @Override
@@ -166,12 +193,18 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                 subEngineer.setEnabled(true);
                 int current = Integer.parseInt(skillEngineerLevel.getText().toString());
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                        != 16) {
+                        < 16) {
                     current++;
                     user.setEngineer(current);
-                } else {
-                    Toast.makeText(getApplication(), "No more Skill Points left.",
-                            Toast.LENGTH_LONG).show();
+                    if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                            == 16) {
+                        addPilot.setEnabled(false);
+                        addFighter.setEnabled(false);
+                        addEngineer.setEnabled(false);
+                        addTrader.setEnabled(false);
+                        Toast.makeText(getApplication(), "No more Skill Points left",
+                                Toast.LENGTH_LONG).show();
+                    }
                 }
                 skillEngineerLevel.setText(String.valueOf(current));
             }
@@ -180,19 +213,21 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         subEngineer.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                addEngineer.setEnabled(true);
+                addFighter.setEnabled(true);
+                addPilot.setEnabled(true);
+                addTrader.setEnabled(true);
                 int current = Integer.parseInt(skillEngineerLevel.getText().toString());
                 if (current > 0) {
                     current--;
                     user.setEngineer(current);
-                } else {
-                    subEngineer.setEnabled(false);
+                    if (current == 0) {
+                        subEngineer.setEnabled(false);
+                    }
                 }
                 skillEngineerLevel.setText(String.valueOf(current));
             }
         });
-
-        Button addTrader = findViewById(R.id.skillTraderIncrease);
-        final Button subTrader = findViewById(R.id.skillTraderDecrease);
 
         addTrader.setOnClickListener(new OnClickListener() {
             @Override
@@ -200,12 +235,18 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                 subTrader.setEnabled(true);
                 int current = Integer.parseInt(skillTraderLevel.getText().toString());
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                        != 16) {
+                        < 16) {
                     current++;
                     user.setTrader(current);
-                } else {
-                    Toast.makeText(getApplication(), "No more Skill Points left.",
-                            Toast.LENGTH_LONG).show();
+                    if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                            == 16) {
+                        addPilot.setEnabled(false);
+                        addFighter.setEnabled(false);
+                        addEngineer.setEnabled(false);
+                        addTrader.setEnabled(false);
+                        Toast.makeText(getApplication(), "No more Skill Points left",
+                                Toast.LENGTH_LONG).show();
+                    }
                 }
                 skillTraderLevel.setText(String.valueOf(current));
             }
@@ -214,12 +255,17 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         subTrader.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                addEngineer.setEnabled(true);
+                addFighter.setEnabled(true);
+                addPilot.setEnabled(true);
+                addTrader.setEnabled(true);
                 int current = Integer.parseInt(skillTraderLevel.getText().toString());
                 if (current > 0) {
                     current--;
                     user.setTrader(current);
-                } else {
-                    subTrader.setEnabled(false);
+                    if (current == 0) {
+                        subTrader.setEnabled(false);
+                    }
                 }
                 skillTraderLevel.setText(String.valueOf(current));
             }
