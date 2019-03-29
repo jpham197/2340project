@@ -76,19 +76,27 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
 //                Log.w(TAG, "TEST");
 //                Log.w(TAG, playerName);
                 Intent intent = new Intent (ConfigureCompleteActivity.this, MarketplaceStartup.class);
+                List list = ssvm.getSolarSystems();
+                SolarSystem solarSystem = (SolarSystem) list.get((int)Math.random() * list.size());
+                Planet[] planets = solarSystem.getPlanets();
+                Planet planet = planets[0];
+                Location planetLocation = planet.getLocation();
+                Location location = new Location(planetLocation.getX(), planetLocation.getY());
+                Player player = pvm.getPlayer();
+                player.setLocation(location);
+                repo.setCurrentPlanet(planet);
                 startActivity(intent);
             }
         });
 
-        inventory.setOnClickListener(new View.OnClickListener() {
+        Button travel = findViewById(R.id.TravelButton);
+        travel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (ConfigureCompleteActivity.this, PlayerInventoryLaunch.class);
+                Intent intent = new Intent(ConfigureCompleteActivity.this, Travel_Launch.class);
                 startActivity(intent);
             }
         });
-
-
     }
 
 }

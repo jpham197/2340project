@@ -8,8 +8,7 @@ import static java.lang.String.valueOf;
 public class Planet {
     private PlanetAttributes resource;
     private String name;
-    private int xCoordinate;
-    private int yCoordinate;
+    private Location location;
     private TechLevel techLevel;
     private Market market;
 
@@ -19,8 +18,7 @@ public class Planet {
         Random random = new Random();
         resource = pAS[random.nextInt(pAS.length)];
         name = valueOf(pNames[(int)(Math.random() * 10)]);
-        this.xCoordinate = (int) (Math.random() * 1000);
-        this.yCoordinate = (int) (Math.random() * 1000);
+        location = new Location((int) (Math.random() * 1000), (int) (Math.random() * 1000));
         techLevel = TechLevel.HITECH;
         market = new Market(techLevel);
     }
@@ -33,12 +31,8 @@ public class Planet {
         return name;
     }
 
-    public int getxCoordinate() {
-        return xCoordinate;
-    }
-
-    public int getyCoordinate() {
-        return yCoordinate;
+    public Location getLocation() {
+        return this.location;
     }
 
     public Market getWholeMarket() {
