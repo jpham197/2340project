@@ -20,6 +20,7 @@ import com.example.android.Entity.SolarSystem;
 import com.example.android.Model.PlayerInteractor;
 import com.example.android.Model.Repository;
 import com.example.android.R;
+import com.example.android.Travel_Launch;
 import com.example.android.ViewModels.PlayerViewModel;
 import com.example.android.ViewModels.SolarSystemViewModel;
 
@@ -84,6 +85,15 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent (ConfigureCompleteActivity.this, PlayerInventoryLaunch.class);
+                startActivity(intent);
+            }
+        });
+
+        Button travel = findViewById(R.id.TravelButton);
+        travel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConfigureCompleteActivity.this, Travel_Launch.class);
                 startActivity(intent);
             }
         });
