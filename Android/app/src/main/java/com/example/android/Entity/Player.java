@@ -53,14 +53,6 @@ public class Player {
         this(null, 0, 0, 0, 0, 0, 0, null);
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
     /**
      *
      * @return

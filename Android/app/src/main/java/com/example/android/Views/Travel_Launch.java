@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android.Entity.Player;
 import com.example.android.Model.Repository;
@@ -80,10 +81,24 @@ public class Travel_Launch extends AppCompatActivity {
             }
         });
 
+
         go6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                if (player)
+            }
+        });
+
+        go1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (repo.getPlayer().travel(repo.getAllPlanets().get(0).getLocation())) {
+                    Toast.makeText(getApplication(), "You have traveled successfully!",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplication(), "You're haven't moved....",
+                            Toast.LENGTH_LONG).show();
+                }
             }
         });
 
