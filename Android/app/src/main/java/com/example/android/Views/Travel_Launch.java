@@ -87,10 +87,37 @@ public class Travel_Launch extends AppCompatActivity {
         go6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                player.travel(repo.getAllPlanets().get(6).getLocation());
                 player.travel(planetViewModel.getAllPlanets().get(6).getLocation());
             }
         });
+
+        go7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                player.travel(planetViewModel.getAllPlanets().get(6).getLocation());
+            }
+        });
+
+//        go8.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                player.travel(planetViewModel.getAllPlanets().get(6).getLocation());
+//            }
+//        });
+//
+//        go9.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                player.travel(planetViewModel.getAllPlanets().get(6).getLocation());
+//            }
+//        });
+//
+//        go10.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                player.travel(planetViewModel.getAllPlanets().get(6).getLocation());
+//            }
+//        });
 
         go1.setOnClickListener(new View.OnClickListener() {
             @Override
