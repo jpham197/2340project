@@ -20,7 +20,6 @@ import com.example.android.Entity.SolarSystem;
 import com.example.android.Model.PlayerInteractor;
 import com.example.android.Model.Repository;
 import com.example.android.R;
-import com.example.android.Travel_Launch;
 import com.example.android.ViewModels.PlayerViewModel;
 import com.example.android.ViewModels.SolarSystemViewModel;
 
@@ -60,9 +59,8 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         SolarSystem solarSystem = (SolarSystem) list.get((int)Math.random() * list.size());
         Planet[] planets = solarSystem.getPlanets();
         Planet planet = planets[0];
-        int x = planet.getxCoordinate();
-        int y = planet.getyCoordinate();
-        Location location = new Location(x, y);
+        Location planetLocation = planet.getLocation();
+        Location location = new Location(planetLocation.getX(), planetLocation.getY());
         Player player = pvm.getPlayer();
         player.setLocation(location);
         repo.setCurrentPlanet(planet);
