@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.android.Entity.Location;
 import com.example.android.Entity.Planet;
@@ -48,21 +49,39 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         setTitle("Space Traders: " + pvm.getPlayer().getName());
         repo = new Repository();
         Button trade = findViewById(R.id.PlanetTradeButton);
+        Button inventory = findViewById(R.id.PlayerInventoryButton);
+        TextView xCor = findViewById(R.id.Xoutput);
+        TextView yCor = findViewById(R.id.Youtput);
+        TextView currPlanetName = findViewById(R.id.PlanetScreen_PlanetName);
+
+        List list = ssvm.getSolarSystems();
+        SolarSystem solarSystem = (SolarSystem) list.get((int)Math.random() * list.size());
+        Planet[] planets = solarSystem.getPlanets();
+        Planet planet = planets[0];
+        Location planetLocation = planet.getLocation();
+        Location location = new Location(planetLocation.getX(), planetLocation.getY());
+        Player player = pvm.getPlayer();
+        player.setLocation(location);
+        repo.setCurrentPlanet(planet);
+
+        xCor.setText(String.valueOf(player.getLocation().getX()));
+        yCor.setText(String.valueOf(player.getLocation().getY()));
+        currPlanetName.setText("Current Planet name: " + planet.getName());
+
         trade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                Log.w(TAG, "TEST");
 //                Log.w(TAG, playerName);
                 Intent intent = new Intent (ConfigureCompleteActivity.this, MarketplaceStartup.class);
-                List list = ssvm.getSolarSystems();
-                SolarSystem solarSystem = (SolarSystem) list.get((int)Math.random() * list.size());
-                Planet[] planets = solarSystem.getPlanets();
-                Planet planet = planets[0];
-                Location planetLocation = planet.getLocation();
-                Location location = new Location(planetLocation.getX(), planetLocation.getY());
-                Player player = pvm.getPlayer();
-                player.setLocation(location);
-                repo.setCurrentPlanet(planet);
+                startActivity(intent);
+            }
+        });
+
+        inventory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (ConfigureCompleteActivity.this, PlayerInventoryLaunch.class);
                 startActivity(intent);
             }
         });
@@ -75,6 +94,8 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
 
 }

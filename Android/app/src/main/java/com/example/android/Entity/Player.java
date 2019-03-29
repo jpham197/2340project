@@ -81,6 +81,8 @@ public class Player {
         this.ship = upgrade;
     }
 
+    public Inventory getInventory() { return this.inventory; }
+
     /**
      *
      * @return
