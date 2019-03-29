@@ -8,14 +8,40 @@
     tools:context=".Views.Travel_Launch"
     tools:showIn="@layout/activity_travel__launch">
 
+    <Button
+        android:id="@+id/Travel_Back_Button"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:text="Back"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:background="#400000ff"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingEnd="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginLeft="75dp"
+        android:gravity="center"
+        android:text="Travel Through The Universe"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@+id/Travel_Back_Button"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/Travel_Holder_Destination1"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        app:cardBackgroundColor="#b1caf6"
+        android:layout_height="55dp"
+        android:layout_marginTop="60dp"
+        app:cardBackgroundColor="#400000ff"
         app:layout_constraintTop_toTopOf="parent">
+
+        <!---->
 
         <TextView
             android:id="@+id/Travel_Destination1"
@@ -77,9 +103,9 @@
     <android.support.v7.widget.CardView
         android:id="@+id/Travel_Holder_Destination2"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:layout_marginTop="5dp"
-        app:cardBackgroundColor="#b1caf6"
+        app:cardBackgroundColor="#400000ff"
         app:layout_constraintTop_toBottomOf="@id/Travel_Holder_Destination1">
 
         <TextView
@@ -142,9 +168,9 @@
     <android.support.v7.widget.CardView
         android:id="@+id/Travel_Holder_Destination3"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:layout_marginTop="5dp"
-        app:cardBackgroundColor="#b1caf6"
+        app:cardBackgroundColor="#400000ff"
         app:layout_constraintTop_toBottomOf="@id/Travel_Holder_Destination2">
 
         <TextView
@@ -207,9 +233,9 @@
     <android.support.v7.widget.CardView
         android:id="@+id/Travel_Holder_Destination5"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:layout_marginTop="5dp"
-        app:cardBackgroundColor="#b1caf6"
+        app:cardBackgroundColor="#400000ff"
         app:layout_constraintTop_toBottomOf="@id/Travel_Holder_Destination4">
 
         <TextView
@@ -272,9 +298,9 @@
     <android.support.v7.widget.CardView
         android:id="@+id/Travel_Holder_Destination6"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:layout_marginTop="5dp"
-        app:cardBackgroundColor="#b1caf6"
+        app:cardBackgroundColor="#400000ff"
         app:layout_constraintTop_toBottomOf="@id/Travel_Holder_Destination5">
 
         <TextView
@@ -337,9 +363,9 @@
     <android.support.v7.widget.CardView
         android:id="@+id/Travel_Holder_Destination7"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:layout_marginTop="5dp"
-        app:cardBackgroundColor="#b1caf6"
+        app:cardBackgroundColor="#400000ff"
         app:layout_constraintTop_toBottomOf="@id/Travel_Holder_Destination6">
 
         <TextView
@@ -402,9 +428,9 @@
     <android.support.v7.widget.CardView
         android:id="@+id/Travel_Holder_Destination4"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:layout_marginTop="5dp"
-        app:cardBackgroundColor="#b1caf6"
+        app:cardBackgroundColor="#400000ff"
         app:layout_constraintTop_toBottomOf="@id/Travel_Holder_Destination3">
 
         <TextView
@@ -467,9 +493,9 @@
     <android.support.v7.widget.CardView
         android:id="@+id/Travel_Holder_Destination8"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:layout_marginTop="5dp"
-        app:cardBackgroundColor="#b1caf6"
+        app:cardBackgroundColor="#400000ff"
         app:layout_constraintTop_toBottomOf="@id/Travel_Holder_Destination7">
 
         <TextView
@@ -532,9 +558,9 @@
     <android.support.v7.widget.CardView
         android:id="@+id/Travel_Holder_Destination9"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:layout_marginTop="5dp"
-        app:cardBackgroundColor="#b1caf6"
+        app:cardBackgroundColor="#400000ff"
         app:layout_constraintTop_toBottomOf="@id/Travel_Holder_Destination8">
 
         <TextView
@@ -597,9 +623,9 @@
     <android.support.v7.widget.CardView
         android:id="@+id/Travel_Holder_Destination10"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="56dp"
         android:layout_marginTop="5dp"
-        app:cardBackgroundColor="#b1caf6"
+        app:cardBackgroundColor="#400000ff"
         app:layout_constraintTop_toBottomOf="@id/Travel_Holder_Destination9">
 
         <TextView
