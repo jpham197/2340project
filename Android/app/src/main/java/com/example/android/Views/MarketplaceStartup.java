@@ -92,7 +92,8 @@ public class MarketplaceStartup extends AppCompatActivity {
         final TextView selectedMachines = findViewById(R.id.Item_Machines_Selected_counter);
 
 //        final Planet planet = ssvm.getSolarSystems().get(0).getPlanets()[0];
-        final Planet planet = pvm.getPlanet();
+        final Planet planet = pvm.getCurrentPlanet();
+//        final Market market = planet.getWholeMarket();
         final Market market = planet.getWholeMarket();
         final Player player = playervm.getPlayer();
         final Inventory inventory = player.getInventory();

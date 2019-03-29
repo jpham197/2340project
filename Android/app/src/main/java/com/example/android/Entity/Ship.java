@@ -27,8 +27,8 @@ public class Ship {
      */
     public Location travel(Location origin, Location destination) {
         int distance = origin.calcDistance(destination);
-        if (fuel >= (distance/fuel)) {
-            fuel -= 5;
+        if (fuel > 0 && fuel > (distance / 100)) {
+            fuel -= 20;
             return destination;
         } else {
             return null;

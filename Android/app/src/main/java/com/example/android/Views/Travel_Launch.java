@@ -38,11 +38,7 @@ public class Travel_Launch extends AppCompatActivity {
         setContentView(R.layout.content_travel__launch);
 
 
-//        final TextView distance1 = rootView.findViewById(R.id.Travel_Destination1);
-//        final TextView fuel1 = rootView.findViewById(R.id.Fuel_Used1);
-//
-//        final TextView distance2 = rootView.findViewById(R.id.Travel_Destination2);
-//        final TextView fuel2 = rootView.findViewById(R.id.Fuel_Used2);
+
 //
 //        final TextView distance3 = rootView.findViewById(R.id.Travel_Destination3);
 //        final TextView fuel3 = rootView.findViewById(R.id.Fuel_Used3);
@@ -82,6 +78,19 @@ public class Travel_Launch extends AppCompatActivity {
         setContentView(R.layout.activity_travel__launch);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        final TextView distance1 = findViewById(R.id.Travel_Distance1);
+        final TextView fuel1 = findViewById(R.id.Fuel_Used1);
+
+        final TextView distance2 = findViewById(R.id.Travel_Distance2);
+        final TextView fuel2 = findViewById(R.id.Fuel_Used2);
+
+        distance1.setText(String.valueOf(player.getLocation().calcDistance(ssvm.getSolarSystems().get(0).getPlanets()[0].getLocation())));
+        fuel1.setText("20");
+
+        distance2.setText(String.valueOf(player.getLocation().calcDistance(ssvm.getSolarSystems().get(1).getPlanets()[0].getLocation())));
+        fuel2.setText("20");
+
         final Button go1 = findViewById(R.id.Travel_Destination1_button);
         final Button go2 = findViewById(R.id.Travel_Destination2_button);
         final Button go3 = findViewById(R.id.Travel_Destination3_button);
@@ -94,18 +103,21 @@ public class Travel_Launch extends AppCompatActivity {
         final Button go10 = findViewById(R.id.Travel_Destination10_button);
         final Intent moved = new Intent(Travel_Launch.this, ConfigureCompleteActivity.class);
 
+
+
         go1.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (player.travel(planetViewModel.getAllPlanets().get(0).getLocation())) {
+                if (player.travel(ssvm.getSolarSystems().get(0).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
+                    planetViewModel.setCurrentPlanet(ssvm.getSolarSystems().get(0).getPlanets()[0]);
                     moved.putExtra("x", player.getLocation().getX());
                     moved.putExtra("y", player.getLocation().getY());
                     moved.putExtra("fuel", player.getShip().getFuel());
                     startActivity(moved);
                 } else {
-                    Toast.makeText(getApplication(), "You're haven't moved....",
+                    Toast.makeText(getApplication(), "Not enough fuel",
                             Toast.LENGTH_LONG).show();
                 }
             }
@@ -123,12 +135,13 @@ public class Travel_Launch extends AppCompatActivity {
 //                }
                 if (player.travel(ssvm.getSolarSystems().get(1).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "Good job", Toast.LENGTH_LONG).show();
+                    planetViewModel.setCurrentPlanet(ssvm.getSolarSystems().get(1).getPlanets()[0]);
                     moved.putExtra("x", player.getLocation().getX());
                     moved.putExtra("y", player.getLocation().getY());
                     moved.putExtra("fuel", player.getShip().getFuel());
                     startActivity(moved);
                 } else {
-                    Toast.makeText(getApplication(), "very bad", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(), "Not enough fuel", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -140,7 +153,7 @@ public class Travel_Launch extends AppCompatActivity {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getApplication(), "You're haven't moved....",
+                    Toast.makeText(getApplication(), "Not enough fuel",
                             Toast.LENGTH_LONG).show();
                 }
             }

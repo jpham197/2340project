@@ -19,7 +19,8 @@ public class Planet {
         resource = pAS[random.nextInt(pAS.length)];
         name = valueOf(pNames[(int)(Math.random() * 10)]);
         location = new Location((int) (Math.random() * 1000), (int) (Math.random() * 1000));
-        techLevel = TechLevel.HITECH;
+//        techLevel = TechLevel.HITECH;
+        techLevel = TechLevel.values()[(int)(Math.random()*7)];
         market = new Market(techLevel);
     }
 
