@@ -437,6 +437,27 @@ public class MarketplaceStartup extends AppCompatActivity {
                     market.removeItem("machines",  Integer.parseInt((String) selectedMachines.getText()));
                     market.removeItem("narcotics",  Integer.parseInt((String) selectedNarcotics.getText()));
                     market.removeItem("robots",  Integer.parseInt((String) selectedRobots.getText()));
+                    availableWater.setText(String.valueOf(market.getStock(("water"))));
+                    selectedWater.setText("0");
+                    availableFurs.setText(String.valueOf(market.getStock(("furs"))));
+                    selectedFurs.setText("0");
+                    availableFood.setText(String.valueOf(market.getStock(("food"))));
+                    selectedFood.setText("0");
+                    availableOre.setText(String.valueOf(market.getStock(("ores"))));
+                    selectedOre.setText("0");
+                    availableGames.setText(String.valueOf(market.getStock(("games"))));
+                    selectedGames.setText("0");
+                    availableFirearms.setText(String.valueOf(market.getStock(("firearms"))));
+                    selectedFirearms.setText("0");
+                    availableMedicine.setText(String.valueOf(market.getStock(("medicine"))));
+                    selectedMedicine.setText("0");
+                    availableMachines.setText(String.valueOf(market.getStock(("machines"))));
+                    selectedMachines.setText("0");
+                    availableNarcotics.setText(String.valueOf(market.getStock(("narcotics"))));
+                    selectedNarcotics.setText("0");
+                    availableRobots.setText(String.valueOf(market.getStock(("robots"))));
+                    selectedRobots.setText("0");
+
 
                 } else {
                     if (playerInventorySpace > totalSelected) {
