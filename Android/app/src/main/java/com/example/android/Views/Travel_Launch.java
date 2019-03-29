@@ -83,19 +83,75 @@ public class Travel_Launch extends AppCompatActivity {
             }
         });
 
+        go1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(1).getLocation())) {
+                    Toast.makeText(getApplication(), "You have traveled successfully!",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplication(), "You're haven't moved....",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        go2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(2).getLocation())) {
+                    Toast.makeText(getApplication(), "You have traveled successfully!",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplication(), "You're haven't moved....",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        go3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(3).getLocation())) {
+                    Toast.makeText(getApplication(), "You have traveled successfully!",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplication(), "You're haven't moved....",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        go4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(4).getLocation())) {
+                    Toast.makeText(getApplication(), "You have traveled successfully!",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplication(), "You're haven't moved....",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        go5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(5).getLocation())) {
+                    Toast.makeText(getApplication(), "You have traveled successfully!",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplication(), "You're haven't moved....",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
         go6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                player.travel(repo.getAllPlanets().get(6).getLocation());
-                player.travel(planetViewModel.getAllPlanets().get(6).getLocation());
-            }
-        });
-
-        go1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (repo.getPlayer().travel(repo.getAllPlanets().get(0).getLocation())) {
+                if (pvm.getPlayer().travel(planetViewModel.getAllPlanets().get(6).getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
                 } else {

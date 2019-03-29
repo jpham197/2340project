@@ -67,6 +67,15 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button travel = findViewById(R.id.TravelButton);
+        travel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConfigureCompleteActivity.this, Travel_Launch.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }
