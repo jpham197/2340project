@@ -1,9 +1,13 @@
 package com.example.android.Views;
 
+import android.animation.ValueAnimator;
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
+import android.support.constraint.Constraints;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +15,8 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -52,6 +58,39 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+//        //Animating Background section
+//        ConstraintLayout gradient = findViewById(R.id.coordinatorLayout2);
+//        AnimationDrawable gradientAnimate = (AnimationDrawable) gradient.getBackground();
+//        gradientAnimate.setEnterFadeDuration(2000);
+//        gradientAnimate.setExitFadeDuration(4000);
+//        gradientAnimate.start();
+//        //
+        final ImageView background1 = findViewById(R.id.background_one);
+        final ImageView background2 = findViewById(R.id.background_two);
+        final ImageView background3 = findViewById(R.id.background_three);
+        final ImageView background4 = findViewById(R.id.background_four);
+       // final ImageView background5 = findViewById(R.id.background_five);
+       // final ImageView background6 = findViewById(R.id.background_six);
+        final ValueAnimator animate = ValueAnimator.ofFloat(0.0f, 1.0f);
+        animate.setRepeatCount(ValueAnimator.INFINITE);
+        animate.setInterpolator(new LinearInterpolator());
+        animate.setDuration(20000L);
+        animate.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                final float progress = (float) animation.getAnimatedValue();
+                final float width = background1.getWidth();
+                final float translationX = width * progress;
+                background1.setTranslationX(translationX);
+                background2.setTranslationX(translationX - width);
+               background3.setTranslationX(translationX);
+               background4.setTranslationX(translationX - width);
+               // background5.setTranslationX(translationX);
+                //background6.setTranslationX(translationX - width);
+            }
+        });
+        animate.start();
 
 
         String[] arraySpinner = new String[] {
