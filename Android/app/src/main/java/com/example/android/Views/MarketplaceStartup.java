@@ -445,7 +445,7 @@ public class MarketplaceStartup extends AppCompatActivity {
                                 + Integer.parseInt(selectedNaroctics.getText().toString())
                                 + Integer.parseInt(selectedRobots.getText().toString());
 
-                if (Integer.parseInt(total.getText().toString()) < playerAvailableCredits && playerInventorySpace > totalSelected) {
+                if (Integer.parseInt(total.getText().toString()) < playerAvailableCredits && playerInventorySpace >= totalSelected) {
                     playerAvailableCredits -= Integer.parseInt(total.getText().toString());
                     credits.setText(String.valueOf(playerAvailableCredits));
                     playerInventorySpace -= totalSelected;
