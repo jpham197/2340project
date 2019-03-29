@@ -10,15 +10,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.android.Entity.Player;
+import com.example.android.Model.Repository;
 import com.example.android.R;
 import com.example.android.ViewModels.PlanetViewModel;
+import com.example.android.ViewModels.PlayerViewModel;
 
 public class Travel_Launch extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        final PlanetViewModel pvm = ViewModelProviders.of(this).get(PlanetViewModel.class);
+        final PlayerViewModel pvm = ViewModelProviders.of(this).get(PlayerViewModel.class);
+        Player player = pvm.getPlayer();
 
         final TextView distance1 = findViewById(R.id.Travel_Destination1);
         final TextView fuel1 = findViewById(R.id.Fuel_Used1);
@@ -60,6 +64,7 @@ public class Travel_Launch extends AppCompatActivity {
 //        final Button go8 = findViewById(R.id.Travel_Destination8_button);
 //        final Button go9 = findViewById(R.id.Travel_Destination9_button);
 //        final Button go10 = findViewById(R.id.Travel_Destination10_button);
+        final Repository repo = new Repository();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travel__launch);
@@ -75,7 +80,12 @@ public class Travel_Launch extends AppCompatActivity {
             }
         });
 
-
+        go6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                if (player)
+            }
+        });
 
     }
 
