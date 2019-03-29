@@ -1,0 +1,33 @@
+<div class="container">
+  <a routerLink="/home">Back</a>
+  <div class="center">
+    <h1>Character Creation</h1>
+    <form [formGroup]="characterForm">
+      <input type="text" placeholder="Name" formControlName="name">
+      <p>Difficulty: 
+        <select name="difficulty" id="dif" formControlName="difficulty">
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+          <option value="Insane">Insane</option>
+        </select>
+      </p>
+      <p>
+        Pilot Skill: <button type="button" (click)="minusSkill('pilot')">-</button> <span>{{ pilotSkill }}</span> <button type="button" (click)="plusSkill('pilot')">+</button>
+      </p>
+      <p>
+        Fighter Skill: <button type="button" (click)="minusSkill('fighter')">-</button> <span>{{ fighterSkill }}</span> <button type="button" (click)="plusSkill('fighter')">+</button>
+      </p>
+      <p>
+        Trader Skill: <button type="button" (click)="minusSkill('trader')">-</button> <span>{{ traderSkill }}</span> <button type="button" (click)="plusSkill('trader')">+</button>
+      </p>
+      <p>
+        Engineer Skill: <button type="button" (click)="minusSkill('engineer')">-</button> <span>{{ engineerSkill }}</span> <button type="button" (click)="plusSkill('engineer')">+</button>
+      </p>
+      <p>
+        Available points: {{ availablePoints }}
+      </p>
+      <button style="margin: auto" (click)="log()">Submit</button>
+    </form>
+  </div>
+</div>

@@ -8,4 +8,6 @@
         Marketplace_PlayerInventory_Startup
     </string>
     <string name="title_activity_marketplace__sell__startup">Marketplace_Sell_Startup</string>
+    <string name="title_activity_player_inventory_launch">PlayerInventoryLaunch</string>
+    <string name="title_activity_travel__launch">Travel_Launch</string>
 </resources>

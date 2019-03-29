@@ -8,7 +8,7 @@ public class Player {
     private int trader;
     private int engineer;
     private int skillPointsAvailable;
-    private Ship current;
+    private Ship ship;
     private Location location;
     private Inventory inventory;
 
@@ -21,10 +21,10 @@ public class Player {
      * @param engineer
      * @param skillPointsAvailable
      * @param credits
-     * @param current
+     * @param ship
      */
     public Player(String name, int pilot, int fighter, int trader, int engineer
-                  , int skillPointsAvailable, int credits, Ship current) {
+                  , int skillPointsAvailable, int credits, Ship ship) {
         this.name = name;
         this.pilot = pilot;
         this.fighter = fighter;
@@ -32,7 +32,7 @@ public class Player {
         this.engineer = engineer;
         this.skillPointsAvailable = skillPointsAvailable;
         this.credits = credits;
-        this.current = current;
+        this.ship = ship;
         this.inventory = new Inventory(10);
     }
 
@@ -43,9 +43,9 @@ public class Player {
      * @param fighter number of skill points in fighter
      * @param trader number of skill points in trader
      * @param engineer number of skill points in engineer
-     * @param current the current ship of the player. Default is Gnat
+     * @param ship the ship ship of the player. Default is Gnat
      */
-    public Player(String name, int pilot, int fighter, int trader, int engineer, Ship current) {
+    public Player(String name, int pilot, int fighter, int trader, int engineer, Ship ship) {
         this(name, pilot, fighter, trader, engineer, 16, 1000
                 , new Ship(100, ShipType.Gnat));
     }
@@ -82,11 +82,11 @@ public class Player {
      * @return
      */
     public Ship getShip() {
-        return this.current;
+        return this.ship;
     }
 
     public void setShip(Ship upgrade) {
-        this.current = upgrade;
+        this.ship = upgrade;
     }
 
     /**
@@ -183,5 +183,14 @@ public class Player {
 
     public Location getLocation() {
         return this.location;
+    }
+
+    public boolean travel(Location destination) {
+        if (ship.travel(this.location, destination) != null) {
+            location = destination;
+            return true;
+        } else {
+            return false;
+        }
     }
 }
