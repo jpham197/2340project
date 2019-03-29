@@ -30,78 +30,78 @@ public class Market {
                 storage.put("narcotics", 100);
                 storage.put("robots", 100);
                 break;
-//            case 5:
-//                storage.put(new Item(ItemType.water), 100);
-//                storage.put(new Item(ItemType.furs), 100);
-//                storage.put(new Item(ItemType.food), 100);
-//                storage.put(new Item(ItemType.ores), 100);
-//                storage.put(new Item(ItemType.games), 100);
-//                storage.put(new Item(ItemType.firearms), 100);
-//                storage.put(new Item(ItemType.medicine), 100);
-//                storage.put(new Item(ItemType.machines), 100);
-//                storage.put(new Item(ItemType.narcotics), 100);
-//                storage.put(new Item(ItemType.robots), 0);
-//                break;
-//            case 4:
-//                storage.put(new Item(ItemType.water), 100);
-//                storage.put(new Item(ItemType.furs), 100);
-//                storage.put(new Item(ItemType.food), 100);
-//                storage.put(new Item(ItemType.ores), 100);
-//                storage.put(new Item(ItemType.games), 100);
-//                storage.put(new Item(ItemType.firearms), 100);
-//                storage.put(new Item(ItemType.medicine), 100);
-//                storage.put(new Item(ItemType.machines), 100);
-//                storage.put(new Item(ItemType.narcotics), 0);
-//                storage.put(new Item(ItemType.robots), 0);
-//                break;
-//            case 3:
-//                storage.put(new Item(ItemType.water), 100);
-//                storage.put(new Item(ItemType.furs), 100);
-//                storage.put(new Item(ItemType.food), 100);
-//                storage.put(new Item(ItemType.ores), 100);
-//                storage.put(new Item(ItemType.games), 100);
-//                storage.put(new Item(ItemType.firearms), 100);
-//                storage.put(new Item(ItemType.medicine), 0);
-//                storage.put(new Item(ItemType.machines), 0);
-//                storage.put(new Item(ItemType.narcotics), 0);
-//                storage.put(new Item(ItemType.robots), 0);
-//                break;
-//            case 2:
-//                storage.put(new Item(ItemType.water), 100);
-//                storage.put(new Item(ItemType.furs), 100);
-//                storage.put(new Item(ItemType.food), 100);
-//                storage.put(new Item(ItemType.ores), 100);
-//                storage.put(new Item(ItemType.games), 0);
-//                storage.put(new Item(ItemType.firearms), 0);
-//                storage.put(new Item(ItemType.medicine), 0);
-//                storage.put(new Item(ItemType.machines), 0);
-//                storage.put(new Item(ItemType.narcotics), 0);
-//                storage.put(new Item(ItemType.robots), 0);
-//                break;
-//            case 1:
-//                storage.put(new Item(ItemType.water), 100);
-//                storage.put(new Item(ItemType.furs), 100);
-//                storage.put(new Item(ItemType.food), 100);
-//                storage.put(new Item(ItemType.ores), 0);
-//                storage.put(new Item(ItemType.games), 0);
-//                storage.put(new Item(ItemType.firearms), 0);
-//                storage.put(new Item(ItemType.medicine), 0);
-//                storage.put(new Item(ItemType.machines), 0);
-//                storage.put(new Item(ItemType.narcotics), 0);
-//                storage.put(new Item(ItemType.robots), 0);
-//                break;
-//            case 0:
-//                storage.put(new Item(ItemType.water), 100);
-//                storage.put(new Item(ItemType.furs), 100);
-//                storage.put(new Item(ItemType.food), 0);
-//                storage.put(new Item(ItemType.ores), 0);
-//                storage.put(new Item(ItemType.games), 0);
-//                storage.put(new Item(ItemType.firearms), 0);
-//                storage.put(new Item(ItemType.medicine), 0);
-//                storage.put(new Item(ItemType.machines), 0);
-//                storage.put(new Item(ItemType.narcotics), 0);
-//                storage.put(new Item(ItemType.robots), 0);
-//                break;
+            case 5:
+                storage.put("water", 100);
+                storage.put("furs", 100);
+                storage.put("food", 100);
+                storage.put("ores", 100);
+                storage.put("games", 100);
+                storage.put("firearms", 100);
+                storage.put("medicine", 100);
+                storage.put("machines", 100);
+                storage.put("narcotics", 100);
+                storage.put("robots", 0);
+                break;
+            case 4:
+                storage.put("water", 100);
+                storage.put("furs", 100);
+                storage.put("food", 100);
+                storage.put("ores", 100);
+                storage.put("games", 100);
+                storage.put("firearms", 100);
+                storage.put("medicine", 100);
+                storage.put("machines", 100);
+                storage.put("narcotics", 0);
+                storage.put("robots", 0);
+                break;
+            case 3:
+                storage.put("water", 100);
+                storage.put("furs", 100);
+                storage.put("food", 100);
+                storage.put("ores", 100);
+                storage.put("games", 100);
+                storage.put("firearms", 100);
+                storage.put("medicine", 0);
+                storage.put("machines", 0);
+                storage.put("narcotics", 0);
+                storage.put("robots", 0);
+                break;
+            case 2:
+                storage.put("water", 100);
+                storage.put("furs", 100);
+                storage.put("food", 100);
+                storage.put("ores", 100);
+                storage.put("games", 0);
+                storage.put("firearms", 0);
+                storage.put("medicine", 0);
+                storage.put("machines", 0);
+                storage.put("narcotics", 0);
+                storage.put("robots", 0);
+                break;
+            case 1:
+                storage.put("water", 100);
+                storage.put("furs", 100);
+                storage.put("food", 100);
+                storage.put("ores", 0);
+                storage.put("games", 0);
+                storage.put("firearms", 0);
+                storage.put("medicine", 0);
+                storage.put("machines", 0);
+                storage.put("narcotics", 0);
+                storage.put("robots", 0);
+                break;
+            case 0:
+                storage.put("water", 100);
+                storage.put("furs", 100);
+                storage.put("food", 0);
+                storage.put("ores", 0);
+                storage.put("games", 0);
+                storage.put("firearms", 0);
+                storage.put("medicine", 0);
+                storage.put("machines", 0);
+                storage.put("narcotics", 0);
+                storage.put("robots", 0);
+                break;
         }
 
     }
