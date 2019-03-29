@@ -10,11 +10,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.android.Entity.Inventory;
 import com.example.android.Entity.Item;
 import com.example.android.Entity.ItemType;
+import com.example.android.Entity.Player;
 import com.example.android.R;
 import com.example.android.ViewModels.PlanetViewModel;
+import com.example.android.ViewModels.PlayerViewModel;
 import com.example.android.ViewModels.SolarSystemViewModel;
 import com.example.android.Entity.Market;
 import com.example.android.Entity.Planet;
@@ -30,10 +34,12 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        final PlayerViewModel playervm = ViewModelProviders.of(this).get(PlayerViewModel.class);
         final SolarSystemViewModel ssvm = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
         final PlanetViewModel pvm = ViewModelProviders.of(this).get(PlanetViewModel.class);
 
         Button back = findViewById(R.id.back_button);
+        Button sell = findViewById(R.id.Marketplace_sell);
 
         Button waterDec = findViewById(R.id.Item_Water_Selected_Dec);
         Button waterInc = findViewById(R.id.Item_Water_Selected_Inc);
@@ -81,11 +87,30 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
         final TextView selectedRobots = findViewById(R.id.Item_Robots_Selected_counter);
         final TextView selectedMachines = findViewById(R.id.Item_Machines_Selected_counter);
 
-        final Planet planet = pvm.getPlanet();
-        final Market market = planet.getWholeMarket();
 
         final TextView credits = findViewById(R.id.Marketplace_Player_Credits_Num);
         final TextView cargoSpace = findViewById(R.id.SellInvSpace);
+        final TextView SelectedTotal = findViewById(R.id.Total_Amount_Items_Counter);
+
+        final Player player = playervm.getPlayer();
+        final Inventory inventory = player.getInventory();
+        final Planet planet = pvm.getPlanet();
+        final Market market = planet.getWholeMarket();
+        credits.setText(String.valueOf(player.getCredits()));
+
+        availableWater.setText(String.valueOf(inventory.getNumOfItem(("water"))));
+        availableFurs.setText(String.valueOf(inventory.getNumOfItem(("furs"))));
+        availableFood.setText(String.valueOf(inventory.getNumOfItem(("food"))));
+        availableOre.setText(String.valueOf(inventory.getNumOfItem(("ores"))));
+        availableGames.setText(String.valueOf(inventory.getNumOfItem(("games"))));
+        availableFirearms.setText(String.valueOf(inventory.getNumOfItem(("firearms"))));
+        availableMedicine.setText(String.valueOf(inventory.getNumOfItem(("medicine"))));
+        availableMachines.setText(String.valueOf(inventory.getNumOfItem(("machines"))));
+        availableNarcotics.setText(String.valueOf(inventory.getNumOfItem(("narcotics"))));
+        availableRobots.setText(String.valueOf(inventory.getNumOfItem(("robots"))));
+
+        cargoSpace.setText(String.valueOf(inventory.getRemInv()));
+
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,140 +123,175 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
         waterInc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                market.addItem("water");
-                availableWater.setText(String.valueOf(market.getStock(("water"))));
                 int x = Integer.parseInt(selectedWater.getText().toString());
-                x++;
-                selectedWater.setText(String.valueOf(x));
-                int totalPrice = Integer.parseInt(total.getText().toString());
-                totalPrice += market.calculatePrice(new Item(ItemType.water));
-                total.setText(String.valueOf(totalPrice));
+                if (x < Integer.valueOf((String) availableWater.getText())) {
+                    x++;
+                    selectedWater.setText(String.valueOf(x));
+                    int totalPrice = Integer.parseInt(total.getText().toString());
+                    totalPrice += market.calculatePrice(new Item(ItemType.water));
+                    total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
+                }
             }
         });
 
         foodInc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                market.removeItem("food");
-                availableFood.setText(String.valueOf(market.getStock(("food"))));
                 int x = Integer.parseInt(selectedFood.getText().toString());
-                x++;
-                selectedFood.setText(String.valueOf(x));
-                int totalPrice = Integer.parseInt(total.getText().toString());
-                totalPrice += market.calculatePrice(new Item(ItemType.food));
-                total.setText(String.valueOf(totalPrice));
+                if (x < Integer.valueOf((String) availableFood.getText())) {
+                    x++;
+                    selectedFood.setText(String.valueOf(x));
+                    int totalPrice = Integer.parseInt(total.getText().toString());
+                    totalPrice += market.calculatePrice(new Item(ItemType.food));
+                    total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
+                }
             }
         });
 
         fursInc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                market.removeItem("furs");
-                availableFurs.setText(String.valueOf(market.getStock(("furs"))));
                 int x = Integer.parseInt(selectedFurs.getText().toString());
-                x++;
-                selectedFurs.setText(String.valueOf(x));
-                int totalPrice = Integer.parseInt(total.getText().toString());
-                totalPrice += market.calculatePrice(new Item(ItemType.furs));
-                total.setText(String.valueOf(totalPrice));
+                if (x < Integer.valueOf((String) availableFurs.getText())) {
+                    x++;
+                    selectedFurs.setText(String.valueOf(x));
+                    int totalPrice = Integer.parseInt(total.getText().toString());
+                    totalPrice += market.calculatePrice(new Item(ItemType.furs));
+                    total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
+                }
             }
         });
 
         oreInc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                market.removeItem("ores");
-                availableOre.setText(String.valueOf(market.getStock(("ores"))));
                 int x = Integer.parseInt(selectedOre.getText().toString());
-                x++;
-                selectedOre.setText(String.valueOf(x));
-                int totalPrice = Integer.parseInt(total.getText().toString());
-                totalPrice += market.calculatePrice(new Item(ItemType.ores));
-                total.setText(String.valueOf(totalPrice));
+                if (x < Integer.valueOf((String) availableOre.getText())) {
+                    x++;
+                    selectedOre.setText(String.valueOf(x));
+                    int totalPrice = Integer.parseInt(total.getText().toString());
+                    totalPrice += market.calculatePrice(new Item(ItemType.ores));
+                    total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
+                }
             }
         });
 
         gamesInc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                market.removeItem("games");
-                availableGames.setText(String.valueOf(market.getStock(("games"))));
                 int x = Integer.parseInt(selectedGames.getText().toString());
-                x++;
-                selectedGames.setText(String.valueOf(x));
-                int totalPrice = Integer.parseInt(total.getText().toString());
-                totalPrice += market.calculatePrice(new Item(ItemType.games));
-                total.setText(String.valueOf(totalPrice));
+                if (x < Integer.valueOf((String) availableGames.getText())) {
+                    x++;
+                    selectedGames.setText(String.valueOf(x));
+                    int totalPrice = Integer.parseInt(total.getText().toString());
+                    totalPrice += market.calculatePrice(new Item(ItemType.games));
+                    total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
+                }
             }
         });
 
         firearmsInc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                market.removeItem("firearms");
-                availableFirearms.setText(String.valueOf(market.getStock(("firearms"))));
                 int x = Integer.parseInt(selectedFirearms.getText().toString());
                 x++;
-                selectedFirearms.setText(String.valueOf(x));
-                int totalPrice = Integer.parseInt(total.getText().toString());
-                totalPrice += market.calculatePrice(new Item(ItemType.firearms));
-                total.setText(String.valueOf(totalPrice));
+                if (x < Integer.valueOf((String) availableFirearms.getText())) {
+                    x++;
+                    selectedFirearms.setText(String.valueOf(x));
+                    int totalPrice = Integer.parseInt(total.getText().toString());
+                    totalPrice += market.calculatePrice(new Item(ItemType.firearms));
+                    total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
+                }
             }
         });
 
         medicineInc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                market.removeItem("medicine");
-                availableMedicine.setText(String.valueOf(market.getStock(("medicine"))));
                 int x = Integer.parseInt(selectedMedicine.getText().toString());
                 x++;
-                selectedMedicine.setText(String.valueOf(x));
-                int totalPrice = Integer.parseInt(total.getText().toString());
-                totalPrice += market.calculatePrice(new Item(ItemType.medicine));
-                total.setText(String.valueOf(totalPrice));
+                if (x < Integer.valueOf((String) availableMedicine.getText())) {
+                    x++;
+                    selectedMedicine.setText(String.valueOf(x));
+                    int totalPrice = Integer.parseInt(total.getText().toString());
+                    totalPrice += market.calculatePrice(new Item(ItemType.medicine));
+                    total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
+                }
             }
         });
 
         machinesInc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                market.removeItem("machines");
-                availableMachines.setText(String.valueOf(market.getStock(("machines"))));
                 int x = Integer.parseInt(selectedMachines.getText().toString());
                 x++;
-                selectedMachines.setText(String.valueOf(x));
-                int totalPrice = Integer.parseInt(total.getText().toString());
-                totalPrice += market.calculatePrice(new Item(ItemType.machines));
-                total.setText(String.valueOf(totalPrice));
+                if (x < Integer.valueOf((String) availableMachines.getText())) {
+                    x++;
+                    selectedMachines.setText(String.valueOf(x));
+                    int totalPrice = Integer.parseInt(total.getText().toString());
+                    totalPrice += market.calculatePrice(new Item(ItemType.machines));
+                    total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
+                }
             }
         });
 
         narcoticsInc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                market.removeItem("narcotics");
-                availableNarcotics.setText(String.valueOf(market.getStock(("narcotics"))));
                 int x = Integer.parseInt(selectedNarcotics.getText().toString());
                 x++;
-                selectedNarcotics.setText(String.valueOf(x));
-                int totalPrice = Integer.parseInt(total.getText().toString());
-                totalPrice += market.calculatePrice(new Item(ItemType.narcotics));
-                total.setText(String.valueOf(totalPrice));
+                if (x < Integer.valueOf((String) availableNarcotics.getText())) {
+                    x++;
+                    selectedNarcotics.setText(String.valueOf(x));
+                    int totalPrice = Integer.parseInt(total.getText().toString());
+                    totalPrice += market.calculatePrice(new Item(ItemType.narcotics));
+                    total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
+                }
             }
         });
 
         robotsInc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                market.removeItem("robots");
-                availableRobots.setText(String.valueOf(market.getStock(("robots"))));
                 int x = Integer.parseInt(selectedRobots.getText().toString());
                 x++;
-                selectedRobots.setText(String.valueOf(x));
-                int totalPrice = Integer.parseInt(total.getText().toString());
-                totalPrice += market.calculatePrice(new Item(ItemType.robots));
-                total.setText(String.valueOf(totalPrice));
+                if (x < Integer.valueOf((String) availableRobots.getText())) {
+                    x++;
+                    selectedRobots.setText(String.valueOf(x));
+                    int totalPrice = Integer.parseInt(total.getText().toString());
+                    totalPrice += market.calculatePrice(new Item(ItemType.robots));
+                    total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
+                }
             }
         });
 
@@ -241,14 +301,13 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                 int x  = Integer.parseInt(selectedWater.getText().toString());
                 if (x > 0) {
                     x--;
-                    market.addItem("water");
                     selectedWater.setText(String.valueOf(x));
-                    int y = Integer.parseInt(availableWater.getText().toString());
-                    y++;
-                    availableWater.setText(String.valueOf(y));
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.water));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -259,14 +318,13 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                 int x  = Integer.parseInt(selectedFurs.getText().toString());
                 if (x > 0) {
                     x--;
-                    market.addItem("furs");
                     selectedFurs.setText(String.valueOf(x));
-                    int y = Integer.parseInt(availableFurs.getText().toString());
-                    y++;
-                    availableFurs.setText(String.valueOf(y));
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.furs));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -277,14 +335,13 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                 int x  = Integer.parseInt(selectedFood.getText().toString());
                 if (x > 0) {
                     x--;
-                    market.addItem("food");
                     selectedFood.setText(String.valueOf(x));
-                    int y = Integer.parseInt(availableFood.getText().toString());
-                    y++;
-                    availableFood.setText(String.valueOf(y));
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.food));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -295,14 +352,13 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                 int x  = Integer.parseInt(selectedOre.getText().toString());
                 if (x > 0) {
                     x--;
-                    market.addItem("ores");
                     selectedOre.setText(String.valueOf(x));
-                    int y = Integer.parseInt(availableOre.getText().toString());
-                    y++;
-                    availableOre.setText(String.valueOf(y));
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.ores));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -313,14 +369,13 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                 int x  = Integer.parseInt(selectedGames.getText().toString());
                 if (x > 0) {
                     x--;
-                    market.addItem("games");
                     selectedGames.setText(String.valueOf(x));
-                    int y = Integer.parseInt(availableGames.getText().toString());
-                    y++;
-                    availableGames.setText(String.valueOf(y));
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.games));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -331,14 +386,13 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                 int x  = Integer.parseInt(selectedFirearms.getText().toString());
                 if (x > 0) {
                     x--;
-                    market.addItem("firearms");
                     selectedFirearms.setText(String.valueOf(x));
-                    int y = Integer.parseInt(availableFirearms.getText().toString());
-                    y++;
-                    availableFirearms.setText(String.valueOf(y));
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.firearms));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -349,14 +403,13 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                 int x  = Integer.parseInt(selectedMedicine.getText().toString());
                 if (x > 0) {
                     x--;
-                    market.addItem("medicine");
                     selectedMedicine.setText(String.valueOf(x));
-                    int y = Integer.parseInt(availableMedicine.getText().toString());
-                    y++;
-                    availableMedicine.setText(String.valueOf(y));
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.medicine));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -367,14 +420,13 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                 int x  = Integer.parseInt(selectedMachines.getText().toString());
                 if (x > 0) {
                     x--;
-                    market.addItem("machines");
                     selectedMachines.setText(String.valueOf(x));
-                    int y = Integer.parseInt(availableMachines.getText().toString());
-                    y++;
-                    availableMachines.setText(String.valueOf(y));
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.machines));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -385,14 +437,13 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                 int x  = Integer.parseInt(selectedNarcotics.getText().toString());
                 if (x > 0) {
                     x--;
-                    market.addItem("narcotics");
                     selectedNarcotics.setText(String.valueOf(x));
-                    int y = Integer.parseInt(availableNarcotics.getText().toString());
-                    y++;
-                    availableNarcotics.setText(String.valueOf(y));
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.narcotics));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -403,15 +454,91 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                 int x  = Integer.parseInt(selectedRobots.getText().toString());
                 if (x > 0) {
                     x--;
-                    market.addItem("robots");
                     selectedRobots.setText(String.valueOf(x));
-                    int y = Integer.parseInt(availableRobots.getText().toString());
-                    y++;
-                    availableRobots.setText(String.valueOf(y));
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.robots));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
+            }
+        });
+
+        sell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int playerAvailableCredits = Integer.parseInt(credits.getText().toString());
+                int playerInventorySpace = Integer.parseInt(cargoSpace.getText().toString());
+                int totalSelected = Integer.parseInt(selectedWater.getText().toString())
+                        + Integer.parseInt(selectedFurs.getText().toString())
+                        + Integer.parseInt(selectedFood.getText().toString())
+                        + Integer.parseInt(selectedOre.getText().toString())
+                        + Integer.parseInt(selectedFirearms.getText().toString())
+                        + Integer.parseInt(selectedMachines.getText().toString())
+                        + Integer.parseInt(selectedMedicine.getText().toString())
+                        + Integer.parseInt(selectedNarcotics.getText().toString())
+                        + Integer.parseInt(selectedRobots.getText().toString());
+
+
+                    playerAvailableCredits += Integer.valueOf((String) total.getText());
+                    player.setCredits(playerAvailableCredits);
+                    credits.setText(String.valueOf(playerAvailableCredits));
+                    playerInventorySpace -= totalSelected;
+                    cargoSpace.setText(String.valueOf(playerInventorySpace));
+                    inventory.removeItem("water", Integer.parseInt((String) selectedWater.getText()));
+                    inventory.removeItem("furs", Integer.parseInt((String) selectedFurs.getText()));
+                    inventory.removeItem("food", Integer.parseInt((String) selectedFood.getText()));
+                    inventory.removeItem("ores", Integer.parseInt((String) selectedOre.getText()));
+                    inventory.removeItem("games", Integer.parseInt((String) selectedGames.getText()));
+                    inventory.removeItem("firearms", Integer.parseInt((String) selectedFirearms.getText()));
+                    inventory.removeItem("medicine", Integer.parseInt((String) selectedMedicine.getText()));
+                    inventory.removeItem("machines", Integer.parseInt((String) selectedMachines.getText()));
+                    inventory.removeItem("narcotics", Integer.parseInt((String) selectedNarcotics.getText()));
+                    inventory.removeItem("robots", Integer.parseInt((String) selectedRobots.getText()));
+
+                    market.addItem("water",  Integer.parseInt((String) selectedWater.getText()));
+                    market.addItem("furs",  Integer.parseInt((String) selectedFurs.getText()));
+                    market.addItem("food",  Integer.parseInt((String) selectedFood.getText()));
+                    market.addItem("ores",  Integer.parseInt((String) selectedOre.getText()));
+                    market.addItem("games",  Integer.parseInt((String) selectedGames.getText()));
+                    market.addItem("firearms",  Integer.parseInt((String) selectedFirearms.getText()));
+                    market.addItem("medicine",  Integer.parseInt((String) selectedMedicine.getText()));
+                    market.addItem("machines",  Integer.parseInt((String) selectedMachines.getText()));
+                    market.addItem("narcotics",  Integer.parseInt((String) selectedNarcotics.getText()));
+                    market.addItem("robots",  Integer.parseInt((String) selectedRobots.getText()));
+                    total.setText("0");
+                    availableWater.setText(String.valueOf(inventory.getNumOfItem(("water"))));
+                    selectedWater.setText("0");
+                    availableFurs.setText(String.valueOf(inventory.getNumOfItem(("furs"))));
+                    selectedFurs.setText("0");
+                    availableFood.setText(String.valueOf(inventory.getNumOfItem(("food"))));
+                    selectedFood.setText("0");
+                    availableOre.setText(String.valueOf(inventory.getNumOfItem(("ores"))));
+                    selectedOre.setText("0");
+                    availableGames.setText(String.valueOf(inventory.getNumOfItem(("games"))));
+                    selectedGames.setText("0");
+                    availableFirearms.setText(String.valueOf(inventory.getNumOfItem(("firearms"))));
+                    selectedFirearms.setText("0");
+                    availableMedicine.setText(String.valueOf(inventory.getNumOfItem(("medicine"))));
+                    selectedMedicine.setText("0");
+                    availableMachines.setText(String.valueOf(inventory.getNumOfItem(("machines"))));
+                    selectedMachines.setText("0");
+                    availableNarcotics.setText(String.valueOf(inventory.getNumOfItem(("narcotics"))));
+                    selectedNarcotics.setText("0");
+                    availableRobots.setText(String.valueOf(inventory.getNumOfItem(("robots"))));
+                    selectedRobots.setText("0");
+                    inventory.incInv(totalSelected);
+                    cargoSpace.setText(String.valueOf(inventory.getRemInv()));
+                    SelectedTotal.setText("0");
+
+
+
+                    if (inventory.getRemInv() < totalSelected || totalSelected == 0) {
+                        Toast.makeText(getApplication(), "Insufficient Sale!",
+                                Toast.LENGTH_LONG).show();
+                    }
+
             }
         });
     }
