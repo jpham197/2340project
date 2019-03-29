@@ -2,10 +2,13 @@ package com.example.android.Entity;
 
 import java.util.HashMap;
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 public class Inventory {
     private final int inventorySize; //capacity
     private final HashMap<String, Integer> inventory;
+    private final int maxInv = 20;
+    private int remInv = maxInv;
 
     Inventory(int inventorySize) {
         this.inventorySize = inventorySize;
@@ -39,6 +42,12 @@ public class Inventory {
             inventory.put(item, inventory.get(item) - 1);
         }
     }
+
+    public void removeItem(String item, int times) {
+        for (int i = 1; i <= times; i++) {
+            removeItem(item);
+        }
+    }
     public int getNumOfItem(String item) {
         return inventory.get(item);
     }
@@ -51,4 +60,23 @@ public class Inventory {
         }
         return result;
     }
+
+
+    public int getMaxInv() {
+        return maxInv;
+    }
+
+    public void decInv(int totalItems) {
+        remInv -= totalItems;
+    }
+
+    public void incInv(int totalItems) {
+        remInv += totalItems;
+    }
+
+    public int getRemInv() {
+        return remInv;
+    }
+
+
 }
