@@ -90,6 +90,7 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
 
         final TextView credits = findViewById(R.id.Marketplace_Player_Credits_Num);
         final TextView cargoSpace = findViewById(R.id.SellInvSpace);
+        final TextView SelectedTotal = findViewById(R.id.Total_Amount_Items_Counter);
 
         final Player player = playervm.getPlayer();
         final Inventory inventory = player.getInventory();
@@ -129,6 +130,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice += market.calculatePrice(new Item(ItemType.water));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -143,6 +147,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice += market.calculatePrice(new Item(ItemType.food));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -157,6 +164,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice += market.calculatePrice(new Item(ItemType.furs));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -171,6 +181,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice += market.calculatePrice(new Item(ItemType.ores));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -185,6 +198,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice += market.calculatePrice(new Item(ItemType.games));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -200,6 +216,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice += market.calculatePrice(new Item(ItemType.firearms));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -215,6 +234,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice += market.calculatePrice(new Item(ItemType.medicine));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -230,6 +252,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice += market.calculatePrice(new Item(ItemType.machines));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -245,6 +270,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice += market.calculatePrice(new Item(ItemType.narcotics));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -260,6 +288,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice += market.calculatePrice(new Item(ItemType.robots));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems++;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -274,6 +305,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.water));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -288,6 +322,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.furs));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -302,6 +339,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.food));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -316,6 +356,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.ores));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -330,6 +373,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.games));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -344,6 +390,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.firearms));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -358,6 +407,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.medicine));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -372,6 +424,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.machines));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -386,6 +441,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.narcotics));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -400,6 +458,9 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     int totalPrice = Integer.parseInt(total.getText().toString());
                     totalPrice -= market.calculatePrice(new Item(ItemType.robots));
                     total.setText(String.valueOf(totalPrice));
+                    int incrementTotalItems = Integer.valueOf((String) SelectedTotal.getText());
+                    incrementTotalItems--;
+                    SelectedTotal.setText(String.valueOf(incrementTotalItems));
                 }
             }
         });
@@ -469,6 +530,7 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     selectedRobots.setText("0");
                     inventory.incInv(totalSelected);
                     cargoSpace.setText(String.valueOf(inventory.getRemInv()));
+                    SelectedTotal.setText("0");
 
 
 
