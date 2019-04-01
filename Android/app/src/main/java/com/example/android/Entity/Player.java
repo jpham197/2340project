@@ -100,6 +100,15 @@ public class Player {
     }
 
     /**
+     * Checks to see if a player has a certain amount of credits
+     * @param credits
+     * @return
+     */
+    public boolean checkCredits(int credits) {
+        return this.credits >= credits;
+    }
+
+    /**
      *
      * @return
      */
