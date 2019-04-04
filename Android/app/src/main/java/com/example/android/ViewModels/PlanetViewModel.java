@@ -23,11 +23,19 @@ public class PlanetViewModel extends AndroidViewModel {
     }
 
     public void setCurrentPlanet(Planet planet) {
-        interactor.addPlanet(planet);
+        interactor.setPlanet(planet);
+    }
+
+    public Planet getCurrentPlanet() {
+        return interactor.getCurrentPlanet();
     }
 
     public Planet getPlanet() {
         return planets.get(0);
+    }
+
+    public Planet getSpecificPlanet(int n) {
+        return planets.get(n);
     }
 
     public void addPlanet(Planet planet) {
