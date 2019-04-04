@@ -20,6 +20,7 @@ import com.example.android.Entity.SolarSystem;
 import com.example.android.Model.PlayerInteractor;
 import com.example.android.Model.Repository;
 import com.example.android.R;
+import com.example.android.ViewModels.PlanetViewModel;
 import com.example.android.ViewModels.PlayerViewModel;
 import com.example.android.ViewModels.SolarSystemViewModel;
 
@@ -42,6 +43,7 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
 
         final SolarSystemViewModel ssvm = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
         final PlayerViewModel pvm = ViewModelProviders.of(this).get(PlayerViewModel.class);
+        final PlanetViewModel planetViewModel = ViewModelProviders.of(this).get(PlanetViewModel.class);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configure_complete);
@@ -50,11 +52,10 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         setTitle("Space Traders: " + pvm.getPlayer().getName());
         TextView xCor = findViewById(R.id.Xoutput);
         TextView yCor = findViewById(R.id.Youtput);
-        Player player = pvm.getPlayer();
-        List list = ssvm.getSolarSystems();
-        SolarSystem solarSystem = (SolarSystem) list.get((int)Math.random() * list.size());
-        Planet[] planets = solarSystem.getPlanets();
-        Planet planet = planets[0];
+        TextView currPlanetName = findViewById(R.id.PlanetScreen_PlanetName);
+        TextView fuelView = findViewById(R.id.FuelRemaining);
+
+        Planet planet = planetViewModel.getCurrentPlanet();
         Location planetLocation = planet.getLocation();
         Location location = new Location(planetLocation.getX(), planetLocation.getY());
         xCor.setText(String.valueOf(player.getLocation().getX()));
@@ -93,8 +94,6 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         trade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Log.w(TAG, "TEST");
-//                Log.w(TAG, playerName);
                 Intent intent = new Intent (ConfigureCompleteActivity.this, MarketplaceStartup.class);
                 startActivity(intent);
             }

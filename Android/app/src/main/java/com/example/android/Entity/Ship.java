@@ -61,7 +61,7 @@ public class Ship {
      * @param player
      * @return
      */
-    public boolean upgradeShip(Player player) {
+    public boolean increaseFuel(Player player) {
         if (player.checkCredits(100)) {
             maxFuel += 100;
             //TODO: Subtract player credits
