@@ -19,7 +19,7 @@ public class SolarSystem {
         this.name = name;
         this.numOfPlanets = numOfPlanets;
         this.planets = planets;
-        this.planets[0] = new Planet();
+        this.planets[0] = new Planet(name);
         this.resource = PlanetAttributes.values()[(int) (Math.random() * 13)];
     }
 
@@ -39,7 +39,7 @@ public class SolarSystem {
 
     public SolarSystem() {
 //        this(new Planet().getName(), TechLevel.values()[(int)Math.random()*8], 1);
-        this(names[0], 1, new Planet[1], 0, 0);
+        this(names[count], 1, new Planet[1], 0, 0);
         count++;
 //        this.xCoordinate = (int)(Math.random() * 1001);
 //        this.yCoordinate = (int)(Math.random() * 1001);

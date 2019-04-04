@@ -65,10 +65,10 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
 
         Planet planet = planetViewModel.getCurrentPlanet();
         Location planetLocation = planet.getLocation();
-        Location location = new Location(planetLocation.getX(), planetLocation.getY());
         Player player = pvm.getPlayer();
-        player.setLocation(location);
+        player.setLocation(planetLocation);
         repo.setCurrentPlanet(planet);
+        //TODO: Come up with way to sync planet location and player location
 
         xCor.setText(String.valueOf(player.getLocation().getX()));
         yCor.setText(String.valueOf(player.getLocation().getY()));
