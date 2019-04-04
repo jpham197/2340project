@@ -50,6 +50,14 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("Space Traders: " + pvm.getPlayer().getName());
+        repo = new Repository();
+        Button trade = findViewById(R.id.PlanetTradeButton);
+        Button inventory = findViewById(R.id.PlayerInventoryButton);
+        int xPos = getIntent().getExtras().getInt("x");
+        int yPos = getIntent().getExtras().getInt("y");
+        int fuel = getIntent().getExtras().getInt("fuel");
+        Log.w(TAG, String.valueOf(xPos));
+        Log.w(TAG, String.valueOf(yPos));
         TextView xCor = findViewById(R.id.Xoutput);
         TextView yCor = findViewById(R.id.Youtput);
         TextView currPlanetName = findViewById(R.id.PlanetScreen_PlanetName);
@@ -58,34 +66,15 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         Planet planet = planetViewModel.getCurrentPlanet();
         Location planetLocation = planet.getLocation();
         Location location = new Location(planetLocation.getX(), planetLocation.getY());
-        xCor.setText(String.valueOf(player.getLocation().getX()));
-        yCor.setText(String.valueOf(player.getLocation().getY()));
-        repo = new Repository();
-        Button trade = findViewById(R.id.PlanetTradeButton);
-        Button inventory = findViewById(R.id.PlayerInventoryButton);
-        boolean flag = false;
-        int xPos = (int)Math.random() * 1000;
-        int yPos = (int)Math.random() * 1000;
-        int fuel = (int)Math.random() * 1000;
-        if (getIntent().getExtras() != null) {
-            flag = true;
-            xPos = getIntent().getExtras().getInt("x");
-            yPos = getIntent().getExtras().getInt("y");
-            fuel = getIntent().getExtras().getInt("fuel");
-        }
-//        TextView xCor = findViewById(R.id.Xoutput);
-//        TextView yCor = findViewById(R.id.Youtput);
-        TextView currPlanetName = findViewById(R.id.PlanetScreen_PlanetName);
-        TextView fuelView = findViewById(R.id.FuelRemaining);
-
+        Player player = pvm.getPlayer();
         player.setLocation(location);
         repo.setCurrentPlanet(planet);
 
-//        xCor.setText(String.valueOf(player.getLocation().getX()));
-//        yCor.setText(String.valueOf(player.getLocation().getY()));
+        xCor.setText(String.valueOf(player.getLocation().getX()));
+        yCor.setText(String.valueOf(player.getLocation().getY()));
         currPlanetName.setText("Current Planet name: " + planet.getName());
 
-        if (flag) {
+        if (xPos != 0 && yPos != 0) {
             xCor.setText(String.valueOf(xPos));
             yCor.setText(String.valueOf(yPos));
             fuelView.setText(String.valueOf(fuel));
