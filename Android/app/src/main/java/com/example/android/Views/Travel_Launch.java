@@ -64,33 +64,43 @@ public class Travel_Launch extends AppCompatActivity {
         */
         final TextView distance1 = findViewById(R.id.Travel_Distance1);
         final TextView fuel1 = findViewById(R.id.Fuel_Used1);
+        final TextView destination1 = findViewById(R.id.Travel_Destination1);
 
         final TextView distance2 = findViewById(R.id.Travel_Distance2);
         final TextView fuel2 = findViewById(R.id.Fuel_Used2);
+        final TextView destination2 = findViewById(R.id.Travel_Destination2);
 
         final TextView distance3 = findViewById(R.id.Travel_Distance3);
         final TextView fuel3 = findViewById(R.id.Fuel_Used3);
+        final TextView destination3 = findViewById(R.id.Travel_Destination3);
 
         final TextView distance4 = findViewById(R.id.Travel_Distance4);
         final TextView fuel4 = findViewById(R.id.Fuel_Used4);
+        final TextView destination4 = findViewById(R.id.Travel_Destination4);
 
         final TextView distance5 = findViewById(R.id.Travel_Distance5);
         final TextView fuel5 = findViewById(R.id.Fuel_Used5);
+        final TextView destination5 = findViewById(R.id.Travel_Destination5);
 
         final TextView distance6 = findViewById(R.id.Travel_Distance6);
         final TextView fuel6 = findViewById(R.id.Fuel_Used6);
+        final TextView destination6 = findViewById(R.id.Travel_Destination6);
 
         final TextView distance7 = findViewById(R.id.Travel_Distance7);
         final TextView fuel7 = findViewById(R.id.Fuel_Used7);
+        final TextView destination7 = findViewById(R.id.Travel_Destination7);
 
         final TextView distance8 = findViewById(R.id.Travel_Distance8);
         final TextView fuel8 = findViewById(R.id.Fuel_Used8);
+        final TextView destination8 = findViewById(R.id.Travel_Destination8);
 
         final TextView distance9 = findViewById(R.id.Travel_Distance9);
         final TextView fuel9 = findViewById(R.id.Fuel_Used9);
+        final TextView destination9 = findViewById(R.id.Travel_Destination9);
 
         final TextView distance10 = findViewById(R.id.Travel_Distance10);
         final TextView fuel10 = findViewById(R.id.Fuel_Used10);
+        final TextView destination10 = findViewById(R.id.Travel_Destination10);
 
         distance1.setText(String.valueOf(player.getLocation().calcDistance(ssvm.getSolarSystems().get(0).getPlanets()[0].getLocation())));
         fuel1.setText("20");
@@ -114,6 +124,16 @@ public class Travel_Launch extends AppCompatActivity {
 
         distance10.setText(String.valueOf(player.getLocation().calcDistance(ssvm.getSolarSystems().get(9).getPlanets()[0].getLocation())));
 
+        destination1.setText(ssvm.getSolarSystems().get(0).getPlanets()[0].getName());
+        destination2.setText(ssvm.getSolarSystems().get(1).getPlanets()[0].getName());
+        destination3.setText(ssvm.getSolarSystems().get(2).getPlanets()[0].getName());
+        destination4.setText(ssvm.getSolarSystems().get(3).getPlanets()[0].getName());
+        destination5.setText(ssvm.getSolarSystems().get(4).getPlanets()[0].getName());
+        destination6.setText(ssvm.getSolarSystems().get(5).getPlanets()[0].getName());
+        destination7.setText(ssvm.getSolarSystems().get(6).getPlanets()[0].getName());
+        destination8.setText(ssvm.getSolarSystems().get(7).getPlanets()[0].getName());
+        destination9.setText(ssvm.getSolarSystems().get(8).getPlanets()[0].getName());
+        destination10.setText(ssvm.getSolarSystems().get(9).getPlanets()[0].getName());
 
 
         final Button go1 = findViewById(R.id.Travel_Destination1_button);
