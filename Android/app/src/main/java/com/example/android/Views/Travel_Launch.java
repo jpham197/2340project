@@ -16,6 +16,7 @@ import android.view.View.OnClickListener;
 
 import com.example.android.Entity.Planet;
 import com.example.android.Entity.Player;
+import com.example.android.Entity.RandomEvent;
 import com.example.android.Entity.SolarSystem;
 import com.example.android.Model.Repository;
 import com.example.android.R;
@@ -148,11 +149,12 @@ public class Travel_Launch extends AppCompatActivity {
         final Button go10 = findViewById(R.id.Travel_Destination10_button);
         final Intent moved = new Intent(Travel_Launch.this, ConfigureCompleteActivity.class);
 
-
+        final RandomEvent RE = new RandomEvent();
 
         go1.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                player.setCredits(RE.randomTravel());
                 if (player.travel(ssvm.getSolarSystems().get(0).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
@@ -171,6 +173,7 @@ public class Travel_Launch extends AppCompatActivity {
         go2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                player.setCredits(RE.randomTravel());
                 if (player.travel(ssvm.getSolarSystems().get(1).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "Good job", Toast.LENGTH_LONG).show();
                     planetViewModel.setCurrentPlanet(ssvm.getSolarSystems().get(1).getPlanets()[0]);
@@ -188,6 +191,7 @@ public class Travel_Launch extends AppCompatActivity {
         go3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                player.setCredits(RE.randomTravel());
                 if (player.travel(ssvm.getSolarSystems().get(2).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
@@ -206,6 +210,7 @@ public class Travel_Launch extends AppCompatActivity {
         go4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                player.setCredits(RE.randomTravel());
                 if (player.travel(ssvm.getSolarSystems().get(3).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
@@ -224,6 +229,7 @@ public class Travel_Launch extends AppCompatActivity {
         go5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                player.setCredits(RE.randomTravel());
                 if (player.travel(ssvm.getSolarSystems().get(4).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
@@ -242,6 +248,7 @@ public class Travel_Launch extends AppCompatActivity {
         go6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                player.setCredits(RE.randomTravel());
                 if (player.travel(ssvm.getSolarSystems().get(5).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
@@ -261,6 +268,7 @@ public class Travel_Launch extends AppCompatActivity {
         go7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                player.setCredits(RE.randomTravel());
                 if (player.travel(ssvm.getSolarSystems().get(6).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
@@ -279,6 +287,7 @@ public class Travel_Launch extends AppCompatActivity {
         go8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                player.setCredits(RE.randomTravel());
                 if (player.travel(ssvm.getSolarSystems().get(7).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
@@ -297,6 +306,7 @@ public class Travel_Launch extends AppCompatActivity {
         go9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                player.setCredits(RE.randomTravel());
                 if (player.travel(ssvm.getSolarSystems().get(8).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
@@ -315,6 +325,7 @@ public class Travel_Launch extends AppCompatActivity {
         go10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                player.setCredits(RE.randomTravel());
                 if (player.travel(ssvm.getSolarSystems().get(9).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
