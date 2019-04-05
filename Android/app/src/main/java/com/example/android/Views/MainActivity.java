@@ -322,13 +322,14 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         createButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                Planet startPlanet = new Planet();
                 user.setName(playerName.getText().toString());
                 Universe universe = new Universe();
                 ssvm.addSolarSystemList(universe.getSolarSystems());
-                ppvm.setCurrentPlanet(new Planet());
+                ppvm.setCurrentPlanet(startPlanet);
                 pvm.addPlayer(user);
                 user.setShip(new Ship(100, ShipType.Gnat));
-                user.setLocation(new Location(0, 0));
+                user.setLocation(startPlanet.getLocation());
                 user.setCredits(5000);
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
                         != 16) {
