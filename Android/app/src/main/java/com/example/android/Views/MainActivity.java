@@ -1,8 +1,13 @@
 package com.example.android.Views;
 
+import android.animation.ValueAnimator;
+import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
+import android.support.constraint.Constraints;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +15,8 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -19,13 +26,25 @@ import android.view.View.OnClickListener;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.List;
 
+import com.example.android.Entity.Location;
+import com.example.android.Entity.Planet;
 import com.example.android.Entity.Player;
+import com.example.android.Entity.Ship;
+import com.example.android.Entity.ShipType;
+import com.example.android.Entity.SolarSystem;
 import com.example.android.Entity.Universe;
+import com.example.android.Model.Repository;
 import com.example.android.R;
+import com.example.android.ViewModels.PlanetViewModel;
 import com.example.android.ViewModels.PlayerViewModel;
+import com.example.android.ViewModels.SolarSystemViewModel;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Serializable {
 
     private static final String TAG = "MainActivity";
     Player user = new Player();
@@ -33,11 +52,46 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         final PlayerViewModel pvm = ViewModelProviders.of(this).get(PlayerViewModel.class);
+        final SolarSystemViewModel ssvm = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
+        final PlanetViewModel ppvm = ViewModelProviders.of(this).get(PlanetViewModel.class);
         setTitle("Space Traders");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+//        //Animating Background section
+//        ConstraintLayout gradient = findViewById(R.id.coordinatorLayout2);
+//        AnimationDrawable gradientAnimate = (AnimationDrawable) gradient.getBackground();
+//        gradientAnimate.setEnterFadeDuration(2000);
+//        gradientAnimate.setExitFadeDuration(4000);
+//        gradientAnimate.start();
+//        //
+        final ImageView background1 = findViewById(R.id.background_one);
+        final ImageView background2 = findViewById(R.id.background_two);
+        final ImageView background3 = findViewById(R.id.background_three);
+        final ImageView background4 = findViewById(R.id.background_four);
+       // final ImageView background5 = findViewById(R.id.background_five);
+       // final ImageView background6 = findViewById(R.id.background_six);
+        final ValueAnimator animate = ValueAnimator.ofFloat(0.0f, 1.0f);
+        animate.setRepeatCount(ValueAnimator.INFINITE);
+        animate.setInterpolator(new LinearInterpolator());
+        animate.setDuration(20000L);
+        animate.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                final float progress = (float) animation.getAnimatedValue();
+                final float width = background1.getWidth();
+                final float translationX = width * progress;
+                background1.setTranslationX(translationX);
+                background2.setTranslationX(translationX - width);
+               background3.setTranslationX(translationX);
+               background4.setTranslationX(translationX - width);
+               // background5.setTranslationX(translationX);
+                //background6.setTranslationX(translationX - width);
+            }
+        });
+        animate.start();
 
 
         String[] arraySpinner = new String[] {
@@ -52,9 +106,21 @@ public class MainActivity extends AppCompatActivity {
         final TextView skillTraderLevel = findViewById(R.id.skillTraderLevel);
         final Button createButton = findViewById(R.id.createButton);
 
-        Button addPilot = findViewById(R.id.skillPilotIncrease);
+        final Button addPilot = findViewById(R.id.skillPilotIncrease);
         final Button subPilot = findViewById(R.id.skillPilotDecrease);
+        final Button addFighter = findViewById(R.id.skillFighterIncrease);
+        final Button subFighter = findViewById(R.id.skillFighterDecrease);
+        final Button addEngineer = findViewById(R.id.skillEngineerIncrease);
+        final Button subEngineer = findViewById(R.id.skillEngineerDecrease);
+        final Button addTrader = findViewById(R.id.skillTraderIncrease);
+        final Button subTrader = findViewById(R.id.skillTraderDecrease);
+        subPilot.setEnabled(false);
+        subEngineer.setEnabled(false);
+        subFighter.setEnabled(false);
+        subTrader.setEnabled(false);
+
         createButton.setEnabled(false);
+
         playerName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -82,12 +148,19 @@ public class MainActivity extends AppCompatActivity {
                 subPilot.setEnabled(true);
                 int current = Integer.parseInt(skillPilotLevel.getText().toString());
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                        != 16) {
+                        < 16) {
                     current++;
                     user.setPilot(current);
-                } else {
-                    Toast.makeText(getApplication(), "No more Skill Points left.",
-                            Toast.LENGTH_LONG).show();
+//                    user.setName(playerName.getText().toString());
+                    if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                            == 16) {
+                        addPilot.setEnabled(false);
+                        addFighter.setEnabled(false);
+                        addEngineer.setEnabled(false);
+                        addTrader.setEnabled(false);
+                        Toast.makeText(getApplication(), "No more Skill Points left",
+                                Toast.LENGTH_LONG).show();
+                    }
                 }
                 skillPilotLevel.setText(String.valueOf(current));
             }
@@ -96,19 +169,21 @@ public class MainActivity extends AppCompatActivity {
         subPilot.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                addEngineer.setEnabled(true);
+                addFighter.setEnabled(true);
+                addPilot.setEnabled(true);
+                addTrader.setEnabled(true);
                 int current = Integer.parseInt(skillPilotLevel.getText().toString());
                 if (current > 0) {
                     current--;
                     user.setPilot(current);
-                } else {
-                    subPilot.setEnabled(false);
+                    if (current == 0) {
+                        subPilot.setEnabled(false);
+                    }
                 }
                 skillPilotLevel.setText(String.valueOf(current));
             }
         });
-
-        Button addFighter = findViewById(R.id.skillFighterIncrease);
-        final Button subFighter = findViewById(R.id.skillFighterDecrease);
 
         addFighter.setOnClickListener(new OnClickListener() {
             @Override
@@ -116,12 +191,18 @@ public class MainActivity extends AppCompatActivity {
                 subFighter.setEnabled(true);
                 int current = Integer.parseInt(skillFighterLevel.getText().toString());
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                        != 16) {
+                        < 16) {
                     current++;
                     user.setFighter(current);
-                } else {
-                    Toast.makeText(getApplication(), "No more Skill Points left.",
-                            Toast.LENGTH_LONG).show();
+                    if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                            == 16) {
+                        addPilot.setEnabled(false);
+                        addFighter.setEnabled(false);
+                        addEngineer.setEnabled(false);
+                        addTrader.setEnabled(false);
+                        Toast.makeText(getApplication(), "No more Skill Points left",
+                                Toast.LENGTH_LONG).show();
+                    }
                 }
                 skillFighterLevel.setText(String.valueOf(current));
             }
@@ -130,20 +211,21 @@ public class MainActivity extends AppCompatActivity {
         subFighter.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                addEngineer.setEnabled(true);
+                addFighter.setEnabled(true);
+                addPilot.setEnabled(true);
+                addTrader.setEnabled(true);
                 int current = Integer.parseInt(skillFighterLevel.getText().toString());
                 if (current > 0) {
                     current--;
                     user.setFighter(current);
-                } else {
-                    subFighter.setEnabled(false);
+                    if (current == 0) {
+                        subFighter.setEnabled(false);
+                    }
                 }
                 skillFighterLevel.setText(String.valueOf(current));
             }
         });
-
-
-        Button addEngineer = findViewById(R.id.skillEngineerIncrease);
-        final Button subEngineer = findViewById(R.id.skillEngineerDecrease);
 
         addEngineer.setOnClickListener(new OnClickListener() {
             @Override
@@ -151,12 +233,18 @@ public class MainActivity extends AppCompatActivity {
                 subEngineer.setEnabled(true);
                 int current = Integer.parseInt(skillEngineerLevel.getText().toString());
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                        != 16) {
+                        < 16) {
                     current++;
                     user.setEngineer(current);
-                } else {
-                    Toast.makeText(getApplication(), "No more Skill Points left.",
-                            Toast.LENGTH_LONG).show();
+                    if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                            == 16) {
+                        addPilot.setEnabled(false);
+                        addFighter.setEnabled(false);
+                        addEngineer.setEnabled(false);
+                        addTrader.setEnabled(false);
+                        Toast.makeText(getApplication(), "No more Skill Points left",
+                                Toast.LENGTH_LONG).show();
+                    }
                 }
                 skillEngineerLevel.setText(String.valueOf(current));
             }
@@ -165,19 +253,21 @@ public class MainActivity extends AppCompatActivity {
         subEngineer.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                addEngineer.setEnabled(true);
+                addFighter.setEnabled(true);
+                addPilot.setEnabled(true);
+                addTrader.setEnabled(true);
                 int current = Integer.parseInt(skillEngineerLevel.getText().toString());
                 if (current > 0) {
                     current--;
                     user.setEngineer(current);
-                } else {
-                    subEngineer.setEnabled(false);
+                    if (current == 0) {
+                        subEngineer.setEnabled(false);
+                    }
                 }
                 skillEngineerLevel.setText(String.valueOf(current));
             }
         });
-
-        Button addTrader = findViewById(R.id.skillTraderIncrease);
-        final Button subTrader = findViewById(R.id.skillTraderDecrease);
 
         addTrader.setOnClickListener(new OnClickListener() {
             @Override
@@ -185,12 +275,18 @@ public class MainActivity extends AppCompatActivity {
                 subTrader.setEnabled(true);
                 int current = Integer.parseInt(skillTraderLevel.getText().toString());
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                        != 16) {
+                        < 16) {
                     current++;
                     user.setTrader(current);
-                } else {
-                    Toast.makeText(getApplication(), "No more Skill Points left.",
-                            Toast.LENGTH_LONG).show();
+                    if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                            == 16) {
+                        addPilot.setEnabled(false);
+                        addFighter.setEnabled(false);
+                        addEngineer.setEnabled(false);
+                        addTrader.setEnabled(false);
+                        Toast.makeText(getApplication(), "No more Skill Points left",
+                                Toast.LENGTH_LONG).show();
+                    }
                 }
                 skillTraderLevel.setText(String.valueOf(current));
             }
@@ -199,12 +295,17 @@ public class MainActivity extends AppCompatActivity {
         subTrader.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                addEngineer.setEnabled(true);
+                addFighter.setEnabled(true);
+                addPilot.setEnabled(true);
+                addTrader.setEnabled(true);
                 int current = Integer.parseInt(skillTraderLevel.getText().toString());
                 if (current > 0) {
                     current--;
                     user.setTrader(current);
-                } else {
-                    subTrader.setEnabled(false);
+                    if (current == 0) {
+                        subTrader.setEnabled(false);
+                    }
                 }
                 skillTraderLevel.setText(String.valueOf(current));
             }
@@ -222,8 +323,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 user.setName(playerName.getText().toString());
-                Log.w(TAG, new Universe().toString());
+                Universe universe = new Universe();
+                ssvm.addSolarSystemList(universe.getSolarSystems());
+                ppvm.setCurrentPlanet(new Planet());
                 pvm.addPlayer(user);
+                user.setShip(new Ship(100, ShipType.Gnat));
+                user.setLocation(new Location(0, 0));
+                user.setCredits(5000);
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
                         != 16) {
                     Toast.makeText(getApplication(), "You still have " +
@@ -237,9 +343,16 @@ public class MainActivity extends AppCompatActivity {
                             + "\nFighter Skill: " + user.getFighter()
                             + "\nTrader Skill: " + user.getTrader()
                             + "\nEngineer Skill: " + user.getEngineer();
-                    Log.w(TAG, playerInformation);
-                    Intent intent = new Intent (MainActivity.this,
-                            ConfigureCompleteActivity.class);
+//                    Log.w(TAG, playerInformation);
+                    Intent intent = new Intent(getBaseContext(), ConfigureCompleteActivity.class);
+                    intent.putExtra("playerName", user.getName());
+                    intent.putExtra("playerPilotSkill", user.getPilot());
+                    intent.putExtra("playerFighterSkill", user.getFighter());
+                    intent.putExtra("playerTraderSkill", user.getTrader());
+                    intent.putExtra("playerEngineerSkill", user.getEngineer());
+                    intent.putExtra("playerShip", user.getShip().toString());
+                    intent.putExtra("playerLocation", user.getLocation().toString());
+                    intent.putExtra("playerCredits", user.getCredits());
                     startActivity(intent);
                 }
             }
@@ -255,6 +368,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    void serialize() {
+//        FileOutputStream file = new FileOutputStream("/../entity/player.ser");
     }
 
 }

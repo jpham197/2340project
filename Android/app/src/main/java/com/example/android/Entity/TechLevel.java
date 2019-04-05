@@ -10,14 +10,23 @@ public enum TechLevel {
     POSTINDUSTRIAL(6, "Post-Industrial"),
     HITECH(7, "Hi-Tech");
 
-    TechLevel(int index, String techLV) {
+    private final int index;
+    private final String techLV;
 
+    TechLevel(int index, String techLV) {
+        this.index = index;
+        this.techLV = techLV;
     }
     public TechLevel[] getTechLevels() {
         return TechLevel.values();
     }
+
     public TechLevel getRandomTechLevel() {
         int randomNum = (int) Math.random() * 7;
         return getTechLevels()[randomNum];
+    }
+
+    public int getTechLevel() {
+        return index;
     }
 }
