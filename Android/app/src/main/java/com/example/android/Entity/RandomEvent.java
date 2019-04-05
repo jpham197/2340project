@@ -9,7 +9,7 @@ public class RandomEvent {
         int randomE = (int) (Math.random() * 10);
         if (randomE < 3) {
             return 0;
-        } else if (randomE < 6 && randomE >= 3) {
+        } else if (randomE >= 3 && randomE < 6) {
             return 1;
         } else {
             return -1;
@@ -19,13 +19,13 @@ public class RandomEvent {
     /**
      *
      */
-    public int randomTravel() {
+    public int randomMoney(int current) {
         if (randomEvent() ==  0) {
-            return 0;
+            return current;
         } else if (randomEvent() == 1) {
-            return randomEvent() * 100;
+            return (int) Math.random() * 1000;
         } else {
-            return randomEvent() * 100 * -1;
+            return (int) Math.random() * 1000 * -1;
         }
     }
 
@@ -33,13 +33,13 @@ public class RandomEvent {
      *
      * @return
      */
-    public int randomFuel() {
+    public int randomFuel(int current) {
         if (randomEvent() ==  0) {
-            return 0;
+            return current;
         } else if (randomEvent() == 1) {
-            return randomEvent() * 100;
+            return 0;
         } else {
-            return randomEvent() * 100 * -1;
+            return (int) (Math.random() * 9 + 1) * -1;
         }
     }
 
