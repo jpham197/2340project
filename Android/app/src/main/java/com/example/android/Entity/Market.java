@@ -9,6 +9,7 @@ public class Market {
     //<Item, Stock>
     private HashMap<String, Integer> storage;
     private TechLevel techLevel;
+//    private RandomEvent RE = new RandomEvent();
 
     /**
      * Plain constructor for Market, sets everything to base price and stock to 0

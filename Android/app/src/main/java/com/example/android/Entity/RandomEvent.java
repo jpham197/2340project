@@ -7,40 +7,57 @@ public class RandomEvent {
      */
     public int randomEvent() {
         int randomE = (int) (Math.random() * 10);
-        if (randomE < 3) {
+        if (randomE < 8) {
             return 0;
-        } else if (randomE >= 3 && randomE < 6) {
+        } else if (randomE > 8) {
             return 1;
         } else {
             return -1;
         }
     }
 
+    public boolean eventOccured() {
+        return  (randomEvent() != 0);
+    }
+
     /**
      *
      */
-    public int randomMoney(int current) {
-        if (randomEvent() ==  0) {
-            return current;
-        } else if (randomEvent() == 1) {
-            return (int) Math.random() * 1000;
-        } else {
-            return (int) Math.random() * 1000 * -1;
+    public int randomMoney(int current, boolean occur) {
+        if (occur) {
+            if (randomEvent() == 1) {
+                return (int) Math.random() * 1000 + 1;
+            } else {
+                return (int) Math.random() * 1000 * -1 + current;
+            }
         }
+        return current;
     }
 
     /**
      *
      * @return
      */
-    public int randomFuel(int current) {
-        if (randomEvent() ==  0) {
-            return current;
-        } else if (randomEvent() == 1) {
-            return 0;
-        } else {
-            return (int) (Math.random() * 9 + 1) * -1;
+    public int randomFuel(int current, boolean occur) {
+        if (occur) {
+            if (randomEvent() == 1) {
+                return current;
+            } else {
+                return (int) (Math.random() * 9 + 1) * -1 + current;
+            }
         }
+        return current;
     }
+
+//    public double randomMarketMultiplier() {
+//        if (randomEvent() ==  0) {
+//            return 1;
+//        } else if (randomEvent() == 1) {
+//            return ((Math.random() * 100 + 1)/ 101) + 1;
+//        } else {
+//            return (Math.random() * 100 + 1) / 101;
+//        }
+//    }
+
 
 }

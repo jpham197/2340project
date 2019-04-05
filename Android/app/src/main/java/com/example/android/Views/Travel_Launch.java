@@ -156,10 +156,20 @@ public class Travel_Launch extends AppCompatActivity {
         go1.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                player.setCredits(RE.randomMoney(player.getCredits()));
-                ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel()));
-                if (player.travel(ssvm.getSolarSystems().get(0).getPlanets()[0].getLocation())) {
-                    Toast.makeText(getApplication(), "You have traveled successfully!",
+            Boolean event = RE.eventOccured();
+            Boolean event2 = RE.eventOccured();
+                player.setCredits(RE.randomMoney(player.getCredits(), event));
+                ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel(), event2));
+                if (player.travel(ssvm.getSolarSystems().get(0).getPlanets()[0].getLocation()) && (event || event2)) {
+                    Toast.makeText(getApplication(), "You Something happened....",
+                            Toast.LENGTH_LONG).show();
+                    planetViewModel.setCurrentPlanet(ssvm.getSolarSystems().get(0).getPlanets()[0]);
+                    moved.putExtra("x", player.getLocation().getX());
+                    moved.putExtra("y", player.getLocation().getY());
+                    moved.putExtra("fuel", player.getShip().getFuel());
+                    startActivity(moved);
+                } else if (player.travel(ssvm.getSolarSystems().get(0).getPlanets()[0].getLocation())) {
+                    Toast.makeText(getApplication(), "You have traveled successfully",
                             Toast.LENGTH_LONG).show();
                     planetViewModel.setCurrentPlanet(ssvm.getSolarSystems().get(0).getPlanets()[0]);
                     moved.putExtra("x", player.getLocation().getX());
@@ -171,15 +181,29 @@ public class Travel_Launch extends AppCompatActivity {
                             Toast.LENGTH_LONG).show();
                 }
             }
+
+
         });
 
         go2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                player.setCredits(RE.randomMoney(player.getCredits()));
-                ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel()));
-                if (player.travel(ssvm.getSolarSystems().get(1).getPlanets()[0].getLocation())) {
-                    Toast.makeText(getApplication(), "Good job", Toast.LENGTH_LONG).show();
+                Boolean event = RE.eventOccured();
+                Boolean event2 = RE.eventOccured();
+                    player.setCredits(RE.randomMoney(player.getCredits(), event));
+                    ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel(), event2));
+                if (player.travel(ssvm.getSolarSystems().get(1).getPlanets()[0].getLocation()) && (event || event2)) {
+                    Toast.makeText(getApplication(), "Something happened..",
+                            Toast.LENGTH_LONG).show();
+                    planetViewModel.setCurrentPlanet(ssvm.getSolarSystems().get(1).getPlanets()[0]);
+                    distance3.setText(String.valueOf(player.getLocation().calcDistance(ssvm.getSolarSystems().get(2).getPlanets()[0].getLocation())));
+                    moved.putExtra("x", player.getLocation().getX());
+                    moved.putExtra("y", player.getLocation().getY());
+                    moved.putExtra("fuel", player.getShip().getFuel());
+                    startActivity(moved);
+                } else if (player.travel(ssvm.getSolarSystems().get(1).getPlanets()[0].getLocation())) {
+                    Toast.makeText(getApplication(), "You have moved successfully",
+                            Toast.LENGTH_LONG).show();
                     planetViewModel.setCurrentPlanet(ssvm.getSolarSystems().get(1).getPlanets()[0]);
                     distance3.setText(String.valueOf(player.getLocation().calcDistance(ssvm.getSolarSystems().get(2).getPlanets()[0].getLocation())));
                     moved.putExtra("x", player.getLocation().getX());
@@ -192,12 +216,26 @@ public class Travel_Launch extends AppCompatActivity {
             }
         });
 
+
+
         go3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                player.setCredits(RE.randomMoney(player.getCredits()));
-                ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel()));
-                if (player.travel(ssvm.getSolarSystems().get(2).getPlanets()[0].getLocation())) {
+                Boolean event = RE.eventOccured();
+                Boolean event2 = RE.eventOccured();
+                    player.setCredits(RE.randomMoney(player.getCredits(), event));
+                    ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel(), event2));
+                                        Toast.makeText(getApplication(), "Something happened....",
+                            Toast.LENGTH_LONG).show();
+                if (player.travel(ssvm.getSolarSystems().get(2).getPlanets()[0].getLocation()) && (event || event2)) {
+                    Toast.makeText(getApplication(), "Something happened....",
+                            Toast.LENGTH_LONG).show();
+                    planetViewModel.setCurrentPlanet(ssvm.getSolarSystems().get(0).getPlanets()[0]);
+                    moved.putExtra("x", player.getLocation().getX());
+                    moved.putExtra("y", player.getLocation().getY());
+                    moved.putExtra("fuel", player.getShip().getFuel());
+                    startActivity(moved);
+                } else if (player.travel(ssvm.getSolarSystems().get(2).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
                     planetViewModel.setCurrentPlanet(ssvm.getSolarSystems().get(0).getPlanets()[0]);
@@ -212,12 +250,24 @@ public class Travel_Launch extends AppCompatActivity {
             }
         });
 
+
+
         go4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                player.setCredits(RE.randomMoney(player.getCredits()));
-                ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel()));
-                if (player.travel(ssvm.getSolarSystems().get(3).getPlanets()[0].getLocation())) {
+                Boolean event = RE.eventOccured();
+                Boolean event2 = RE.eventOccured();
+                    player.setCredits(RE.randomMoney(player.getCredits(), event));
+                    ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel(), event2));
+                if (player.travel(ssvm.getSolarSystems().get(3).getPlanets()[0].getLocation()) && (event || event2)) {
+                    Toast.makeText(getApplication(), "Something happened....",
+                            Toast.LENGTH_LONG).show();
+                    planetViewModel.setCurrentPlanet(ssvm.getSolarSystems().get(0).getPlanets()[0]);
+                    moved.putExtra("x", player.getLocation().getX());
+                    moved.putExtra("y", player.getLocation().getY());
+                    moved.putExtra("fuel", player.getShip().getFuel());
+                    startActivity(moved);
+                } else if (player.travel(ssvm.getSolarSystems().get(3).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
                     planetViewModel.setCurrentPlanet(ssvm.getSolarSystems().get(0).getPlanets()[0]);
@@ -235,8 +285,14 @@ public class Travel_Launch extends AppCompatActivity {
         go5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                player.setCredits(RE.randomMoney(player.getCredits()));
-                ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel()));
+                Boolean event = RE.eventOccured();
+                Boolean event2 = RE.eventOccured();
+                if (event || event2) {
+                    player.setCredits(RE.randomMoney(player.getCredits(), event));
+                    ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel(), event2));
+                                        Toast.makeText(getApplication(), "Something happened....",
+                            Toast.LENGTH_LONG).show();
+                }
                 if (player.travel(ssvm.getSolarSystems().get(4).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
@@ -252,11 +308,19 @@ public class Travel_Launch extends AppCompatActivity {
             }
         });
 
+
+
         go6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                player.setCredits(RE.randomMoney(player.getCredits()));
-                ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel()));
+                Boolean event = RE.eventOccured();
+                Boolean event2 = RE.eventOccured();
+                if (event || event2) {
+                    player.setCredits(RE.randomMoney(player.getCredits(), event));
+                    ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel(), event2));
+                                        Toast.makeText(getApplication(), "Something happened....",
+                            Toast.LENGTH_LONG).show();
+                }
                 if (player.travel(ssvm.getSolarSystems().get(5).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
@@ -273,11 +337,19 @@ public class Travel_Launch extends AppCompatActivity {
         });
 
 
+
+
         go7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                player.setCredits(RE.randomMoney(player.getCredits()));
-                ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel()));
+                Boolean event = RE.eventOccured();
+                Boolean event2 = RE.eventOccured();
+                if (event || event2) {
+                    player.setCredits(RE.randomMoney(player.getCredits(), event));
+                    ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel(), event2));
+                                        Toast.makeText(getApplication(), "Something happened....",
+                            Toast.LENGTH_LONG).show();
+                }
                 if (player.travel(ssvm.getSolarSystems().get(6).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
@@ -293,11 +365,19 @@ public class Travel_Launch extends AppCompatActivity {
             }
         });
 
+
+
         go8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                player.setCredits(RE.randomMoney(player.getCredits()));
-                ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel()));
+                Boolean event = RE.eventOccured();
+                Boolean event2 = RE.eventOccured();
+                if (event || event2) {
+                    player.setCredits(RE.randomMoney(player.getCredits(), event));
+                    ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel(), event2));
+                                        Toast.makeText(getApplication(), "Something happened....",
+                            Toast.LENGTH_LONG).show();
+                }
                 if (player.travel(ssvm.getSolarSystems().get(7).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
@@ -313,11 +393,19 @@ public class Travel_Launch extends AppCompatActivity {
             }
         });
 
+
+
         go9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                player.setCredits(RE.randomMoney(player.getCredits()));
-                ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel()));
+                Boolean event = RE.eventOccured();
+                Boolean event2 = RE.eventOccured();
+                if (event || event2) {
+                    player.setCredits(RE.randomMoney(player.getCredits(), event));
+                    ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel(), event2));
+                                        Toast.makeText(getApplication(), "Something happened....",
+                            Toast.LENGTH_LONG).show();
+                }
                 if (player.travel(ssvm.getSolarSystems().get(8).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
@@ -333,11 +421,19 @@ public class Travel_Launch extends AppCompatActivity {
             }
         });
 
+
+
         go10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                player.setCredits(RE.randomMoney(player.getCredits()));
-                ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel()));
+                Boolean event = RE.eventOccured();
+                Boolean event2 = RE.eventOccured();
+                if (event || event2) {
+                    player.setCredits(RE.randomMoney(player.getCredits(), event));
+                    ship.setCurrentFuel(RE.randomFuel(player.getShip().getFuel(), event2));
+                                        Toast.makeText(getApplication(), "Something happened....",
+                            Toast.LENGTH_LONG).show();
+                }
                 if (player.travel(ssvm.getSolarSystems().get(9).getPlanets()[0].getLocation())) {
                     Toast.makeText(getApplication(), "You have traveled successfully!",
                             Toast.LENGTH_LONG).show();
@@ -352,6 +448,8 @@ public class Travel_Launch extends AppCompatActivity {
                 }
             }
         });
+
+
 
 
     }
