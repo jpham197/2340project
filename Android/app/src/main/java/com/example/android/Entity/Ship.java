@@ -46,10 +46,9 @@ public class Ship {
      * @return
      */
     public boolean refuel(Player player) {
-        if (player.checkCredits(maxFuel - currentFuel)) {
+        if (player.checkCredits(3 * (maxFuel - currentFuel))) {
+            int cost = 3 * (maxFuel - currentFuel);
             currentFuel = maxFuel;
-            //TODO: Subtract player credits
-            int cost = 3 * maxFuel;
             player.setCredits(player.getCredits() - cost);
             return true;
         }
