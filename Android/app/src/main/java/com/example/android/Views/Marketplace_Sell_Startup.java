@@ -94,7 +94,7 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
 
         final Player player = playervm.getPlayer();
         final Inventory inventory = player.getInventory();
-        final Planet planet = pvm.getPlanet();
+        final Planet planet = pvm.getCurrentPlanet();
         final Market market = planet.getWholeMarket();
         credits.setText(String.valueOf(player.getCredits()));
 

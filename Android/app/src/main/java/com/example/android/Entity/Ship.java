@@ -1,6 +1,8 @@
 package com.example.android.Entity;
 
-public class Ship {
+import java.io.Serializable;
+
+public class Ship implements Serializable {
     private int currentFuel;
     private int maxFuel;
     private ShipType type;

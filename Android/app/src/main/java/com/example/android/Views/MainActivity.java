@@ -26,7 +26,10 @@ import android.view.View.OnClickListener;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.List;
@@ -354,6 +357,17 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                     intent.putExtra("playerLocation", user.getLocation().toString());
                     intent.putExtra("playerCredits", user.getCredits());
                     startActivity(intent);
+                }
+                try {
+                    File directory = new File(getCacheDir(), "Player.ser");
+                    FileOutputStream fileOut = new FileOutputStream(directory);
+                    ObjectOutput out = new ObjectOutputStream(fileOut);
+                    out.writeObject(user);
+                    out.close();
+                    fileOut.close();
+                    System.out.println("Serialized data is saved in player.ser " + user.toString());
+                } catch (IOException i) {
+                    i.printStackTrace();
                 }
             }
         });

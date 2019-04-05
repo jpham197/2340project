@@ -24,6 +24,10 @@ import com.example.android.ViewModels.PlanetViewModel;
 import com.example.android.ViewModels.PlayerViewModel;
 import com.example.android.ViewModels.SolarSystemViewModel;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
 import java.util.List;
 
 public class ConfigureCompleteActivity extends AppCompatActivity {
@@ -104,6 +108,7 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
 
     }

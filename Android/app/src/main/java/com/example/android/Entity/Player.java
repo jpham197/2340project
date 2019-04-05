@@ -1,6 +1,8 @@
 package com.example.android.Entity;
 
-public class Player {
+import java.io.Serializable;
+
+public class Player implements Serializable {
     private String name;
     private int credits;
     private int pilot;
@@ -195,5 +197,9 @@ public class Player {
         } else {
             return false;
         }
+    }
+
+    public String toString() {
+        return name + " " +(credits) + " " + pilot + " " + (fighter) + " " +(trader) + " " + (engineer) + " " +(skillPointsAvailable);
     }
 }

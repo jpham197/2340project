@@ -1,10 +1,11 @@
 package com.example.android.Entity;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-public class Inventory {
+public class Inventory implements Serializable {
     private final int inventorySize; //capacity
     private final HashMap<String, Integer> inventory;
     private final int maxInv = 20;

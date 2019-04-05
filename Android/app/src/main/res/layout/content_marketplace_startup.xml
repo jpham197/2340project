@@ -158,6 +158,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
+        android:layout_marginTop="4dp"
         android:gravity="center_horizontal"
         android:text="Water"
         android:textSize="20sp"
@@ -603,18 +604,21 @@
         android:id="@+id/Marketplace_buy"
         android:layout_width="32dp"
         android:layout_height="31dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="52dp"
         android:text="Buy"
+        app:layout_constraintBottom_toTopOf="@+id/Market_Items_Selected"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
 
     <Button
         android:id="@+id/Marketplace_sell"
         android:layout_width="30dp"
         android:layout_height="28dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="Sell"
