@@ -16,6 +16,7 @@ import com.example.android.Entity.Inventory;
 import com.example.android.Entity.Item;
 import com.example.android.Entity.ItemType;
 import com.example.android.Entity.Player;
+import com.example.android.Entity.RandomEvent;
 import com.example.android.R;
 import com.example.android.ViewModels.PlanetViewModel;
 import com.example.android.ViewModels.PlayerViewModel;
