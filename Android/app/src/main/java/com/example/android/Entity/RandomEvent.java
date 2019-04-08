@@ -7,7 +7,7 @@ public class RandomEvent {
      */
     public int randomEvent() {
         int randomE = (int) (Math.random() * 10);
-        if (randomE < 8) {
+        if (randomE < 1) {
             return 0;
         } else if (randomE > 8) {
             return 1;
@@ -26,9 +26,9 @@ public class RandomEvent {
     public int randomMoney(int current, boolean occur) {
         if (occur) {
             if (randomEvent() == 1) {
-                return (int) Math.random() * 1000 + 1;
+                return (int) (Math.random() * 100 + 1) + current;
             } else {
-                return (int) Math.random() * 1000 * -1 + current;
+                return current - (int) (Math.random() * 100 * -1);
             }
         }
         return current;
@@ -43,7 +43,7 @@ public class RandomEvent {
             if (randomEvent() == 1) {
                 return current;
             } else {
-                return (int) (Math.random() * 9 + 1) * -1 + current;
+                return (int) ((Math.random() * 9 + 1) * -1) + current;
             }
         }
         return current;

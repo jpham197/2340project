@@ -5,7 +5,9 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.Constraints;
 import android.support.design.widget.FloatingActionButton;
@@ -26,6 +28,7 @@ import android.view.View.OnClickListener;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
@@ -43,8 +46,11 @@ import com.example.android.R;
 import com.example.android.ViewModels.PlanetViewModel;
 import com.example.android.ViewModels.PlayerViewModel;
 import com.example.android.ViewModels.SolarSystemViewModel;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity implements Serializable {
+public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     Player user = new Player();
@@ -56,9 +62,14 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         final PlanetViewModel ppvm = ViewModelProviders.of(this).get(PlanetViewModel.class);
         setTitle("Space Traders");
         super.onCreate(savedInstanceState);
+        FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        final DatabaseReference databasePlayer;
+        databasePlayer = FirebaseDatabase.getInstance().getReference("players");
+
 
 //        //Animating Background section
 //        ConstraintLayout gradient = findViewById(R.id.coordinatorLayout2);
@@ -353,6 +364,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                     intent.putExtra("playerShip", user.getShip().toString());
                     intent.putExtra("playerLocation", user.getLocation().toString());
                     intent.putExtra("playerCredits", user.getCredits());
+                    String id = databasePlayer.push().getKey();
+                    databasePlayer.child(id).setValue(user);
                     startActivity(intent);
                 }
             }
