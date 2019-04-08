@@ -69,15 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         final DatabaseReference databasePlayer;
         databasePlayer = FirebaseDatabase.getInstance().getReference("players");
-
-
-//        //Animating Background section
-//        ConstraintLayout gradient = findViewById(R.id.coordinatorLayout2);
-//        AnimationDrawable gradientAnimate = (AnimationDrawable) gradient.getBackground();
-//        gradientAnimate.setEnterFadeDuration(2000);
-//        gradientAnimate.setExitFadeDuration(4000);
-//        gradientAnimate.start();
-//        //
+      
         final ImageView background1 = findViewById(R.id.background_one);
         final ImageView background2 = findViewById(R.id.background_two);
         final ImageView background3 = findViewById(R.id.background_three);
@@ -87,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         final ValueAnimator animate = ValueAnimator.ofFloat(0.0f, 1.0f);
         animate.setRepeatCount(ValueAnimator.INFINITE);
         animate.setInterpolator(new LinearInterpolator());
-        animate.setDuration(20000L);
+        animate.setDuration(40000L);
         animate.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -333,13 +325,14 @@ public class MainActivity extends AppCompatActivity {
         createButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                Planet startPlanet = new Planet();
                 user.setName(playerName.getText().toString());
                 Universe universe = new Universe();
                 ssvm.addSolarSystemList(universe.getSolarSystems());
-                ppvm.setCurrentPlanet(new Planet());
+                ppvm.setCurrentPlanet(startPlanet);
                 pvm.addPlayer(user);
                 user.setShip(new Ship(100, ShipType.Gnat));
-                user.setLocation(new Location(0, 0));
+                user.setLocation(startPlanet.getLocation());
                 user.setCredits(5000);
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
                         != 16) {
