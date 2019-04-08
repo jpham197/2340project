@@ -23,6 +23,10 @@ public class Ship {
         return this.currentFuel;
     }
 
+    public void setCurrentFuel(int currentFuel) {
+        this.currentFuel = currentFuel;
+    }
+
     /**
      * @param origin Where you're leaving from
      * @param destination Where you're going to
@@ -30,8 +34,9 @@ public class Ship {
      */
     public Location travel(Location origin, Location destination) {
         int distance = origin.calcDistance(destination);
-        if (currentFuel > 0 && currentFuel > (distance / 100)) {
-            currentFuel -= 20;
+        int fuelCost = fuelCost(origin, destination);
+        if ((currentFuel - fuelCost) >= 0) {
+            currentFuel -= fuelCost;
             return destination;
         } else {
             return null;
@@ -45,9 +50,10 @@ public class Ship {
      * @return
      */
     public boolean refuel(Player player) {
-        if (player.checkCredits(maxFuel - currentFuel)) {
+        if (player.checkCredits(3 * (maxFuel - currentFuel))) {
+            int cost = 3 * (maxFuel - currentFuel);
             currentFuel = maxFuel;
-            //TODO: Subtract player credits
+            player.setCredits(player.getCredits() - cost);
             return true;
         }
         return false;
@@ -58,12 +64,18 @@ public class Ship {
      * @param player
      * @return
      */
-    public boolean upgradeShip(Player player) {
+    public boolean increaseFuel(Player player) {
         if (player.checkCredits(100)) {
             maxFuel += 100;
             //TODO: Subtract player credits
             return true;
         }
         return false;
+    }
+
+    public int fuelCost(Location origin, Location destination){
+        int distance = origin.calcDistance(destination);
+        int fuelCost = ((100 + distance) / 100);
+        return fuelCost;
     }
 }
