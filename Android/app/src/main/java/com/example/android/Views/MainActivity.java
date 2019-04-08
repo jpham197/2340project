@@ -60,13 +60,6 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        //Animating Background section
-//        ConstraintLayout gradient = findViewById(R.id.coordinatorLayout2);
-//        AnimationDrawable gradientAnimate = (AnimationDrawable) gradient.getBackground();
-//        gradientAnimate.setEnterFadeDuration(2000);
-//        gradientAnimate.setExitFadeDuration(4000);
-//        gradientAnimate.start();
-//        //
         final ImageView background1 = findViewById(R.id.background_one);
         final ImageView background2 = findViewById(R.id.background_two);
         final ImageView background3 = findViewById(R.id.background_three);
@@ -76,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         final ValueAnimator animate = ValueAnimator.ofFloat(0.0f, 1.0f);
         animate.setRepeatCount(ValueAnimator.INFINITE);
         animate.setInterpolator(new LinearInterpolator());
-        animate.setDuration(20000L);
+        animate.setDuration(40000L);
         animate.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
