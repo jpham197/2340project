@@ -34,6 +34,10 @@ public class Repository {
         allPlayers.add(input);
     }
 
+    public void setAllPlayers(List<Player> allPlayers) {
+        this.allPlayers = allPlayers;
+    }
+
     public void deletePlayer(Player input) {
         allPlayers.remove(input);
     }

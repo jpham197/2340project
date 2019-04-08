@@ -114,7 +114,7 @@ public class Market {
      * @throws java.util.NoSuchElementException when item stock is 0
      */
     public String removeItem(String item, int times) {
-        if (storage.get(item) <= 0) {
+        if (storage.get(item) < 0) {
             throw new NoSuchElementException(item + " is not in stock");
         } else {
             storage.put(item, storage.get(item) - times);

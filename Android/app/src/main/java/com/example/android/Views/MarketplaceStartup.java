@@ -42,7 +42,6 @@ public class MarketplaceStartup extends AppCompatActivity {
         Button buy = findViewById(R.id.Marketplace_buy);
         Button sell = findViewById(R.id.Marketplace_sell);
         Button back = findViewById(R.id.back_button);
-
         Button waterDec = findViewById(R.id.Item_Water_Selected_Dec);
         Button waterInc = findViewById(R.id.Item_Water_Selected_Inc);
         Button fursDec = findViewById(R.id.Item_Furs_Selected_Dec);
