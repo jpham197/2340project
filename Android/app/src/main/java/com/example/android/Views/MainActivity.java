@@ -5,7 +5,9 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.Constraints;
 import android.support.design.widget.FloatingActionButton;
@@ -26,6 +28,7 @@ import android.view.View.OnClickListener;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
@@ -43,8 +46,11 @@ import com.example.android.R;
 import com.example.android.ViewModels.PlanetViewModel;
 import com.example.android.ViewModels.PlayerViewModel;
 import com.example.android.ViewModels.SolarSystemViewModel;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity implements Serializable {
+public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     Player user = new Player();
@@ -57,17 +63,14 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         final PlanetViewModel ppvm = ViewModelProviders.of(this).get(PlanetViewModel.class);
         setTitle("Space Traders");
         super.onCreate(savedInstanceState);
+        FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        //Animating Background section
-//        ConstraintLayout gradient = findViewById(R.id.coordinatorLayout2);
-//        AnimationDrawable gradientAnimate = (AnimationDrawable) gradient.getBackground();
-//        gradientAnimate.setEnterFadeDuration(2000);
-//        gradientAnimate.setExitFadeDuration(4000);
-//        gradientAnimate.start();
-//        //
+        final DatabaseReference databasePlayer;
+        databasePlayer = FirebaseDatabase.getInstance().getReference("players");
+      
         final ImageView background1 = findViewById(R.id.background_one);
         final ImageView background2 = findViewById(R.id.background_two);
         final ImageView background3 = findViewById(R.id.background_three);
@@ -77,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         final ValueAnimator animate = ValueAnimator.ofFloat(0.0f, 1.0f);
         animate.setRepeatCount(ValueAnimator.INFINITE);
         animate.setInterpolator(new LinearInterpolator());
-        animate.setDuration(20000L);
+        animate.setDuration(40000L);
         animate.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -343,17 +346,19 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                     + "\nTrader Skill: " + user.getTrader()
                     + "\nEngineer Skill: " + user.getEngineer();
 //                    Log.w(TAG, playerInformation);
-                Intent intent = new Intent(getBaseContext(), ConfigureCompleteActivity.class);
-                intent.putExtra("playerName", user.getName());
-                intent.putExtra("playerPilotSkill", user.getPilot());
-                intent.putExtra("playerFighterSkill", user.getFighter());
-                intent.putExtra("playerTraderSkill", user.getTrader());
-                intent.putExtra("playerEngineerSkill", user.getEngineer());
-                intent.putExtra("playerShip", user.getShip().toString());
-                intent.putExtra("playerLocation", user.getLocation().toString());
-                intent.putExtra("playerCredits", user.getCredits());
-                startActivity(intent);
-            }
+                    Intent intent = new Intent(getBaseContext(), ConfigureCompleteActivity.class);
+                    intent.putExtra("playerName", user.getName());
+                    intent.putExtra("playerPilotSkill", user.getPilot());
+                    intent.putExtra("playerFighterSkill", user.getFighter());
+                    intent.putExtra("playerTraderSkill", user.getTrader());
+                    intent.putExtra("playerEngineerSkill", user.getEngineer());
+                    intent.putExtra("playerShip", user.getShip().toString());
+                    intent.putExtra("playerLocation", user.getLocation().toString());
+                    intent.putExtra("playerCredits", user.getCredits());
+                    String id = databasePlayer.push().getKey();
+                    databasePlayer.child(id).setValue(user);
+                    startActivity(intent);
+                }
             }
         });
 
