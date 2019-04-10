@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         final PlayerViewModel pvm = ViewModelProviders.of(this).get(PlayerViewModel.class);
-        final SolarSystemViewModel ssvm = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
+        final SolarSystemViewModel ssvm = ViewModelProviders.of(this)
+                .get(SolarSystemViewModel.class);
         final PlanetViewModel ppvm = ViewModelProviders.of(this).get(PlanetViewModel.class);
         setTitle("Space Traders");
         super.onCreate(savedInstanceState);

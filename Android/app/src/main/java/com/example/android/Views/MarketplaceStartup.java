@@ -531,7 +531,8 @@ public class MarketplaceStartup extends AppCompatActivity {
         sell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (MarketplaceStartup.this, Marketplace_Sell_Startup.class);
+                Intent intent = new Intent
+                        (MarketplaceStartup.this, Marketplace_Sell_Startup.class);
                 startActivity(intent);
             }
         });
@@ -539,7 +540,8 @@ public class MarketplaceStartup extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (MarketplaceStartup.this, ConfigureCompleteActivity.class);
+                Intent intent = new Intent
+                        (MarketplaceStartup.this, ConfigureCompleteActivity.class);
                 startActivity(intent);
             }
         });
