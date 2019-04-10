@@ -58,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         final PlayerViewModel pvm = ViewModelProviders.of(this).get(PlayerViewModel.class);
-        final SolarSystemViewModel ssvm = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
+        final SolarSystemViewModel ssvm = ViewModelProviders.of(this)
+                .get(SolarSystemViewModel.class);
         final PlanetViewModel ppvm = ViewModelProviders.of(this).get(PlanetViewModel.class);
         setTitle("Space Traders");
         super.onCreate(savedInstanceState);
@@ -83,15 +84,15 @@ public class MainActivity extends AppCompatActivity {
         animate.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                final float progress = (float) animation.getAnimatedValue();
-                final float width = background1.getWidth();
-                final float translationX = width * progress;
-                background1.setTranslationX(translationX);
-                background2.setTranslationX(translationX - width);
-               background3.setTranslationX(translationX);
-               background4.setTranslationX(translationX - width);
-               // background5.setTranslationX(translationX);
-                //background6.setTranslationX(translationX - width);
+            final float progress = (float) animation.getAnimatedValue();
+            final float width = background1.getWidth();
+            final float translationX = width * progress;
+            background1.setTranslationX(translationX);
+            background2.setTranslationX(translationX - width);
+           background3.setTranslationX(translationX);
+           background4.setTranslationX(translationX - width);
+           // background5.setTranslationX(translationX);
+            //background6.setTranslationX(translationX - width);
             }
         });
         animate.start();
@@ -148,205 +149,202 @@ public class MainActivity extends AppCompatActivity {
         addPilot.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                subPilot.setEnabled(true);
-                int current = Integer.parseInt(skillPilotLevel.getText().toString());
-                if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                        < 16) {
-                    current++;
-                    user.setPilot(current);
+            subPilot.setEnabled(true);
+            int current = Integer.parseInt(skillPilotLevel.getText().toString());
+            if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                    < 16) {
+                current++;
+                user.setPilot(current);
 //                    user.setName(playerName.getText().toString());
-                    if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                            == 16) {
-                        addPilot.setEnabled(false);
-                        addFighter.setEnabled(false);
-                        addEngineer.setEnabled(false);
-                        addTrader.setEnabled(false);
-                        Toast.makeText(getApplication(), "No more Skill Points left",
-                                Toast.LENGTH_LONG).show();
-                    }
+                if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                        == 16) {
+                    addPilot.setEnabled(false);
+                    addFighter.setEnabled(false);
+                    addEngineer.setEnabled(false);
+                    addTrader.setEnabled(false);
+                    Toast.makeText(getApplication(), "No more Skill Points left",
+                            Toast.LENGTH_LONG).show();
                 }
-                skillPilotLevel.setText(String.valueOf(current));
+            }
+            skillPilotLevel.setText(String.valueOf(current));
             }
         });
 
         subPilot.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                addEngineer.setEnabled(true);
-                addFighter.setEnabled(true);
-                addPilot.setEnabled(true);
-                addTrader.setEnabled(true);
-                int current = Integer.parseInt(skillPilotLevel.getText().toString());
-                if (current > 0) {
-                    current--;
-                    user.setPilot(current);
-                    if (current == 0) {
-                        subPilot.setEnabled(false);
-                    }
+            addEngineer.setEnabled(true);
+            addFighter.setEnabled(true);
+            addPilot.setEnabled(true);
+            addTrader.setEnabled(true);
+            int current = Integer.parseInt(skillPilotLevel.getText().toString());
+            if (current > 0) {
+                current--;
+                user.setPilot(current);
+                if (current == 0) {
+                    subPilot.setEnabled(false);
                 }
-                skillPilotLevel.setText(String.valueOf(current));
+            }
+            skillPilotLevel.setText(String.valueOf(current));
             }
         });
 
         addFighter.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                subFighter.setEnabled(true);
-                int current = Integer.parseInt(skillFighterLevel.getText().toString());
+            subFighter.setEnabled(true);
+            int current = Integer.parseInt(skillFighterLevel.getText().toString());
+            if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                    < 16) {
+                current++;
+                user.setFighter(current);
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                        < 16) {
-                    current++;
-                    user.setFighter(current);
-                    if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                            == 16) {
-                        addPilot.setEnabled(false);
-                        addFighter.setEnabled(false);
-                        addEngineer.setEnabled(false);
-                        addTrader.setEnabled(false);
-                        Toast.makeText(getApplication(), "No more Skill Points left",
-                                Toast.LENGTH_LONG).show();
-                    }
+                        == 16) {
+                    addPilot.setEnabled(false);
+                    addFighter.setEnabled(false);
+                    addEngineer.setEnabled(false);
+                    addTrader.setEnabled(false);
+                    Toast.makeText(getApplication(), "No more Skill Points left",
+                            Toast.LENGTH_LONG).show();
                 }
-                skillFighterLevel.setText(String.valueOf(current));
+            }
+            skillFighterLevel.setText(String.valueOf(current));
             }
         });
 
         subFighter.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                addEngineer.setEnabled(true);
-                addFighter.setEnabled(true);
-                addPilot.setEnabled(true);
-                addTrader.setEnabled(true);
-                int current = Integer.parseInt(skillFighterLevel.getText().toString());
-                if (current > 0) {
-                    current--;
-                    user.setFighter(current);
-                    if (current == 0) {
-                        subFighter.setEnabled(false);
-                    }
+            addEngineer.setEnabled(true);
+            addFighter.setEnabled(true);
+            addPilot.setEnabled(true);
+            addTrader.setEnabled(true);
+            int current = Integer.parseInt(skillFighterLevel.getText().toString());
+            if (current > 0) {
+                current--;
+                user.setFighter(current);
+                if (current == 0) {
+                    subFighter.setEnabled(false);
                 }
-                skillFighterLevel.setText(String.valueOf(current));
+            }
+            skillFighterLevel.setText(String.valueOf(current));
             }
         });
 
         addEngineer.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                subEngineer.setEnabled(true);
-                int current = Integer.parseInt(skillEngineerLevel.getText().toString());
+            subEngineer.setEnabled(true);
+            int current = Integer.parseInt(skillEngineerLevel.getText().toString());
+            if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                    < 16) {
+                current++;
+                user.setEngineer(current);
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                        < 16) {
-                    current++;
-                    user.setEngineer(current);
-                    if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                            == 16) {
-                        addPilot.setEnabled(false);
-                        addFighter.setEnabled(false);
-                        addEngineer.setEnabled(false);
-                        addTrader.setEnabled(false);
-                        Toast.makeText(getApplication(), "No more Skill Points left",
-                                Toast.LENGTH_LONG).show();
-                    }
+                        == 16) {
+                    addPilot.setEnabled(false);
+                    addFighter.setEnabled(false);
+                    addEngineer.setEnabled(false);
+                    addTrader.setEnabled(false);
+                    Toast.makeText(getApplication(), "No more Skill Points left",
+                            Toast.LENGTH_LONG).show();
                 }
-                skillEngineerLevel.setText(String.valueOf(current));
+            }
+            skillEngineerLevel.setText(String.valueOf(current));
             }
         });
 
         subEngineer.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                addEngineer.setEnabled(true);
-                addFighter.setEnabled(true);
-                addPilot.setEnabled(true);
-                addTrader.setEnabled(true);
-                int current = Integer.parseInt(skillEngineerLevel.getText().toString());
-                if (current > 0) {
-                    current--;
-                    user.setEngineer(current);
-                    if (current == 0) {
-                        subEngineer.setEnabled(false);
-                    }
+            addEngineer.setEnabled(true);
+            addFighter.setEnabled(true);
+            addPilot.setEnabled(true);
+            addTrader.setEnabled(true);
+            int current = Integer.parseInt(skillEngineerLevel.getText().toString());
+            if (current > 0) {
+                current--;
+                user.setEngineer(current);
+                if (current == 0) {
+                    subEngineer.setEnabled(false);
                 }
-                skillEngineerLevel.setText(String.valueOf(current));
+            }
+            skillEngineerLevel.setText(String.valueOf(current));
             }
         });
 
         addTrader.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                subTrader.setEnabled(true);
-                int current = Integer.parseInt(skillTraderLevel.getText().toString());
+            subTrader.setEnabled(true);
+            int current = Integer.parseInt(skillTraderLevel.getText().toString());
+            if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                    < 16) {
+                current++;
+                user.setTrader(current);
                 if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                        < 16) {
-                    current++;
-                    user.setTrader(current);
-                    if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                            == 16) {
-                        addPilot.setEnabled(false);
-                        addFighter.setEnabled(false);
-                        addEngineer.setEnabled(false);
-                        addTrader.setEnabled(false);
-                        Toast.makeText(getApplication(), "No more Skill Points left",
-                                Toast.LENGTH_LONG).show();
-                    }
+                        == 16) {
+                    addPilot.setEnabled(false);
+                    addFighter.setEnabled(false);
+                    addEngineer.setEnabled(false);
+                    addTrader.setEnabled(false);
+                    Toast.makeText(getApplication(), "No more Skill Points left",
+                            Toast.LENGTH_LONG).show();
                 }
-                skillTraderLevel.setText(String.valueOf(current));
+            }
+            skillTraderLevel.setText(String.valueOf(current));
             }
         });
 
         subTrader.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                addEngineer.setEnabled(true);
-                addFighter.setEnabled(true);
-                addPilot.setEnabled(true);
-                addTrader.setEnabled(true);
-                int current = Integer.parseInt(skillTraderLevel.getText().toString());
-                if (current > 0) {
-                    current--;
-                    user.setTrader(current);
-                    if (current == 0) {
-                        subTrader.setEnabled(false);
-                    }
+            addEngineer.setEnabled(true);
+            addFighter.setEnabled(true);
+            addPilot.setEnabled(true);
+            addTrader.setEnabled(true);
+            int current = Integer.parseInt(skillTraderLevel.getText().toString());
+            if (current > 0) {
+                current--;
+                user.setTrader(current);
+                if (current == 0) {
+                    subTrader.setEnabled(false);
                 }
-                skillTraderLevel.setText(String.valueOf(current));
+            }
+            skillTraderLevel.setText(String.valueOf(current));
             }
         });
-
-
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, arraySpinner);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s.setAdapter(adapter);
 
-
         createButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Planet startPlanet = new Planet();
-                user.setName(playerName.getText().toString());
-                Universe universe = new Universe();
-                ssvm.addSolarSystemList(universe.getSolarSystems());
-                ppvm.setCurrentPlanet(startPlanet);
-                pvm.addPlayer(user);
-                user.setShip(new Ship(100, ShipType.Gnat));
-                user.setLocation(startPlanet.getLocation());
-                user.setCredits(5000);
-                if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
-                        != 16) {
-                    Toast.makeText(getApplication(), "You still have " +
-                                    (16 - (user.getPilot() + user.getTrader()
-                                    + user.getEngineer() + user.getFighter())) + " Skill Points left.",
-                            Toast.LENGTH_LONG).show();
-                } else {
-                    final String playerInformation = "\nPlayer Name: " + user.getName()
-                            + "\nDifficulty: " + s.getSelectedItem()
-                            + "\nPilot Skill: " + user.getPilot()
-                            + "\nFighter Skill: " + user.getFighter()
-                            + "\nTrader Skill: " + user.getTrader()
-                            + "\nEngineer Skill: " + user.getEngineer();
+            Planet startPlanet = new Planet();
+            user.setName(playerName.getText().toString());
+            Universe universe = new Universe();
+            ssvm.addSolarSystemList(universe.getSolarSystems());
+            ppvm.setCurrentPlanet(startPlanet);
+            pvm.addPlayer(user);
+            user.setShip(new Ship(100, ShipType.Gnat));
+            user.setLocation(startPlanet.getLocation());
+            user.setCredits(5000);
+            if (user.getPilot() + user.getTrader() + user.getEngineer() + user.getFighter()
+                    != 16) {
+                Toast.makeText(getApplication(), "You still have " +
+                            (16 - (user.getPilot() + user.getTrader()
+                            + user.getEngineer() + user.getFighter())) + " Skill Points left.",
+                    Toast.LENGTH_LONG).show();
+            } else {
+                final String playerInformation = "\nPlayer Name: " + user.getName()
+                    + "\nDifficulty: " + s.getSelectedItem()
+                    + "\nPilot Skill: " + user.getPilot()
+                    + "\nFighter Skill: " + user.getFighter()
+                    + "\nTrader Skill: " + user.getTrader()
+                    + "\nEngineer Skill: " + user.getEngineer();
 //                    Log.w(TAG, playerInformation);
                     Intent intent = new Intent(getBaseContext(), ConfigureCompleteActivity.class);
                     intent.putExtra("playerName", user.getName());
