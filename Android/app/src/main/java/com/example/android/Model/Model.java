@@ -1,16 +1,17 @@
 package com.example.android.Model;
 
+import com.example.android.Entity.Game;
+import com.example.android.Entity.GameDifficulty;
+import com.example.android.Entity.Player;
 import com.example.android.Entity.SolarSystem;
+import com.example.android.Entity.Universe;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Model {
 
-    /** the data repository */
-    private Repository myRepository;
-
-    private Map<String, Object> interactorMap;
+    private Game game;
 
     /** Singleton Pattern Code
      *  this allows us to get access to this class
@@ -22,34 +23,22 @@ public class Model {
     public static Model getInstance() { return instance; }
 
     /**
-     * Make a new Model instance
+     * Generates a game instance
+     * @param difficulty
+     * @param name
+     * @param pilot
+     * @param fighter
+     * @param trader
+     * @param engineer
      */
-    private Model() {
-        myRepository = new Repository();
-        interactorMap = new HashMap<>();
-        registerInteractors();
+    public void generateGame(GameDifficulty difficulty, String name,
+                             int pilot,
+                             int fighter,
+                             int trader,
+                             int engineer) {
+        Player player = new Player(name, pilot, fighter, trader, engineer);
+        game = new Game(difficulty, player);
     }
 
-    /** end Singleton Pattern */
 
-    /**
-     * Create a set of interactors to be used by the application
-     */
-    private void registerInteractors() {
-        interactorMap.put("Player", new PlayerInteractor(myRepository));
-        interactorMap.put("Planet", new PlanetInteractor(myRepository));
-        interactorMap.put("SolarSystem", new SolarSystemInteractor(myRepository));
-    }
-
-    public PlayerInteractor getPlayerInteractor() {
-        return (PlayerInteractor) interactorMap.get("Player");
-    }
-
-    public PlanetInteractor getPlanetInteractor() {
-        return (PlanetInteractor) interactorMap.get("Planet");
-    }
-
-    public SolarSystemInteractor getSolarSystemInteractor() {
-        return (SolarSystemInteractor) interactorMap.get("SolarSystem");
-    }
 }

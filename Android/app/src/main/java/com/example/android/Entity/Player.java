@@ -13,7 +13,7 @@ public class Player {
     private Inventory inventory;
 
     /**
-     *
+     * Full constructor for player
      * @param name
      * @param pilot
      * @param fighter
@@ -23,8 +23,8 @@ public class Player {
      * @param credits
      * @param ship
      */
-    public Player(String name, int pilot, int fighter, int trader, int engineer
-                  , int skillPointsAvailable, int credits, Ship ship) {
+    public Player(String name, int pilot, int fighter, int trader, int engineer,
+                  int skillPointsAvailable, int credits, Ship ship) {
         this.name = name;
         this.pilot = pilot;
         this.fighter = fighter;
@@ -37,18 +37,21 @@ public class Player {
     }
 
     /**
-     * this constructor initializes the default values for the player
+     * Basic player constructor
      * @param name name of the commander
      * @param pilot number of skill points in pilot
      * @param fighter number of skill points in fighter
      * @param trader number of skill points in trader
      * @param engineer number of skill points in engineer
-     * @param ship the ship ship of the player. Default is Gnat
      */
-    public Player(String name, int pilot, int fighter, int trader, int engineer, Ship ship) {
-        this(name, pilot, fighter, trader, engineer, 16, 1000
-                , new Ship(100, ShipType.Gnat));
+    public Player(String name, int pilot, int fighter, int trader, int engineer) {
+        this(name, pilot, fighter, trader, engineer,16, 1000,
+                new Ship(100, ShipType.Gnat));
     }
+
+    /**
+     * Default constructor, everything is set to 0 and null
+     */
     public Player() {
         this(null, 0, 0,
                 0, 0, 0, 0, null);
@@ -78,6 +81,10 @@ public class Player {
         return this.ship;
     }
 
+    /**
+     *
+     * @param upgrade
+     */
     public void setShip(Ship upgrade) {
         this.ship = upgrade;
     }
@@ -181,10 +188,18 @@ public class Player {
         return this.skillPointsAvailable;
     }
 
+    /**
+     *
+     * @param location new location to set player to
+     */
     public void setLocation(Location location) {
         this.location = location;
     }
 
+    /**
+     *
+     * @return the current location of player
+     */
     public Location getLocation() {
         return this.location;
     }

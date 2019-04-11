@@ -50,7 +50,7 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity {
+public class CreatePlayerActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     Player user = new Player();
@@ -89,8 +89,8 @@ public class MainActivity extends AppCompatActivity {
             final float translationX = width * progress;
             background1.setTranslationX(translationX);
             background2.setTranslationX(translationX - width);
-           background3.setTranslationX(translationX);
-           background4.setTranslationX(translationX - width);
+            background3.setTranslationX(translationX);
+            background4.setTranslationX(translationX - width);
            // background5.setTranslationX(translationX);
             //background6.setTranslationX(translationX - width);
             }

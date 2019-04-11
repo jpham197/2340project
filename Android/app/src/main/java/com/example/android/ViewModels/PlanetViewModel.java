@@ -18,7 +18,6 @@ public class PlanetViewModel extends AndroidViewModel {
 
     public PlanetViewModel(@NonNull Application application) {
         super(application);
-        interactor = Model.getInstance().getPlanetInteractor();
         planets = interactor.getAllPlanets();
     }
 

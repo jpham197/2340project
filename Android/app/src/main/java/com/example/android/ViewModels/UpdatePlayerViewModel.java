@@ -8,10 +8,10 @@ import com.example.android.Entity.Player;
 import com.example.android.Model.PlayerInteractor;
 import com.example.android.Model.Model;
 
-public class EditAddPlayerViewModel extends AndroidViewModel {
+public class UpdatePlayerViewModel extends AndroidViewModel {
     private PlayerInteractor interactor;
 
-    public EditAddPlayerViewModel(@NonNull Application application) {
+    public UpdatePlayerViewModel(@NonNull Application application) {
         super(application);
         interactor = Model.getInstance().getPlayerInteractor();
     }

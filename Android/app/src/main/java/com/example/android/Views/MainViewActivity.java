@@ -26,17 +26,8 @@ import com.example.android.ViewModels.SolarSystemViewModel;
 
 import java.util.List;
 
-public class ConfigureCompleteActivity extends AppCompatActivity {
+public class MainViewActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    Repository repo;
-
-//    final String playerPilotSkill = getIntent().getStringExtra("playerPilotSkill");
-//    final String playerFighterSkill = getIntent().getStringExtra("playerFighterSkill");
-//    final String playerTradeSkill = getIntent().getStringExtra("playerTradeSkill");
-//    final String playerEngineerSkill = getIntent().getStringExtra("playerEngineerSkill");
-//    final String playerShip = getIntent().getStringExtra("playerShip");
-//    final String playerLocation = getIntent().getStringExtra("playerLocation");
-//    final String playerCredits = getIntent().getStringExtra("playerCredits");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +41,6 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("Space Traders: " + pvm.getPlayer().getName());
-        repo = new Repository();
         Button trade = findViewById(R.id.PlanetTradeButton);
         Button inventory = findViewById(R.id.PlayerInventoryButton);
         int xPos = getIntent().getExtras().getInt("x");
@@ -67,7 +57,6 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         Location planetLocation = planet.getLocation();
         Player player = pvm.getPlayer();
         player.setLocation(planetLocation);
-        repo.setCurrentPlanet(planet);
         //TODO: Come up with way to sync planet location and player location
 
         xCor.setText(String.valueOf(player.getLocation().getX()));
@@ -83,7 +72,7 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         trade.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (ConfigureCompleteActivity.this, MarketplaceStartup.class);
+                Intent intent = new Intent (MainViewActivity.this, MarketplaceStartup.class);
                 startActivity(intent);
             }
         });
@@ -91,7 +80,7 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         inventory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (ConfigureCompleteActivity.this, PlayerInventoryLaunch.class);
+                Intent intent = new Intent (MainViewActivity.this, PlayerInventoryLaunch.class);
                 startActivity(intent);
             }
         });
@@ -100,7 +89,7 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         travel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ConfigureCompleteActivity.this, Travel_Launch.class);
+                Intent intent = new Intent(MainViewActivity.this, Travel_Launch.class);
                 startActivity(intent);
             }
         });
