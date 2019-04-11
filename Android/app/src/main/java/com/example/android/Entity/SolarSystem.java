@@ -13,6 +13,10 @@ public class SolarSystem {
             "Optimus Prime", "BTS", "GOT7", "Qiu", "Hang"};
     private PlanetAttributes resource;
 
+    private static final int numPlanets = 1;
+    private static final int startX = 0;
+    private static final int startY = 0;
+
     SolarSystem(String name, int numOfPlanets, Planet[] planets
         , int xCoordinate, int yCoordinate) {
 
@@ -28,30 +32,16 @@ public class SolarSystem {
      *          Array of Planets
      *          Xcoordinate should be between 0 - 100
      *          Ycoordinate should be between 0 - 100
-     * @param name name of the Solar System
-     * @param techLevel the overall tech level of the solar system
-     * @param numOfPlanets the number of planets in the solar system
      */
-//    SolarSystem(String name, TechLevel techLevel, int numOfPlanets){
-//        this(name, numOfPlanets, new Planet[numOfPlanets]
-//                ,(int) (Math.random() * 1001), (int) (Math.random() * 1001));
-//    }
-
     public SolarSystem() {
-//        this(new Planet().getName(), TechLevel.values()[(int)Math.random()*8], 1);
-        this(names[count], 1, new Planet[1], 0, 0);
+        this(names[count], numPlanets, new Planet[numPlanets], startX, startY);
         count++;
-//        this.xCoordinate = (int)(Math.random() * 1001);
-//        this.yCoordinate = (int)(Math.random() * 1001);
-//        this.techLevel = TechLevel.values()[(int) (Math.random() * 8)];
     }
 
     public String toString() {
         return "\nSolar System: " + name + " at (" + xCoordinate + ", " + yCoordinate
                 + ") with planet " + name + " containing resources: " + this.resource + " with tech level: " + techLevel;
     }
-
-    //getters and setters for SolarSystem refs
 
     /**
      * gets the name of the Solar System

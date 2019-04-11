@@ -5,13 +5,11 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 
 public class Inventory {
-    private final int inventorySize; //capacity
     private final HashMap<String, Integer> inventory;
     private final int maxInv = 20;
     private int remInv = maxInv;
 
-    Inventory(int inventorySize) {
-        this.inventorySize = inventorySize;
+    Inventory() {
         inventory = new HashMap<>();
         inventory.put("water", 0);
         inventory.put("furs", 0);

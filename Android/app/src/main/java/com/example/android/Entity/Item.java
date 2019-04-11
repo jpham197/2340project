@@ -5,7 +5,7 @@ public class Item {
 
     /**
      * Main constructor for Item, manually set name, stock, and price
-     * @param type
+     * @param type item type from enum
      */
     public Item(ItemType type) {
         this.name = type;

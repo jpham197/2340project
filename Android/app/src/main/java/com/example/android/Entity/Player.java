@@ -14,14 +14,14 @@ public class Player {
 
     /**
      *
-     * @param name
-     * @param pilot
-     * @param fighter
-     * @param trader
-     * @param engineer
-     * @param skillPointsAvailable
-     * @param credits
-     * @param ship
+     * @param name player name
+     * @param pilot pilot skill
+     * @param fighter fighter skill
+     * @param trader trader skill
+     * @param engineer engineer skill
+     * @param skillPointsAvailable sp available
+     * @param credits number
+     * @param ship player ship
      */
     public Player(String name, int pilot, int fighter, int trader, int engineer
                   , int skillPointsAvailable, int credits, Ship ship) {
@@ -56,7 +56,7 @@ public class Player {
 
     /**
      *
-     * @return
+     * @return name
      */
     public String getName() {
         return this.name;
@@ -64,7 +64,7 @@ public class Player {
 
     /**
      *
-     * @return
+     * @param name to set
      */
     public void setName(String name) {
         this.name = name;
@@ -72,12 +72,16 @@ public class Player {
 
     /**
      *
-     * @return
+     * @return current ship
      */
     public Ship getShip() {
         return this.ship;
     }
 
+    /**
+     *
+     * @param upgrade
+     */
     public void setShip(Ship upgrade) {
         this.ship = upgrade;
     }
