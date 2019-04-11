@@ -204,6 +204,11 @@ public class Player {
         return this.location;
     }
 
+    /**
+     * Travel method to update player's location if enough credits
+     * @param destination
+     * @return
+     */
     public boolean travel(Location destination) {
         if (ship.travel(this.location, destination) != null) {
             location = destination;
@@ -211,5 +216,11 @@ public class Player {
         } else {
             return false;
         }
+    }
+
+    public boolean refuel() {
+        int refuelCost = 3 * (ship.getMaxFuel() - ship.getFuel());
+
+        if ()
     }
 }

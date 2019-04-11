@@ -4,8 +4,6 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -15,17 +13,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.android.Entity.Player;
-import com.example.android.Model.Repository;
 import com.example.android.R;
-import com.example.android.ViewModels.PlayerViewModel;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 
 public class StartUpActivity extends AppCompatActivity {
     private static final String TAG = "StartupActivity";

@@ -19,12 +19,24 @@ public class Ship {
         return type + ": " + currentFuel + "/" + maxFuel + " kgal";
     }
 
+    /**
+     * Gets current fuel level
+     * @return
+     */
     public int getFuel() {
         return this.currentFuel;
     }
 
     public void setCurrentFuel(int currentFuel) {
         this.currentFuel = currentFuel;
+    }
+
+    /**
+     * Gets max fuel level
+     * @return
+     */
+    public int getMaxFuel() {
+        return this.maxFuel;
     }
 
     /**
@@ -46,23 +58,23 @@ public class Ship {
 
     /**
      * Method to refuel player's ship
-     * @param player
      * @return
      */
-    public boolean refuel(Player player) {
-        if (player.checkCredits(3 * (maxFuel - currentFuel))) {
-            int cost = 3 * (maxFuel - currentFuel);
-            currentFuel = maxFuel;
-            player.setCredits(player.getCredits() - cost);
-            return true;
-        }
-        return false;
+    public void refuel() {
+//        if (player.checkCredits(3 * (maxFuel - currentFuel))) {
+//            int cost = 3 * (maxFuel - currentFuel);
+//            currentFuel = maxFuel;
+//            player.setCredits(player.getCredits() - cost);
+//            return true;
+//        }
+//        return false;
+        currentFuel = maxFuel;
     }
 
-    /**
+    /** LMAO DON'T USE THIS I DON'T THINK WE'R
      * Method to upgrade player's ship
      * @param player
-     * @return
+     * @return if the fuel was increased
      */
     public boolean increaseFuel(Player player) {
         if (player.checkCredits(100)) {
@@ -73,6 +85,12 @@ public class Ship {
         return false;
     }
 
+    /**
+     * Calculate fuel cost of traveling from one place to another
+     * @param origin
+     * @param destination
+     * @return cost of travel
+     */
     public int fuelCost(Location origin, Location destination){
         int distance = origin.calcDistance(destination);
         int fuelCost = ((100 + distance) / 100);

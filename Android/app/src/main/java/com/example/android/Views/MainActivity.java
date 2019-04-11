@@ -2,10 +2,7 @@ package com.example.android.Views;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -16,17 +13,9 @@ import android.widget.TextView;
 import com.example.android.Entity.Location;
 import com.example.android.Entity.Planet;
 import com.example.android.Entity.Player;
-import com.example.android.Entity.SolarSystem;
-import com.example.android.Model.PlayerInteractor;
-import com.example.android.Model.Repository;
 import com.example.android.R;
-import com.example.android.ViewModels.PlanetViewModel;
-import com.example.android.ViewModels.PlayerViewModel;
-import com.example.android.ViewModels.SolarSystemViewModel;
 
-import java.util.List;
-
-public class MainViewActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
     @Override

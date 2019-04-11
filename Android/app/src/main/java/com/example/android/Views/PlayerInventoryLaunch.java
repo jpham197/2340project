@@ -3,8 +3,6 @@ package com.example.android.Views;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -12,11 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.android.Entity.Inventory;
-import com.example.android.Entity.Market;
-import com.example.android.Entity.Planet;
 import com.example.android.Entity.Player;
 import com.example.android.R;
-import com.example.android.ViewModels.PlayerViewModel;
 
 public class PlayerInventoryLaunch extends AppCompatActivity {
 
@@ -59,7 +54,7 @@ public class PlayerInventoryLaunch extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (PlayerInventoryLaunch.this, ConfigureCompleteActivity.class);
+                Intent intent = new Intent (PlayerInventoryLaunch.this, CreatePlayerActivity.class);
                 startActivity(intent);
             }
         });
