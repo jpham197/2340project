@@ -10,6 +10,8 @@
 
     <!--animation section start-->
 
+    <!--We don't need content descriptions for these images as it only serves as a background for
+        the game. -->
     <ImageView
         android:id="@+id/background1"
         android:layout_width="match_parent"
@@ -19,6 +21,8 @@
         android:src="@drawable/background"
         android:contentDescription="hahaidkwhatthisis" />
 
+    <!--We don't need content descriptions for these images as it only serves as a background for
+        the game. -->
     <ImageView
         android:id="@+id/background2"
         android:layout_width="match_parent"
@@ -28,6 +32,8 @@
         android:src="@drawable/background"
         android:contentDescription="hahaidkwhatthisis" />
 
+    <!--We don't need content descriptions for these images as it only serves as a background for
+        the game. -->
     <ImageView
         android:id="@+id/background3"
         android:layout_width="match_parent"
@@ -37,6 +43,8 @@
         android:src="@drawable/background"
         android:contentDescription="hahaidkwhatthisis" />
 
+    <!--We don't need content descriptions for these images as it only serves as a background for
+        the game. -->
     <ImageView
         android:id="@+id/background4"
         android:layout_width="match_parent"

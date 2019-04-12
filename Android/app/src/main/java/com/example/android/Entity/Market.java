@@ -10,7 +10,7 @@ public class Market {
     //<Item, Stock>
     private final HashMap<String, Integer> storage;
     private final TechLevel techLevel;
-//    private RandomEvent RE = new RandomEvent();
+    //    private RandomEvent RE = new RandomEvent();
 
     /**
      * Plain constructor for Market, sets everything to base price and stock to 0
@@ -110,7 +110,6 @@ public class Market {
 
     /**
      * Removes item from the storage
-     * @return the item that is passed in
      * @throws java.util.NoSuchElementException when item stock is 0
      */
     public void removeItem() {
@@ -121,6 +120,7 @@ public class Market {
 //                storage.put(item, storage.get(item) - times);
 //            }
 //        }
+        int x = 10;
     }
 
     /**

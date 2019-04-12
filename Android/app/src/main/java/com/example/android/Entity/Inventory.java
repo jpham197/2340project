@@ -55,7 +55,7 @@ public class Inventory {
 //        if (inventory != null) {
 //            return inventory.get(item);
 //        } else {
-//            return 0;
+            return (int) (Math.random() * 100);
 //        }
     }
 

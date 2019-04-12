@@ -17,6 +17,8 @@
 
     <!--animation section start-->
 
+    <!--We don't need content descriptions for these images as it only serves as a background for
+        the game. -->
     <ImageView
         android:id="@+id/background_one"
         android:layout_width="match_parent"
@@ -24,8 +26,11 @@
         android:layout_marginBottom="-114dp"
         android:tint="#26ffffff"
         android:src="@drawable/background"
-        android:contentDescription="moving1" />
+        android:contentDescription="space background"
+        />
 
+    <!--We don't need content descriptions for these images as it only serves as a background for
+            the game. -->
     <ImageView
         android:id="@+id/background_two"
         android:layout_width="match_parent"
@@ -35,6 +40,8 @@
         android:src="@drawable/background"
         android:contentDescription="moving2" />
 
+    <!--We don't need content descriptions for these images as it only serves as a background for
+            the game. -->
     <ImageView
         android:id="@+id/background_three"
         android:layout_width="match_parent"
@@ -44,6 +51,8 @@
         android:src="@drawable/background"
         android:contentDescription="moving3" />
 
+    <!--We don't need content descriptions for these images as it only serves as a background for
+        the game. -->
     <ImageView
         android:id="@+id/background_four"
         android:layout_width="match_parent"
@@ -83,6 +92,7 @@
         android:layout_marginRight="8dp"
         android:text="Player Name"
         android:textColor="@android:color/white"
+        android:hint="Enter Player Name"
         app:layout_constraintBottom_toTopOf="@+id/inputPlayerName"
         app:layout_constraintEnd_toStartOf="@+id/include2"
         app:layout_constraintHorizontal_bias="0.0"
