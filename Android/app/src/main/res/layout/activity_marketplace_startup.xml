@@ -6,12 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Views.MarketplaceStartup">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appBarLayout3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"/>
-
     <include
         android:id="@+id/include3"
         layout="@layout/content_marketplace_startup"

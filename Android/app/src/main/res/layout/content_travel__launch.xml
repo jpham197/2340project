@@ -12,24 +12,26 @@
         android:id="@+id/Travel_Back_Button"
         android:layout_width="50dp"
         android:layout_height="40dp"
-        android:text="Back"
-        android:textSize="10dp"
+        android:text="@string/Back"
+        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:background="#400000ff"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#400000ff"
+        android:gravity="center"
         android:paddingStart="10dp"
         android:paddingLeft="10dp"
         android:paddingEnd="10dp"
         android:paddingRight="10dp"
-        android:layout_marginStart="69dp"
-        android:layout_marginLeft="75dp"
-        android:gravity="center"
-        android:text="Travel Through The Universe"
-        android:textSize="15dp"
+        android:text="@string/Travel_Through_The_Universe"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Travel_Back_Button"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,7 +49,7 @@
             android:id="@+id/Travel_Destination1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Destination1"
+            android:text="@string/Destination1"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
         <TextView
@@ -56,8 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:text="Distance"
+            android:text="@string/Distance"
 
             />
 
@@ -66,8 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="210dp"
-            android:layout_marginLeft="210dp"
-            android:text="frops"
+            android:text="@string/frops"
             android:textColor="@android:color/holo_orange_dark"
             />
 
@@ -77,16 +77,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="250dp"
-            android:layout_marginLeft="250dp"
-            android:text="Fuel"/>
+            android:text="@string/Fuel"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="280dp"
-            android:layout_marginLeft="280dp"
-            android:text="Kgal"
+            android:text="@string/Kgal"
             android:textColor="@android:color/holo_orange_dark"/>
 
         <Button
@@ -94,8 +92,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="350dp"
-            android:layout_marginLeft="350dp"
-            android:text="go"
+            android:text="@string/Go"
             tools:ignore="RtlHardcoded" />
 
     </RelativeLayout>
@@ -112,7 +109,7 @@
             android:id="@+id/Travel_Destination2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Destination2"
+            android:text="@string/Destination2"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
         <TextView
@@ -121,8 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:text="Distance"
+            android:text="@string/Distance"
 
             />
 
@@ -131,8 +127,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="210dp"
-            android:layout_marginLeft="210dp"
-            android:text="frops"
+            android:text="@string/frops"
             android:textColor="@android:color/holo_orange_dark"
             />
 
@@ -142,16 +137,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="250dp"
-            android:layout_marginLeft="250dp"
-            android:text="Fuel"/>
+            android:text="@string/Fuel"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="280dp"
-            android:layout_marginLeft="280dp"
-            android:text="Kgal"
+            android:text="@string/Kgal"
             android:textColor="@android:color/holo_orange_dark"/>
 
         <Button
@@ -159,8 +152,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="350dp"
-            android:layout_marginLeft="350dp"
-            android:text="go"
+            android:text="@string/Go"
             />
 
     </android.support.v7.widget.CardView>
@@ -177,7 +169,7 @@
             android:id="@+id/Travel_Destination3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Destination3"
+            android:text="@string/Destination3"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
         <TextView
@@ -186,8 +178,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:text="Distance"
+            android:text="@string/Distance"
 
             />
 
@@ -196,8 +187,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="210dp"
-            android:layout_marginLeft="210dp"
-            android:text="frops"
+            android:text="@string/frops"
             android:textColor="@android:color/holo_orange_dark"
             />
 
@@ -207,16 +197,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="250dp"
-            android:layout_marginLeft="250dp"
-            android:text="Fuel"/>
+            android:text="@string/Fuel"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="280dp"
-            android:layout_marginLeft="280dp"
-            android:text="Kgal"
+            android:text="@string/Kgal"
             android:textColor="@android:color/holo_orange_dark"/>
 
         <Button
@@ -224,8 +212,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="350dp"
-            android:layout_marginLeft="350dp"
-            android:text="go"
+            android:text="@string/Go"
             />
 
     </android.support.v7.widget.CardView>
@@ -242,7 +229,7 @@
             android:id="@+id/Travel_Destination5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Destination5"
+            android:text="@string/Destination5"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
         <TextView
@@ -251,8 +238,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:text="Distance"
+            android:text="@string/Distance"
 
             />
 
@@ -261,8 +247,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="210dp"
-            android:layout_marginLeft="210dp"
-            android:text="frops"
+            android:text="@string/frops"
             android:textColor="@android:color/holo_orange_dark"
             />
 
@@ -272,16 +257,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="250dp"
-            android:layout_marginLeft="250dp"
-            android:text="Fuel"/>
+            android:text="@string/Fuel"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="280dp"
-            android:layout_marginLeft="280dp"
-            android:text="Kgal"
+            android:text="@string/Kgal"
             android:textColor="@android:color/holo_orange_dark"/>
 
         <Button
@@ -289,8 +272,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="350dp"
-            android:layout_marginLeft="350dp"
-            android:text="go"
+            android:text="@string/Go"
             />
 
     </android.support.v7.widget.CardView>
@@ -307,7 +289,7 @@
             android:id="@+id/Travel_Destination6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Destination6"
+            android:text="@string/Destination6"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
         <TextView
@@ -316,8 +298,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:text="Distance"
+            android:text="@string/Distance"
 
             />
 
@@ -326,8 +307,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="210dp"
-            android:layout_marginLeft="210dp"
-            android:text="frops"
+            android:text="@string/frops"
             android:textColor="@android:color/holo_orange_dark"
             />
 
@@ -337,16 +317,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="250dp"
-            android:layout_marginLeft="250dp"
-            android:text="Fuel"/>
+            android:text="@string/Fuel"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="280dp"
-            android:layout_marginLeft="280dp"
-            android:text="Kgal"
+            android:text="@string/Kgal"
             android:textColor="@android:color/holo_orange_dark"/>
 
         <Button
@@ -354,8 +332,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="350dp"
-            android:layout_marginLeft="350dp"
-            android:text="go"
+            android:text="@string/Go"
             />
 
     </android.support.v7.widget.CardView>
@@ -372,7 +349,7 @@
             android:id="@+id/Travel_Destination7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Destination7"
+            android:text="@string/Destination7"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
         <TextView
@@ -381,8 +358,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:text="Distance"
+            android:text="@string/Distance"
 
             />
 
@@ -391,8 +367,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="210dp"
-            android:layout_marginLeft="210dp"
-            android:text="frops"
+            android:text="@string/frops"
             android:textColor="@android:color/holo_orange_dark"
             />
 
@@ -402,16 +377,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="250dp"
-            android:layout_marginLeft="250dp"
-            android:text="Fuel"/>
+            android:text="@string/Fuel"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="280dp"
-            android:layout_marginLeft="280dp"
-            android:text="Kgal"
+            android:text="@string/Kgal"
             android:textColor="@android:color/holo_orange_dark"/>
 
         <Button
@@ -419,8 +392,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="350dp"
-            android:layout_marginLeft="350dp"
-            android:text="go"
+            android:text="@string/Go"
             />
 
     </android.support.v7.widget.CardView>
@@ -437,7 +409,7 @@
             android:id="@+id/Travel_Destination4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Destination4"
+            android:text="@string/Destination4"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
         <TextView
@@ -446,8 +418,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:text="Distance"
+            android:text="@string/Distance"
 
             />
 
@@ -456,8 +427,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="210dp"
-            android:layout_marginLeft="210dp"
-            android:text="frops"
+            android:text="@string/frops"
             android:textColor="@android:color/holo_orange_dark"
             />
 
@@ -467,16 +437,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="250dp"
-            android:layout_marginLeft="250dp"
-            android:text="Fuel"/>
+            android:text="@string/Fuel"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="280dp"
-            android:layout_marginLeft="280dp"
-            android:text="Kgal"
+            android:text="@string/Kgal"
             android:textColor="@android:color/holo_orange_dark"/>
 
         <Button
@@ -484,8 +452,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="350dp"
-            android:layout_marginLeft="350dp"
-            android:text="go"
+            android:text="@string/Go"
             />
 
     </android.support.v7.widget.CardView>
@@ -502,7 +469,7 @@
             android:id="@+id/Travel_Destination8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Destination8"
+            android:text="@string/Destination8"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
         <TextView
@@ -511,8 +478,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:text="Distance"
+            android:text="@string/Distance"
 
             />
 
@@ -521,8 +487,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="210dp"
-            android:layout_marginLeft="210dp"
-            android:text="frops"
+            android:text="@string/frops"
             android:textColor="@android:color/holo_orange_dark"
             />
 
@@ -532,16 +497,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="250dp"
-            android:layout_marginLeft="250dp"
-            android:text="Fuel"/>
+            android:text="@string/Fuel"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="280dp"
-            android:layout_marginLeft="280dp"
-            android:text="Kgal"
+            android:text="@string/Kgal"
             android:textColor="@android:color/holo_orange_dark"/>
 
         <Button
@@ -549,8 +512,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="350dp"
-            android:layout_marginLeft="350dp"
-            android:text="go"
+            android:text="@string/Go"
             />
 
     </android.support.v7.widget.CardView>
@@ -567,7 +529,7 @@
             android:id="@+id/Travel_Destination9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Destination9"
+            android:text="@string/Destination9"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
         <TextView
@@ -576,8 +538,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:text="Distance"
+            android:text="@string/Distance"
 
             />
 
@@ -586,8 +547,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="210dp"
-            android:layout_marginLeft="210dp"
-            android:text="frops"
+            android:text="@string/frops"
             android:textColor="@android:color/holo_orange_dark"
             />
 
@@ -597,16 +557,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="250dp"
-            android:layout_marginLeft="250dp"
-            android:text="Fuel"/>
+            android:text="@string/Fuel"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="280dp"
-            android:layout_marginLeft="280dp"
-            android:text="Kgal"
+            android:text="@string/Kgal"
             android:textColor="@android:color/holo_orange_dark"/>
 
         <Button
@@ -614,8 +572,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="350dp"
-            android:layout_marginLeft="350dp"
-            android:text="go"
+            android:text="@string/Go"
             />
 
     </android.support.v7.widget.CardView>
@@ -632,7 +589,7 @@
             android:id="@+id/Travel_Destination10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Destination10"
+            android:text="@string/Destination10"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
         <TextView
@@ -641,8 +598,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:text="Distance"
+            android:text="@string/Distance"
 
             />
 
@@ -651,8 +607,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="210dp"
-            android:layout_marginLeft="210dp"
-            android:text="frops"
+            android:text="@string/frops"
             android:textColor="@android:color/holo_orange_dark"
             />
 
@@ -662,16 +617,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="250dp"
-            android:layout_marginLeft="250dp"
-            android:text="Fuel"/>
+            android:text="@string/Fuel"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="280dp"
-            android:layout_marginLeft="280dp"
-            android:text="Kgal"
+            android:text="@string/Kgal"
             android:textColor="@android:color/holo_orange_dark"/>
 
         <Button
@@ -679,8 +632,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="350dp"
-            android:layout_marginLeft="350dp"
-            android:text="go"
+            android:text="@string/Go"
             />
 
     </android.support.v7.widget.CardView>

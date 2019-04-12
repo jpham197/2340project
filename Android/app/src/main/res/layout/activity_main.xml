@@ -25,8 +25,8 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="-114dp"
         android:tint="#26ffffff"
-        android:src="@drawable/background"
-        android:contentDescription="space background"
+        android:src="@mipmap/background"
+        android:contentDescription="@string/space_background"
         />
 
     <!--We don't need content descriptions for these images as it only serves as a background for
@@ -37,8 +37,8 @@
         android:layout_height="match_parent"
         android:tint="#26ffffff"
         android:layout_marginBottom="-114dp"
-        android:src="@drawable/background"
-        android:contentDescription="moving2" />
+        android:src="@mipmap/background"
+        android:contentDescription="@string/moving2" />
 
     <!--We don't need content descriptions for these images as it only serves as a background for
             the game. -->
@@ -48,8 +48,8 @@
         android:tint="#26ffffff"
         android:layout_height="match_parent"
         android:layout_marginTop="-114dp"
-        android:src="@drawable/background"
-        android:contentDescription="moving3" />
+        android:src="@mipmap/background"
+        android:contentDescription="@string/moving3" />
 
     <!--We don't need content descriptions for these images as it only serves as a background for
         the game. -->
@@ -59,8 +59,8 @@
         android:layout_height="match_parent"
         android:layout_marginTop="-114dp"
         android:tint="#26ffffff"
-        android:src="@drawable/background"
-        android:contentDescription="whatisthiseven" />
+        android:src="@mipmap/background"
+        android:contentDescription="@string/whatisthiseven" />
 
     <!--animation section end-->
 
@@ -69,11 +69,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Character Creation"
+        android:text="@string/Character_Creation"
         android:textSize="36sp"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,13 +84,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Player Name"
+        android:text="@string/Player_Name"
         android:textColor="@android:color/white"
-        android:hint="Enter Player Name"
+        android:hint="@string/Enter_Player_Name"
         app:layout_constraintBottom_toTopOf="@+id/inputPlayerName"
         app:layout_constraintEnd_toStartOf="@+id/include2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -107,10 +103,8 @@
         android:textColor="@android:color/white"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toStartOf="@+id/include2"
@@ -125,11 +119,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Skills"
+        android:text="@string/Skills"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.044"
@@ -141,11 +133,10 @@
         android:layout_width="31dp"
         android:layout_height="36dp"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:width="10dp"
         android:height="10dp"
-        android:text="-"
-        android:textSize="8sp"
+        android:text="@string/minus_sign"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/skillView" />
 
@@ -154,11 +145,10 @@
         android:layout_width="31dp"
         android:layout_height="36dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:width="10dp"
         android:height="10dp"
-        android:text="+"
-        android:textSize="8sp"
+        android:text="@string/plus_sign"
+        android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@+id/skillPilotLevel"
         app:layout_constraintTop_toBottomOf="@+id/skillView" />
 
@@ -168,9 +158,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textColor="@android:color/white"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="0"
+        android:text="@string/zero"
         app:layout_constraintStart_toEndOf="@+id/skillPilotDecrease"
         app:layout_constraintTop_toTopOf="@+id/skillPilotDecrease" />
 
@@ -179,9 +168,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:text="Pilot"
+        android:text="@string/Pilot"
         android:textColor="@android:color/white"
         app:layout_constraintStart_toEndOf="@+id/skillPilotIncrease"
         app:layout_constraintTop_toBottomOf="@+id/skillView" />
@@ -191,11 +179,10 @@
         android:layout_width="31dp"
         android:layout_height="36dp"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:width="10dp"
         android:height="10dp"
-        android:text="-"
-        android:textSize="8sp"
+        android:text="@string/minus_sign"
+        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/skillPilotDecrease" />
 
@@ -204,11 +191,10 @@
         android:layout_width="31dp"
         android:layout_height="36dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:width="10dp"
         android:height="10dp"
-        android:text="+"
-        android:textSize="8sp"
+        android:text="@string/plus_sign"
+        android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@+id/skillFighterLevel"
         app:layout_constraintTop_toBottomOf="@+id/skillPilotIncrease" />
 
@@ -217,9 +203,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
-        android:text="0"
+        android:text="@string/zero"
         android:textColor="@android:color/white"
         app:layout_constraintStart_toEndOf="@+id/skillFighterDecrease"
         app:layout_constraintTop_toBottomOf="@+id/skillPilotLevel" />
@@ -229,10 +214,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:textColor="@android:color/white"
         android:layout_marginTop="18dp"
-        android:text="Fighter"
+        android:text="@string/Fighter"
         app:layout_constraintStart_toEndOf="@+id/skillFighterIncrease"
         app:layout_constraintTop_toBottomOf="@+id/skillPilotText" />
 
@@ -241,11 +225,10 @@
         android:layout_width="31dp"
         android:layout_height="36dp"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:width="10dp"
         android:height="10dp"
-        android:text="-"
-        android:textSize="8sp"
+        android:text="@string/minus_sign"
+        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/skillFighterDecrease" />
 
@@ -254,11 +237,10 @@
         android:layout_width="31dp"
         android:layout_height="36dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:width="10dp"
         android:height="10dp"
-        android:text="+"
-        android:textSize="8sp"
+        android:text="@string/plus_sign"
+        android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@+id/skillTraderLevel"
         app:layout_constraintTop_toBottomOf="@+id/skillFighterIncrease" />
 
@@ -267,10 +249,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="17dp"
         android:textColor="@android:color/white"
-        android:text="0"
+        android:text="@string/zero"
         app:layout_constraintStart_toEndOf="@+id/skillTraderDecrease"
         app:layout_constraintTop_toBottomOf="@+id/skillFighterLevel" />
 
@@ -279,9 +260,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="18dp"
-        android:text="Trader"
+        android:text="@string/Trader"
         android:textColor="@android:color/white"
         app:layout_constraintStart_toEndOf="@+id/skillTraderIncrease"
         app:layout_constraintTop_toBottomOf="@+id/skillFighterText" />
@@ -291,11 +271,10 @@
         android:layout_width="31dp"
         android:layout_height="36dp"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:width="10dp"
         android:height="10dp"
-        android:text="-"
-        android:textSize="8sp"
+        android:text="@string/minus_sign"
+        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/skillTraderDecrease" />
 
@@ -304,11 +283,10 @@
         android:layout_width="31dp"
         android:layout_height="36dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:width="10dp"
         android:height="10dp"
-        android:text="+"
-        android:textSize="8sp"
+        android:text="@string/plus_sign"
+        android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@+id/skillEngineerLevel"
         app:layout_constraintTop_toBottomOf="@+id/skillTraderIncrease" />
 
@@ -317,9 +295,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="17dp"
-        android:text="0"
+        android:text="@string/zero"
         android:textColor="@android:color/white"
         app:layout_constraintStart_toEndOf="@+id/skillEngineerDecrease"
         app:layout_constraintTop_toBottomOf="@+id/skillTraderLevel" />
@@ -329,10 +306,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:textColor="@android:color/white"
-        android:text="Engineer"
+        android:text="@string/Engineer"
         app:layout_constraintStart_toEndOf="@+id/skillEngineerIncrease"
         app:layout_constraintTop_toBottomOf="@+id/skillTraderText" />
 
@@ -341,11 +317,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Difficulty"
+        android:text="@string/Difficulty"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.044"
@@ -356,9 +330,7 @@
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="@android:color/white"
         android:background="@android:color/white"
@@ -367,28 +339,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/difficultyText" />
 
-
-=======
-        app:layout_constraintStart_toStartOf="parent" />
->>>>>>> Stashed changes
-=======
-        app:layout_constraintStart_toStartOf="parent" />
->>>>>>> Stashed changes
-=======
-        app:layout_constraintStart_toStartOf="parent" />
->>>>>>> Stashed changes
-
     <Button
         android:id="@+id/createButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Create"
+        android:text="@string/Create"
         app:layout_constraintBottom_toBottomOf="@+id/include2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -399,12 +358,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Exit Game"
+        android:text="@string/Exit_Game"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

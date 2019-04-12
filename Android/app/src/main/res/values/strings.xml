@@ -10,4 +10,102 @@
     <string name="title_activity_marketplace__sell__startup">Marketplace_Sell_Startup</string>
     <string name="title_activity_player_inventory_launch">PlayerInventoryLaunch</string>
     <string name="title_activity_travel__launch">Travel_Launch</string>
+
+    <string name="space_background">Spacebackground</string>
+    <string name="moving2">moving2</string>
+    <string name="moving3">moving3</string>
+    <string name="Current_Planet_Name">Current Planet Name</string>
+
+    <string name="plus_sign">+</string>
+    <string name="minus_sign">-</string>
+    <string name="zero">0</string>
+
+    <string name="whatisthiseven">Background</string>
+    <string name="Character_Creation">Character Creation</string>
+    <string name="Player_Name">Player Name</string>
+    <string name="Enter_Player_Name">Enter Player Name</string>
+    <string name="Skills">Skills</string>
+    <string name="Pilot">Pilot</string>
+    <string name="Fighter">Fighter</string>
+    <string name="Trader">Trader</string>
+    <string name="Engineer">Engineer</string>
+    <string name="Difficulty">Difficulty</string>
+    <string name="Create">Create</string>
+    <string name="Exit_Game">Exit Game</string>
+
+
+
+
+    <string name="Trade">Trade</string>
+    <string name="Travel">Travel</string>
+    <string name="Inventory">Inventory</string>
+    <string name="Captain">Captain</string>
+    <!--<string name="Current">Current</string>-->
+    <string name="X">X =</string>
+    <string name="Y">Y =</string>
+    <string name="Fuel">Fuel</string>
+    <string name="one_hundred">100</string>
+    <string name="one_hundred_slash">/ 100</string>
+    <string name="Fuel2">    Fuel:  </string>
+
+
+
+    <string name="Back">Back</string>
+    <string name="Credits">Credits</string>
+    <string name="Inventory_Space_Left">Inventory Space Left:</string>
+    <string name="Sell_Inventory">Sell Inventory</string>
+    <string name="Owned_Items">Owned Items</string>
+    <string name="Player_Inventory">Player Inventory</string>
+    <string name="Items_Owned">Items Owned</string>
+    <string name="Selected">Selected</string>
+    <string name="Amount">Amount</string>
+    <string name="Sell">Sell</string>
+    <string name="Buy">Buy</string>
+
+    <string name="Water">Water</string>
+    <string name="Furs">Furs</string>
+    <string name="Food">Food</string>
+    <string name="Ore">Ore</string>
+    <string name="Games">Games</string>
+    <string name="Firearms">Firearms</string>
+    <string name="Medicine">Medicine</string>
+    <string name="Machines">Machines</string>
+    <string name="Narcotics">Narcotics</string>
+    <string name="Robots">Robots</string>
+
+    <string name="Planetary_Marketplace">Planetary Marketplace</string>
+    <string name="Market_Items">Market Items</string>
+    <string name="Available">Available</string>
+    <string name="Total">Total:</string>
+    <string name="Total_Items">Total Items:</string>
+
+
+
+
+    <string name="Amount_Owned">Amount owned</string>
+
+
+    <string name="SPACE_TRADERS">SPACE TRADERS</string>
+    <string name="LOAD_GAME">LOAD GAME</string>
+    <string name="START_NEW_GAME">START NEW GAME</string>
+    <string name="hahaidkwhatthisis"> Background </string>
+
+    <string name="frops"> Miles </string>
+    <string name="Kgal"> Gallons </string>
+    <string name="Destination1"> Destination1 </string>
+    <string name="Destination2"> Destination2 </string>
+    <string name="Destination3"> Destination3 </string>
+    <string name="Destination4"> Destination4 </string>
+    <string name="Destination5"> Destination5 </string>
+    <string name="Destination6"> Destination6 </string>
+    <string name="Destination7"> Destination7 </string>
+    <string name="Destination8"> Destination8 </string>
+    <string name="Destination9"> Destination9 </string>
+    <string name="Destination10"> Destination10 </string>
+
+    <string name="Travel_Through_The_Universe"> Destination </string>
+    <string name="Distance"> Distance </string>
+    <string name="Go"> Go </string>
+
+
 </resources>

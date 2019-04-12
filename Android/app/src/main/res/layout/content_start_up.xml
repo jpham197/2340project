@@ -19,7 +19,7 @@
         android:layout_marginBottom="-114dp"
         android:tint="#26ffffff"
         android:src="@drawable/background"
-        android:contentDescription="hahaidkwhatthisis" />
+        android:contentDescription="@string/hahaidkwhatthisis" />
 
     <!--We don't need content descriptions for these images as it only serves as a background for
         the game. -->
@@ -30,7 +30,7 @@
         android:tint="#26ffffff"
         android:layout_marginBottom="-114dp"
         android:src="@drawable/background"
-        android:contentDescription="hahaidkwhatthisis" />
+        android:contentDescription="@string/hahaidkwhatthisis" />
 
     <!--We don't need content descriptions for these images as it only serves as a background for
         the game. -->
@@ -41,7 +41,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="-114dp"
         android:src="@drawable/background"
-        android:contentDescription="hahaidkwhatthisis" />
+        android:contentDescription="@string/hahaidkwhatthisis" />
 
     <!--We don't need content descriptions for these images as it only serves as a background for
         the game. -->
@@ -52,7 +52,7 @@
         android:layout_marginTop="-114dp"
         android:tint="#26ffffff"
         android:src="@drawable/background"
-        android:contentDescription="hahaidkwhatthisis" />
+        android:contentDescription="@string/hahaidkwhatthisis" />
 
     <!--animation section end-->
  <RelativeLayout
@@ -73,8 +73,8 @@
         android:layout_marginTop="160dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:text=" SPACE TRADERS"
-        android:textSize="45dp"
+        android:text="@string/SPACE_TRADERS"
+        android:textSize="45sp"
         android:textColor="@android:color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:visibility="visible"
@@ -92,7 +92,7 @@
         android:layout_marginTop="136dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:text="LOAD GAME"
+        android:text="@string/LOAD_GAME"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -106,7 +106,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:text="START NEW GAME"
+        android:text="@string/START_NEW_GAME"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
