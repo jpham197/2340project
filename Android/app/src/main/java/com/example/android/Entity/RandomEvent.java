@@ -5,7 +5,7 @@ public class RandomEvent {
     /**
      * @return
      */
-    public int randomEvent() {
+    private int randomEvent() {
         int randomE = (int) (Math.random() * 10);
         if (randomE < 1) {
             return 0;

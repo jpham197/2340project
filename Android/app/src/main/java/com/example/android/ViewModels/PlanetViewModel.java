@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlanetViewModel extends AndroidViewModel {
-    private PlanetInteractor interactor;
+    private final PlanetInteractor interactor;
     private List<Planet> planets;
     private Planet planet;
 

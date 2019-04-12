@@ -11,12 +11,11 @@ import com.example.android.Model.SolarSystemInteractor;
 import java.util.List;
 
 public class SolarSystemViewModel extends AndroidViewModel {
-    private SolarSystemInteractor interactor;
-    private List<SolarSystem> solarSystems;
+    private final List<SolarSystem> solarSystems;
 
     public SolarSystemViewModel(@NonNull Application application) {
         super(application);
-        interactor = Model.getInstance().getSolarSystemInteractor();
+        SolarSystemInteractor interactor = Model.getInstance().getSolarSystemInteractor();
         solarSystems = interactor.getAllSolarSystems();
     }
 

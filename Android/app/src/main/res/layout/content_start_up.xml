@@ -16,7 +16,8 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="-114dp"
         android:tint="#26ffffff"
-        android:src="@drawable/background"/>
+        android:src="@drawable/background"
+        android:contentDescription="hahaidkwhatthisis" />
 
     <ImageView
         android:id="@+id/background2"
@@ -24,7 +25,8 @@
         android:layout_height="match_parent"
         android:tint="#26ffffff"
         android:layout_marginBottom="-114dp"
-        android:src="@drawable/background"/>
+        android:src="@drawable/background"
+        android:contentDescription="hahaidkwhatthisis" />
 
     <ImageView
         android:id="@+id/background3"
@@ -32,7 +34,8 @@
         android:tint="#26ffffff"
         android:layout_height="match_parent"
         android:layout_marginTop="-114dp"
-        android:src="@drawable/background"/>
+        android:src="@drawable/background"
+        android:contentDescription="hahaidkwhatthisis" />
 
     <ImageView
         android:id="@+id/background4"
@@ -40,7 +43,8 @@
         android:layout_height="match_parent"
         android:layout_marginTop="-114dp"
         android:tint="#26ffffff"
-        android:src="@drawable/background"/>
+        android:src="@drawable/background"
+        android:contentDescription="hahaidkwhatthisis" />
 
     <!--animation section end-->
  <RelativeLayout

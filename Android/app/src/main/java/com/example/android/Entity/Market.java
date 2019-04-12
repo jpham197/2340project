@@ -7,8 +7,8 @@ import java.util.NoSuchElementException;
 public class Market {
     //Price of items are set to base price
     //<Item, Stock>
-    private HashMap<String, Integer> storage;
-    private TechLevel techLevel;
+    private final HashMap<String, Integer> storage;
+    private final TechLevel techLevel;
 //    private RandomEvent RE = new RandomEvent();
 
     /**
@@ -140,7 +140,7 @@ public class Market {
 
     public int calculatePrice(Item item) {
         int randomizer = (int) Math.random() * item.getVariance();
-        boolean coin = Math.random() < 0.5 ? true : false;
+        boolean coin = Math.random() < 0.5;
         int price = 0;
         if (coin) {
             price = item.getBasePrice() +

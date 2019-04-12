@@ -7,10 +7,10 @@ public class Player {
     private int fighter;
     private int trader;
     private int engineer;
-    private int skillPointsAvailable;
+    private final int skillPointsAvailable;
     private Ship ship;
     private Location location;
-    private Inventory inventory;
+    private final Inventory inventory;
 
     /**
      *
@@ -33,7 +33,7 @@ public class Player {
         this.skillPointsAvailable = skillPointsAvailable;
         this.credits = credits;
         this.ship = ship;
-        this.inventory = new Inventory(10);
+        this.inventory = new Inventory();
     }
 
     /**

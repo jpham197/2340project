@@ -8,20 +8,15 @@ public class SolarSystem {
     private Planet[] planets;
     private int xCoordinate = 0;
     private int yCoordinate = 0;
-    static int count = 0;
-    static String[] names = {"Earth" ,"Mars", "Bars", "Stars", "Combinatorics",
+    private static int count = 0;
+    private static final String[] names = {"Earth" ,"Mars", "Bars", "Stars", "Combinatorics",
             "Optimus Prime", "BTS", "GOT7", "Qiu", "Hang"};
-    private PlanetAttributes resource;
+    private final PlanetAttributes resource;
 
-    private static final int numPlanets = 1;
-    private static final int startX = 0;
-    private static final int startY = 0;
-
-    SolarSystem(String name, int numOfPlanets, Planet[] planets
-        , int xCoordinate, int yCoordinate) {
+    private SolarSystem(String name, Planet[] planets) {
 
         this.name = name;
-        this.numOfPlanets = numOfPlanets;
+        this.numOfPlanets = 1;
         this.planets = planets;
         this.planets[0] = new Planet(name);
         this.resource = PlanetAttributes.values()[(int) (Math.random() * 13)];
@@ -34,7 +29,7 @@ public class SolarSystem {
      *          Ycoordinate should be between 0 - 100
      */
     public SolarSystem() {
-        this(names[count], numPlanets, new Planet[numPlanets], startX, startY);
+        this(names[count], new Planet[1]);
         count++;
     }
 

@@ -23,7 +23,7 @@ public class Inventory {
         inventory.put("robots", 0);
     }
 
-    public void add(String item) {
+    private void add(String item) {
         inventory.put(item, inventory.get(item) + 1);
     }
 
@@ -33,7 +33,7 @@ public class Inventory {
         }
     }
 
-    public void removeItem(String item) {
+    private void removeItem(String item) {
         if (inventory.get(item) == 0) {
             throw new NoSuchElementException("No " + item + " is in inventory");
         } else {

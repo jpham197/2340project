@@ -3,7 +3,7 @@ package com.example.android.Entity;
 public class Ship {
     private int currentFuel;
     private int maxFuel;
-    private ShipType type;
+    private final ShipType type;
     public Ship(int maxFuel, ShipType type) {
         this.maxFuel = maxFuel;
         this.currentFuel = maxFuel;
@@ -73,9 +73,8 @@ public class Ship {
         return false;
     }
 
-    public int fuelCost(Location origin, Location destination){
+    private int fuelCost(Location origin, Location destination){
         int distance = origin.calcDistance(destination);
-        int fuelCost = ((100 + distance) / 100);
-        return fuelCost;
+        return ((100 + distance) / 100);
     }
 }

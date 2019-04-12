@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import static java.lang.String.valueOf;
 
 public class Planet {
-    private PlanetAttributes resource;
-    private String name;
-    private Location location;
-    private TechLevel techLevel;
-    private Market market;
+    private final PlanetAttributes resource;
+    private final String name;
+    private final Location location;
+    private final TechLevel techLevel;
+    private final Market market;
 
     public Planet() {
         PlanetAttributes[] pAS = PlanetAttributes.values();

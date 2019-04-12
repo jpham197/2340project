@@ -23,7 +23,8 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="-114dp"
         android:tint="#26ffffff"
-        android:src="@drawable/background"/>
+        android:src="@drawable/background"
+        android:contentDescription="moving1" />
 
     <ImageView
         android:id="@+id/background_two"
@@ -31,7 +32,8 @@
         android:layout_height="match_parent"
         android:tint="#26ffffff"
         android:layout_marginBottom="-114dp"
-        android:src="@drawable/background"/>
+        android:src="@drawable/background"
+        android:contentDescription="moving2" />
 
     <ImageView
         android:id="@+id/background_three"
@@ -39,7 +41,8 @@
         android:tint="#26ffffff"
         android:layout_height="match_parent"
         android:layout_marginTop="-114dp"
-        android:src="@drawable/background"/>
+        android:src="@drawable/background"
+        android:contentDescription="moving3" />
 
     <ImageView
         android:id="@+id/background_four"
@@ -47,7 +50,8 @@
         android:layout_height="match_parent"
         android:layout_marginTop="-114dp"
         android:tint="#26ffffff"
-        android:src="@drawable/background"/>
+        android:src="@drawable/background"
+        android:contentDescription="whatisthiseven" />
 
     <!--animation section end-->
 
@@ -102,7 +106,9 @@
         app:layout_constraintEnd_toStartOf="@+id/include2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleView" />
+        app:layout_constraintTop_toBottomOf="@+id/titleView"
+        tools:ignore="LabelFor"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/skillView"

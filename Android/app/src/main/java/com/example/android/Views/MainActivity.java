@@ -53,7 +53,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
-    Player user = new Player();
+    private final Player user = new Player();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,7 +1,7 @@
 package com.example.android.Entity;
 
 public class Item {
-    private ItemType name;
+    private final ItemType name;
 
     /**
      * Main constructor for Item, manually set name, stock, and price

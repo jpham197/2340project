@@ -28,7 +28,6 @@ import java.util.List;
 
 public class ConfigureCompleteActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    Repository repo;
 
 //    final String playerPilotSkill = getIntent().getStringExtra("playerPilotSkill");
 //    final String playerFighterSkill = getIntent().getStringExtra("playerFighterSkill");
@@ -50,7 +49,7 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("Space Traders: " + pvm.getPlayer().getName());
-        repo = new Repository();
+        Repository repo = new Repository();
         Button trade = findViewById(R.id.PlanetTradeButton);
         Button inventory = findViewById(R.id.PlayerInventoryButton);
         int xPos = getIntent().getExtras().getInt("x");

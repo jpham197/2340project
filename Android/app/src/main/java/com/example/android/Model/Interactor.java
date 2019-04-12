@@ -1,6 +1,6 @@
 package com.example.android.Model;
 
-public abstract class Interactor {
+abstract class Interactor {
 
     private Repository myRepository;
 

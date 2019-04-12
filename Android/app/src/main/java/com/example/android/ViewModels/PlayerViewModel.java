@@ -12,7 +12,7 @@ import com.example.android.Model.PlayerInteractor;
 import java.util.List;
 
 public class PlayerViewModel extends AndroidViewModel {
-    private PlayerInteractor model;
+    private final PlayerInteractor model;
     private List<Player> players;
 
     public PlayerViewModel(@NonNull Application application) {

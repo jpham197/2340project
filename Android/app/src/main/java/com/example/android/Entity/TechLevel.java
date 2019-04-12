@@ -1,23 +1,22 @@
 package com.example.android.Entity;
 
 public enum TechLevel {
-    PREAGRICULTURE(0, "Pre-Agriculture"),
     AGRICULTURE(1, "Agriculture"),
-    MEDIEVAL(2, "Medieval"),
-    RENAISSANCE(3, "Renaissance"),
     EARLYINDUSTRIAL(4, "Early Industrial"),
+    HITECH(7, "Hi-Tech"),
     INDUSTRIAL(5, "Industrial"),
+    MEDIEVAL(2, "Medieval"),
     POSTINDUSTRIAL(6, "Post-Industrial"),
-    HITECH(7, "Hi-Tech");
+    PREAGRICULTURE(0, "Pre-Agriculture"),
+    RENAISSANCE(3, "Renaissance");
 
     private final int index;
-    private final String techLV;
 
     TechLevel(int index, String techLV) {
         this.index = index;
-        this.techLV = techLV;
     }
-    public TechLevel[] getTechLevels() {
+
+    private TechLevel[] getTechLevels() {
         return TechLevel.values();
     }
 

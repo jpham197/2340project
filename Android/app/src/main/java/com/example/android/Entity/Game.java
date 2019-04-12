@@ -1,6 +1,6 @@
 package com.example.android.Entity;
 
-public class Game {
+class Game {
     private Player player;
     private Universe universe;
     private GameDifficulty difficulty;
