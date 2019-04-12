@@ -96,7 +96,7 @@
             android:layout_marginStart="350dp"
             android:layout_marginLeft="350dp"
             android:text="go"
-            />
+            tools:ignore="RtlHardcoded" />
 
     </RelativeLayout>
 
