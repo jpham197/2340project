@@ -18,7 +18,7 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="-114dp"
         android:tint="#26ffffff"
-        android:src="@drawable/background"
+        android:src="@mipmap/background"
         android:contentDescription="@string/hahaidkwhatthisis" />
 
     <!--We don't need content descriptions for these images as it only serves as a background for
@@ -29,7 +29,7 @@
         android:layout_height="match_parent"
         android:tint="#26ffffff"
         android:layout_marginBottom="-114dp"
-        android:src="@drawable/background"
+        android:src="@mipmap/background"
         android:contentDescription="@string/hahaidkwhatthisis" />
 
     <!--We don't need content descriptions for these images as it only serves as a background for
@@ -40,7 +40,7 @@
         android:tint="#26ffffff"
         android:layout_height="match_parent"
         android:layout_marginTop="-114dp"
-        android:src="@drawable/background"
+        android:src="@mipmap/background"
         android:contentDescription="@string/hahaidkwhatthisis" />
 
     <!--We don't need content descriptions for these images as it only serves as a background for
@@ -51,7 +51,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="-114dp"
         android:tint="#26ffffff"
-        android:src="@drawable/background"
+        android:src="@mipmap/background"
         android:contentDescription="@string/hahaidkwhatthisis" />
 
     <!--animation section end-->
