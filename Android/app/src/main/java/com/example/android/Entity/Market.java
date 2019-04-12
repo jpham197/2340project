@@ -1,8 +1,9 @@
 package com.example.android.Entity;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.NoSuchElementException;
+import java.util.Objects;
+
+import androidx.annotation.RecentlyNonNull;
 
 public class Market {
     //Price of items are set to base price
@@ -109,39 +110,32 @@ public class Market {
 
     /**
      * Removes item from the storage
-     * @param item The item to be removed
      * @return the item that is passed in
      * @throws java.util.NoSuchElementException when item stock is 0
      */
-    public String removeItem(String item, int times) {
-        if (storage.get(item) < 0) {
-            throw new NoSuchElementException(item + " is not in stock");
-        } else {
-            storage.put(item, storage.get(item) - times);
-            return item;
-        }
-    }
-
-    public String removeItem(String item) {
-        return removeItem(item, 1);
+    public void removeItem() {
+//        if (storage != null) {
+//            if (storage.get(item) < 0) {
+//                throw new NoSuchElementException(item + " is not in stock");
+//            } else {
+//                storage.put(item, storage.get(item) - times);
+//            }
+//        }
     }
 
     /**
      * Increases the stock of the given item by 1
-     * @param item The item whose stock to increase
      */
-    public void addItem(String item, int times) {
-        storage.put(item, storage.get(item) + times);
-    }
-
-    public void addItem(String item) {
-        addItem(item, 1);
-    }
+//    public void addItem() {
+//        if (storage != null) {
+//            storage.put(item, storage.get(item) + times);
+//        }
+//    }
 
     public int calculatePrice(Item item) {
-        int randomizer = (int) Math.random() * item.getVariance();
+        int randomizer = (int) (Math.random() * item.getVariance());
         boolean coin = Math.random() < 0.5;
-        int price = 0;
+        int price;
         if (coin) {
             price = item.getBasePrice() +
                     ((item.getIPL() * (techLevel.ordinal() - item.getMTLP()) + randomizer));
@@ -160,13 +154,15 @@ public class Market {
      * Shows all items inside the storage
      * @return all items, stock, and price as a string
      */
+
+    @RecentlyNonNull
     public String toString() {
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         for (String i : storage.keySet()) {
-            result += i + " " + storage.get(i).toString() + "\n";
+            result.append(i).append(" ").append(Objects.requireNonNull(storage.get(i)).toString()).append("\n");
         }
 
-        return result;
+        return result.toString();
     }
 }

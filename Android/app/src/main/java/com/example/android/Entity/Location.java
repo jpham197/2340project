@@ -1,8 +1,10 @@
 package com.example.android.Entity;
 
+import androidx.annotation.RecentlyNonNull;
+
 public class Location {
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     public Location(int x, int y) {
         this.x = x;
@@ -17,13 +19,19 @@ public class Location {
         return y;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
+// --Commented out by Inspection START (4/11/19, 11:23 PM):
+// --Commented out by Inspection START (4/11/19, 11:23 PM):
+////    public void setX(int x) {
+////        this.x = x;
+// --Commented out by Inspection STOP (4/11/19, 11:23 PM)
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:23 PM)
 
-    public void setY(int y) {
-        this.y = y;
-    }
+// --Commented out by Inspection START (4/11/19, 11:24 PM):
+//    public void setY(int y) {
+//        this.y = y;
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:24 PM)
 
     /**
      * Calculates distance of current location and a given destination
@@ -40,7 +48,7 @@ public class Location {
         return (int) Math.floor(Math.sqrt(xSquared + ySquared));
     }
 
-    @Override
+    @RecentlyNonNull
     public String toString() {
         return String.format("(%d, %d)", x, y);
     }

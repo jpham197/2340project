@@ -1,9 +1,7 @@
 package com.example.android.Entity;
 
-import java.util.HashMap;
-
 public enum ShipType {
     Gnat,
-    Beetle,
-    Dragonfly
+    // --Commented out by Inspection (4/11/19, 11:23 PM):Beetle,
+    // --Commented out by Inspection (4/11/19, 11:23 PM):Dragonfly
 }

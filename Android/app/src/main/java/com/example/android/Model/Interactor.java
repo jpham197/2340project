@@ -2,13 +2,13 @@ package com.example.android.Model;
 
 abstract class Interactor {
 
-    private Repository myRepository;
+    private final Repository myRepository;
 
-    protected Interactor(Repository repo) {
+    Interactor(Repository repo) {
         myRepository = repo;
     }
 
-    protected Repository getRepository() {
+    Repository getRepository() {
         return myRepository;
     }
 }

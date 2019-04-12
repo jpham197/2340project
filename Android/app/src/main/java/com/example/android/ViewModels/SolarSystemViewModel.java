@@ -19,11 +19,9 @@ public class SolarSystemViewModel extends AndroidViewModel {
         solarSystems = interactor.getAllSolarSystems();
     }
 
-    public void addSolarSystemList(SolarSystem[] list) {
-        for (SolarSystem ss : list) {
-            solarSystems.add(ss);
-        }
-    }
+//    public void addSolarSystemList(SolarSystem[] list) {
+//        Collection();
+//    }
 
     public List<SolarSystem> getSolarSystems() {
         return solarSystems;

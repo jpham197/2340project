@@ -1,12 +1,11 @@
 package com.example.android.Entity;
 
 import java.util.Random;
-import java.util.List;
-import java.util.ArrayList;
+
 import static java.lang.String.valueOf;
 
 public class Planet {
-    private final PlanetAttributes resource;
+    // --Commented out by Inspection (4/11/19, 11:24 PM):private final PlanetAttributes resource;
     private final String name;
     private final Location location;
     private final TechLevel techLevel;
@@ -34,9 +33,11 @@ public class Planet {
         market = new Market(techLevel);
     }
 
-    public PlanetAttributes getResource() {
-        return resource;
-    }
+// --Commented out by Inspection START (4/11/19, 11:23 PM):
+//    public PlanetAttributes getResource() {
+//        return resource;
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:23 PM)
 
     public String getName() {
         return name;

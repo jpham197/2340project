@@ -1,23 +1,23 @@
 package com.example.android.Entity;
 
+import androidx.annotation.RecentlyNonNull;
+
 public enum ItemType {
-    water(30, 3, 4, 2, 0, 0),
-    furs(250, 10, 10, 0, 0, 0),
-    food(100, 5, 5, 1, 1, 0),
-    ores(350, 20, 10, 3, 2, 2),
-    games(250, -10, 5, 6, 3, 1),
-    firearms(1250, -75, 100, 5, 3, 1),
-    medicine(650, -20, 10, 6, 4, 1),
-    machines(900, -30, 5, 5, 4, 3),
-    narcotics(3500, -125, 150, 5, 5, 0),
-    robots(9000, -150, 100, 7, 6, 4);
+    water(30, 3, 4, 0),
+    furs(250, 10, 10, 0),
+    food(100, 5, 5, 1),
+    ores(350, 20, 10, 2),
+    games(250, -10, 5, 3),
+    firearms(1250, -75, 100, 3),
+    medicine(650, -20, 10, 4),
+    machines(900, -30, 5, 4),
+    narcotics(3500, -125, 150, 5),
+    robots(9000, -150, 100, 6);
 
     private final int basePrice;
     private final int IPL;
     private final int MTLP;
     private final int variance;
-    private final int TTP;
-    private final int MTLU;
 
     /*
      * baseprice: starting cost
@@ -27,13 +27,11 @@ public enum ItemType {
      * MTLP: Minimum tech level to buy the item
      * MTLU: minimum tech level to sell the item
      */
-    ItemType(int basePrice, int IPL, int variance, int TTP, int MTLP, int MTLU) {
+    ItemType(int basePrice, int IPL, int variance, int MTLP) {
         this.basePrice = basePrice;
         this.IPL = IPL;
         this.variance = variance;
-        this.TTP = TTP;
         this.MTLP = MTLP;
-        this.MTLU = MTLU;
     }
 
     public int getBasePrice() {
@@ -48,19 +46,23 @@ public enum ItemType {
         return variance;
     }
 
-    public int getTTP() {
-        return TTP;
-    }
+// --Commented out by Inspection START (4/11/19, 11:24 PM):
+//    public int getTTP() {
+//        return TTP;
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:24 PM)
 
     public int getMTLP() {
         return MTLP;
     }
 
-    public int getMTLU() {
-        return MTLU;
-    }
+// --Commented out by Inspection START (4/11/19, 11:24 PM):
+//    public int getMTLU() {
+//        return MTLU;
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:24 PM)
 
-    @Override
+    @RecentlyNonNull
     public String toString() {
         return name();
     }

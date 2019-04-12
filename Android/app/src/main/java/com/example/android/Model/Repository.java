@@ -10,16 +10,16 @@ import java.util.List;
 public class Repository {
 
 
-    private List<Player> allPlayers;
-    private List<SolarSystem> allSolarSystems;
-    private List<Planet> allPlanets;
-    private Planet currentPlanet;
+    private final List<Player> allPlayers;
+    private final List<SolarSystem> allSolarSystems;
+    private final List<Planet> allPlanets;
+    // --Commented out by Inspection (4/11/19, 11:28 PM):private final Planet currentPlanet;
 
     public Repository() {
         allPlayers = new ArrayList<>();
         allSolarSystems = new ArrayList<>();
         allPlanets = new ArrayList<>();
-        currentPlanet = null;
+//        currentPlanet = null;
     }
 
     public List<Player> getAllPlayers() {return allPlayers;}
@@ -30,45 +30,69 @@ public class Repository {
         return allPlayers.get(0);
     }
 
-    public void addPlayer(Player input) {
-        allPlayers.add(input);
+// --Commented out by Inspection START (4/11/19, 11:24 PM):
+// --Commented out by Inspection START (4/11/19, 11:24 PM):
+////    public void addPlayer(Player input) {
+////        allPlayers.add(input);
+////    }
+//// --Commented out by Inspection STOP (4/11/19, 11:24 PM)
+// --Commented out by Inspection STOP (4/11/19, 11:24 PM)
+
+// --Commented out by Inspection START (4/11/19, 11:27 PM):
+//    public void setAllPlayers(List<Player> allPlayers) {
+//// --Commented out by Inspection START (4/11/19, 11:24 PM):
+////        this.allPlayers = allPlayers;
+////    }
+////
+////    public void deletePlayer(Player input) {
+////        allPlayers.remove(input);
+//// --Commented out by Inspection STOP (4/11/19, 11:24 PM)
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:27 PM)
+
+// --Commented out by Inspection START (4/11/19, 11:27 PM):
+//    public void addSolarSystem(SolarSystem input) {
+//        allSolarSystems.add(input);
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:27 PM)
+
+// --Commented out by Inspection START (4/11/19, 11:23 PM):
+//    public void addSolarSystemList(SolarSystem[] list) {
+// --Commented out by Inspection START (4/11/19, 11:24 PM):
+//// --Commented out by Inspection START (4/11/19, 11:23 PM):
+//////        for (SolarSystem ss : list) {
+//////            addSolarSystem(ss);
+// --Commented out by Inspection STOP (4/11/19, 11:24 PM)
+////        }
+////    }
+//// --Commented out by Inspection STOP (4/11/19, 11:23 PM)
+// --Commented out by Inspection STOP (4/11/19, 11:23 PM)
+
+// --Commented out by Inspection START (4/11/19, 11:24 PM):
+//    public void deleteSolarSystem(SolarSystem input) {
+//        allSolarSystems.remove(input);
+// --Commented out by Inspection STOP (4/11/19, 11:24 PM)
     }
 
-    public void setAllPlayers(List<Player> allPlayers) {
-        this.allPlayers = allPlayers;
-    }
+// --Commented out by Inspection START (4/11/19, 11:24 PM):
+//    public void addPlanet(Planet input) {
+//        allPlanets.add(input);
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:24 PM)
 
-    public void deletePlayer(Player input) {
-        allPlayers.remove(input);
-    }
-
-    public void addSolarSystem(SolarSystem input) {
-        allSolarSystems.add(input);
-    }
-
-    public void addSolarSystemList(SolarSystem[] list) {
-        for (SolarSystem ss : list) {
-            addSolarSystem(ss);
-        }
-    }
-
-    public void deleteSolarSystem(SolarSystem input) {
-        allSolarSystems.remove(input);
-    }
-
-    public void addPlanet(Planet input) {
-        allPlanets.add(input);
-    }
-
-    public void deletePlanet(Planet input) {
-        allPlanets.remove(input);
-    }
-
-    public void setCurrentPlanet(Planet currentPlanet) {
-        this.currentPlanet = currentPlanet;
-    }
-
-    public Planet getCurrentPlanet() {
-        return currentPlanet;
-    }
-}
+// --Commented out by Inspection START (4/11/19, 11:27 PM):
+//    public void deletePlanet(Planet input) {
+//        allPlanets.remove(input);
+//    }
+// --Commented out by Inspection START (4/11/19, 11:27 PM):
+//// --Commented out by Inspection STOP (4/11/19, 11:27 PM)
+//
+//    public void setCurrentPlanet(Planet currentPlanet) {
+//        this.currentPlanet = currentPlanet;
+// --Commented out by Inspection STOP (4/11/19, 11:27 PM)
+//    }
+//
+//    public Planet getCurrentPlanet() {
+//        return currentPlanet;
+//    }
+//}

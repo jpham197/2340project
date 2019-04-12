@@ -3,13 +3,10 @@ package com.example.android.Views;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,14 +16,12 @@ import com.example.android.Entity.ItemType;
 import com.example.android.Entity.Market;
 import com.example.android.Entity.Planet;
 import com.example.android.Entity.Player;
-import com.example.android.Model.Repository;
 import com.example.android.R;
 import com.example.android.ViewModels.PlanetViewModel;
 import com.example.android.ViewModels.PlayerViewModel;
-import com.example.android.ViewModels.SolarSystemViewModel;
 
 public class MarketplaceStartup extends AppCompatActivity {
-    Repository repo;
+    // --Commented out by Inspection (4/11/19, 11:23 PM):Repository repo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +30,7 @@ public class MarketplaceStartup extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final SolarSystemViewModel ssvm = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
+//        final SolarSystemViewModel ssvm = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
         final PlanetViewModel pvm = ViewModelProviders.of(this).get(PlanetViewModel.class);
         final PlayerViewModel playervm = ViewModelProviders.of(this).get(PlayerViewModel.class);
 
@@ -479,16 +474,16 @@ public class MarketplaceStartup extends AppCompatActivity {
                     inventory.add("narcotics", Integer.parseInt((String) selectedNarcotics.getText()));
                     inventory.add("robots", Integer.parseInt((String) selectedRobots.getText()));
 
-                    market.removeItem("water",  Integer.parseInt((String) selectedWater.getText()));
-                    market.removeItem("furs",  Integer.parseInt((String) selectedFurs.getText()));
-                    market.removeItem("food",  Integer.parseInt((String) selectedFood.getText()));
-                    market.removeItem("ores",  Integer.parseInt((String) selectedOre.getText()));
-                    market.removeItem("games",  Integer.parseInt((String) selectedGames.getText()));
-                    market.removeItem("firearms",  Integer.parseInt((String) selectedFirearms.getText()));
-                    market.removeItem("medicine",  Integer.parseInt((String) selectedMedicine.getText()));
-                    market.removeItem("machines",  Integer.parseInt((String) selectedMachines.getText()));
-                    market.removeItem("narcotics",  Integer.parseInt((String) selectedNarcotics.getText()));
-                    market.removeItem("robots",  Integer.parseInt((String) selectedRobots.getText()));
+                    market.removeItem();
+                    market.removeItem();
+                    market.removeItem();
+                    market.removeItem();
+                    market.removeItem();
+                    market.removeItem();
+                    market.removeItem();
+                    market.removeItem();
+                    market.removeItem();
+                    market.removeItem();
                     total.setText("0");
                     availableWater.setText(String.valueOf(market.getStock(("water"))));
                     selectedWater.setText("0");

@@ -1,31 +1,25 @@
 package com.example.android.Entity;
 
 public enum TechLevel {
-    AGRICULTURE(1, "Agriculture"),
-    EARLYINDUSTRIAL(4, "Early Industrial"),
-    HITECH(7, "Hi-Tech"),
-    INDUSTRIAL(5, "Industrial"),
-    MEDIEVAL(2, "Medieval"),
-    POSTINDUSTRIAL(6, "Post-Industrial"),
-    PREAGRICULTURE(0, "Pre-Agriculture"),
-    RENAISSANCE(3, "Renaissance");
+    AGRICULTURE(1),
+    EARLYINDUSTRIAL(4),
+    HITECH(7),
+    INDUSTRIAL(5),
+    MEDIEVAL(2),
+    POSTINDUSTRIAL(6),
+    PREAGRICULTURE(0),
+    RENAISSANCE(3);
 
-    private final int index;
+    // --Commented out by Inspection (4/11/19, 11:35 PM):private final int index;
 
-    TechLevel(int index, String techLV) {
+    TechLevel(int index) {
         this.index = index;
     }
 
-    private TechLevel[] getTechLevels() {
-        return TechLevel.values();
-    }
+// --Commented out by Inspection START (4/11/19, 11:24 PM):
+//    private TechLevel[] getTechLevels() {
+//        return TechLevel.values();
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:24 PM)
 
-    public TechLevel getRandomTechLevel() {
-        int randomNum = (int) Math.random() * 7;
-        return getTechLevels()[randomNum];
-    }
-
-    public int getTechLevel() {
-        return index;
-    }
 }

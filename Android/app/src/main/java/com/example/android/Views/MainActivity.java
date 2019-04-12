@@ -1,17 +1,9 @@
 package com.example.android.Views;
 
 import android.animation.ValueAnimator;
-import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.constraint.Constraints;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -25,23 +17,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.view.View.OnClickListener;
-import android.util.Log;
 import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.util.List;
-
-import com.example.android.Entity.Location;
 import com.example.android.Entity.Planet;
 import com.example.android.Entity.Player;
 import com.example.android.Entity.Ship;
 import com.example.android.Entity.ShipType;
-import com.example.android.Entity.SolarSystem;
 import com.example.android.Entity.Universe;
-import com.example.android.Model.Repository;
 import com.example.android.R;
 import com.example.android.ViewModels.PlanetViewModel;
 import com.example.android.ViewModels.PlayerViewModel;
@@ -50,9 +32,11 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
+    // --Commented out by Inspection (4/11/19, 11:23 PM):private static final String TAG = "MainActivity";
     private final Player user = new Player();
 
     @Override
@@ -339,12 +323,7 @@ public class MainActivity extends AppCompatActivity {
                             + user.getEngineer() + user.getFighter())) + " Skill Points left.",
                     Toast.LENGTH_LONG).show();
             } else {
-                final String playerInformation = "\nPlayer Name: " + user.getName()
-                    + "\nDifficulty: " + s.getSelectedItem()
-                    + "\nPilot Skill: " + user.getPilot()
-                    + "\nFighter Skill: " + user.getFighter()
-                    + "\nTrader Skill: " + user.getTrader()
-                    + "\nEngineer Skill: " + user.getEngineer();
+
 //                    Log.w(TAG, playerInformation);
                     Intent intent = new Intent(getBaseContext(), ConfigureCompleteActivity.class);
                     intent.putExtra("playerName", user.getName());
@@ -356,7 +335,7 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("playerLocation", user.getLocation().toString());
                     intent.putExtra("playerCredits", user.getCredits());
                     String id = databasePlayer.push().getKey();
-                    databasePlayer.child(id).setValue(user);
+                    databasePlayer.child(Objects.requireNonNull(id)).setValue(user);
                     startActivity(intent);
                 }
             }
@@ -374,8 +353,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    void serialize() {
-//        FileOutputStream file = new FileOutputStream("/../entity/player.ser");
-    }
+// --Commented out by Inspection START (4/11/19, 11:23 PM):
+//    void serialize() {
+////        FileOutputStream file = new FileOutputStream("/../entity/player.ser");
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:23 PM)
 
 }

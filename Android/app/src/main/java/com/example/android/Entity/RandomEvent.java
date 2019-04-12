@@ -3,7 +3,7 @@ package com.example.android.Entity;
 public class RandomEvent {
 
     /**
-     * @return
+     * @return dog
      */
     private int randomEvent() {
         int randomE = (int) (Math.random() * 10);
@@ -36,7 +36,7 @@ public class RandomEvent {
 
     /**
      *
-     * @return
+     * @return dog
      */
     public int randomFuel(int current, boolean occur) {
         if (occur) {

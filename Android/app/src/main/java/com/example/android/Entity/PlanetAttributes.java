@@ -1,32 +1,36 @@
 package com.example.android.Entity;
 
+import androidx.annotation.RecentlyNonNull;
+
 public enum PlanetAttributes {
-    NOSPECIALRESOURCES("No Special Resources"),
-    MINERALRICH("Mineral Rich"),
-    MINERALPOOR("Mineral Poor"),
-    DESERT("Desert"),
-    LOTSOFWATER("Lots of Water"),
-    RICHSOIL("Rich Soil"),
-    POORSOIL("Poor Soil"),
-    RICHFAUNA("Rich Fauna"),
-    LIFELESS("Lifeless"),
-    WEIRDMUSHROOMS("Weird Mushrooms"),
-    LOTSOFHERBS("Lots of Herbs"),
-    ARTISTIC("Artistic"),
-    WARLIKE("Warlike");
+    NOSPECIALRESOURCES(),
+    MINERALRICH(),
+    MINERALPOOR(),
+    DESERT(),
+    LOTSOFWATER(),
+    RICHSOIL(),
+    POORSOIL(),
+    RICHFAUNA(),
+    LIFELESS(),
+    WEIRDMUSHROOMS(),
+    LOTSOFHERBS(),
+    ARTISTIC(),
+    WARLIKE();
 
     /**
      * Constructor for planet attributes
      *
-     * @param name name of the resource
      */
-    PlanetAttributes(String name) {
+    PlanetAttributes() {
     }
 
-    public PlanetAttributes[] getResource() {
-        return PlanetAttributes.values();
-    }
+// --Commented out by Inspection START (4/11/19, 11:23 PM):
+//    public PlanetAttributes[] getResource() {
+//        return PlanetAttributes.values();
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:23 PM)
 
+    @RecentlyNonNull
     @Override
     public String toString() {
         return name();

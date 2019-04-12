@@ -3,23 +3,17 @@ package com.example.android.Views;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View.OnClickListener;
 
-import com.example.android.Entity.Planet;
 import com.example.android.Entity.Player;
 import com.example.android.Entity.RandomEvent;
 import com.example.android.Entity.Ship;
-import com.example.android.Entity.SolarSystem;
-import com.example.android.Model.Repository;
 import com.example.android.R;
 import com.example.android.ViewModels.PlanetViewModel;
 import com.example.android.ViewModels.PlayerViewModel;
@@ -110,6 +104,15 @@ public class Travel_Launch extends AppCompatActivity {
 
         distance2.setText(String.valueOf(player.getLocation().calcDistance(ssvm.getSolarSystems().get(1).getPlanets()[0].getLocation())));
         fuel2.setText("20");
+        fuel3.setText("20");
+        fuel4.setText("20");
+        fuel5.setText("20");
+        fuel6.setText("20");
+        fuel7.setText("20");
+        fuel8.setText("20");
+        fuel9.setText("20");
+        fuel10.setText("20");
+
 
         distance3.setText(String.valueOf(player.getLocation().calcDistance(ssvm.getSolarSystems().get(2).getPlanets()[0].getLocation())));
 
@@ -473,10 +476,6 @@ public class Travel_Launch extends AppCompatActivity {
 
 
 
-
-    }
-
-    private void updateViews() {
 
     }
 

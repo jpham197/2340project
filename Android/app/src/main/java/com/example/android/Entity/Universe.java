@@ -3,9 +3,11 @@ package com.example.android.Entity;
 
 import java.util.Arrays;
 
+import androidx.annotation.RecentlyNonNull;
+
 public class Universe {
 
-    private SolarSystem[] solarSystems;
+    private final SolarSystem[] solarSystems;
 
     public Universe() {
         solarSystems = new SolarSystem[10];
@@ -14,43 +16,50 @@ public class Universe {
         }
     }
 
-    /**
-     *
-     * @param solarSystems
-     */
-    public Universe(SolarSystem[] solarSystems) {
-        this.solarSystems = solarSystems;
-    }
+// --Commented out by Inspection START (4/11/19, 11:24 PM):
+//    /**
+//     *
+//     * @param solarSystems
+//     */
+//    public Universe(SolarSystem[] solarSystems) {
+//        this.solarSystems = solarSystems;
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:24 PM)
 
     /**
      *
-     * @return
+     * @return dog
      */
     public SolarSystem[] getSolarSystems() {
         return solarSystems;
     }
 
-    /**
-     *
-     * @param solarSystems
-     */
-    public void setSolarSystems(SolarSystem[] solarSystems) {
-        this.solarSystems = solarSystems;
-    }
+// --Commented out by Inspection START (4/11/19, 11:24 PM):
+//    /**
+//     *
+//     * @param solarSystems
+//     */
+//    public void setSolarSystems(SolarSystem[] solarSystems) {
+//        this.solarSystems = solarSystems;
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:24 PM)
 
-    /**
-     *
-     */
-    public SolarSystem getSolarSystem(SolarSystem name) {
+// --Commented out by Inspection START (4/11/19, 11:24 PM):
+//    /**
+//     *
+//     */
+//    public SolarSystem getSolarSystem(SolarSystem name) {
+//
+//        for (int i = 0; i < this.solarSystems.length; i++) {
+//            if (this.solarSystems[i] == name) {
+//                return solarSystems[i];
+//            }
+//        }
+//        return null;
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:24 PM)
 
-        for (int i = 0; i < this.solarSystems.length; i++) {
-            if (this.solarSystems[i] == name) {
-                return solarSystems[i];
-            }
-        }
-        return null;
-    }
-
+    @RecentlyNonNull
     public String toString() {
         return Arrays.toString(solarSystems);
     }

@@ -7,30 +7,26 @@ public class Player {
     private int fighter;
     private int trader;
     private int engineer;
-    private final int skillPointsAvailable;
     private Ship ship;
     private Location location;
     private final Inventory inventory;
 
     /**
-     *
-     * @param name player name
+     *  @param name player name
      * @param pilot pilot skill
      * @param fighter fighter skill
      * @param trader trader skill
      * @param engineer engineer skill
-     * @param skillPointsAvailable sp available
      * @param credits number
      * @param ship player ship
      */
     public Player(String name, int pilot, int fighter, int trader, int engineer
-                  , int skillPointsAvailable, int credits, Ship ship) {
+            , int credits, Ship ship) {
         this.name = name;
         this.pilot = pilot;
         this.fighter = fighter;
         this.trader = trader;
         this.engineer = engineer;
-        this.skillPointsAvailable = skillPointsAvailable;
         this.credits = credits;
         this.ship = ship;
         this.inventory = new Inventory();
@@ -43,15 +39,14 @@ public class Player {
      * @param fighter number of skill points in fighter
      * @param trader number of skill points in trader
      * @param engineer number of skill points in engineer
-     * @param ship the ship ship of the player. Default is Gnat
      */
-    public Player(String name, int pilot, int fighter, int trader, int engineer, Ship ship) {
-        this(name, pilot, fighter, trader, engineer, 16, 1000
+    public Player(String name, int pilot, int fighter, int trader, int engineer) {
+        this(name, pilot, fighter, trader, engineer, 1000
                 , new Ship(100, ShipType.Gnat));
     }
     public Player() {
         this(null, 0, 0,
-                0, 0, 0, 0, null);
+                0, 0, 0, null);
     }
 
     /**
@@ -80,7 +75,7 @@ public class Player {
 
     /**
      *
-     * @param upgrade
+     * @param upgrade dog
      */
     public void setShip(Ship upgrade) {
         this.ship = upgrade;
@@ -90,7 +85,7 @@ public class Player {
 
     /**
      *
-     * @return
+     * @return dog
      */
     public int getCredits() {
         return this.credits;
@@ -98,24 +93,24 @@ public class Player {
 
     /**
      *
-     * @param credit
+     * @param credit dog
      */
     public void setCredits(int credit) {
         this.credits = credit;
     }
 
-    /**
-     * Checks to see if a player has a certain amount of credits
-     * @param credits
-     * @return
-     */
-    public boolean checkCredits(int credits) {
-        return this.credits >= credits;
-    }
+//    /**
+//     * Checks to see if a player has a certain amount of credits
+//     * @param credits dog
+//     * @return dog
+//     */
+//    public boolean checkCredits(int credits) {
+//        return this.credits >= credits;
+//    }
 
     /**
      *
-     * @return
+     * @return dog
      */
     public int getPilot() {
         return this.pilot;
@@ -123,7 +118,7 @@ public class Player {
 
     /**
      *
-     * @param pilot
+     * @param pilot dog
      */
     public void setPilot(int pilot) {
         this.pilot = pilot;
@@ -131,7 +126,7 @@ public class Player {
 
     /**
      *
-     * @return
+     * @return dog
      */
     public int getFighter() {
         return this.fighter;
@@ -139,7 +134,7 @@ public class Player {
 
     /**
      *
-     * @param fighter
+     * @param fighter dog
      */
     public void setFighter(int fighter) {
         this.fighter = fighter;
@@ -147,7 +142,7 @@ public class Player {
 
     /**
      *
-     * @return
+     * @return dog
      */
     public int getTrader() {
         return  this.trader;
@@ -155,7 +150,7 @@ public class Player {
 
     /**
      *
-     * @param trader
+     * @param trader dog
      */
     public void setTrader(int trader) {
         this.trader = trader;
@@ -163,7 +158,7 @@ public class Player {
 
     /**
      *
-     * @return
+     * @return dog
      */
     public int getEngineer() {
         return this.engineer;
@@ -171,19 +166,21 @@ public class Player {
 
     /**
      *
-     * @param engineer
+     * @param engineer dog
      */
     public void setEngineer(int engineer) {
         this.engineer = engineer;
     }
 
-    /**
-     *
-     * @return
-     */
-    public int getSkillpointsavailible() {
-        return this.skillPointsAvailable;
-    }
+// --Commented out by Inspection START (4/11/19, 11:23 PM):
+//    /**
+//     *
+//     * @return
+//     */
+//    public int getSkillpointsavailible() {
+//        return this.skillPointsAvailable;
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:23 PM)
 
     public void setLocation(Location location) {
         this.location = location;
@@ -193,12 +190,12 @@ public class Player {
         return this.location;
     }
 
-    public boolean travel(Location destination) {
-        if (ship.travel(this.location, destination) != null) {
-            location = destination;
-            return true;
-        } else {
-            return false;
-        }
-    }
+//    public boolean travel(Location destination) {
+//        if (ship.travel(this.location, destination) != null) {
+//            location = destination;
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
 }

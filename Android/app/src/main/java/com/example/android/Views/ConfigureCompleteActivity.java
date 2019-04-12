@@ -2,10 +2,7 @@ package com.example.android.Views;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -16,15 +13,12 @@ import android.widget.TextView;
 import com.example.android.Entity.Location;
 import com.example.android.Entity.Planet;
 import com.example.android.Entity.Player;
-import com.example.android.Entity.SolarSystem;
-import com.example.android.Model.PlayerInteractor;
 import com.example.android.Model.Repository;
 import com.example.android.R;
 import com.example.android.ViewModels.PlanetViewModel;
 import com.example.android.ViewModels.PlayerViewModel;
-import com.example.android.ViewModels.SolarSystemViewModel;
 
-import java.util.List;
+import java.util.Objects;
 
 public class ConfigureCompleteActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -40,7 +34,6 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        final SolarSystemViewModel ssvm = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
         final PlayerViewModel pvm = ViewModelProviders.of(this).get(PlayerViewModel.class);
         final PlanetViewModel planetViewModel = ViewModelProviders.of(this).get(PlanetViewModel.class);
 
@@ -52,9 +45,15 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
         Repository repo = new Repository();
         Button trade = findViewById(R.id.PlanetTradeButton);
         Button inventory = findViewById(R.id.PlayerInventoryButton);
-        int xPos = getIntent().getExtras().getInt("x");
-        int yPos = getIntent().getExtras().getInt("y");
-        int fuel = getIntent().getExtras().getInt("fuel");
+        int xPos = 0;
+        int yPos = 0;
+        if (getIntent() != null) {
+            xPos = Objects.requireNonNull(getIntent().getExtras()).getInt("x");
+            yPos = getIntent().getExtras().getInt("y");
+        }
+//        if (getIntent() != null) {
+//            int fuel = Objects.requireNonNull(getIntent().getExtras()).getInt("fuel");
+//        }
         Log.w(TAG, String.valueOf(xPos));
         Log.w(TAG, String.valueOf(yPos));
         TextView xCor = findViewById(R.id.Xoutput);

@@ -14,7 +14,4 @@ public class SolarSystemInteractor extends Interactor {
         return getRepository().getAllSolarSystems();
     }
 
-    public void addSolarSystem(SolarSystem s) {
-        getRepository().addSolarSystem(s);
-    }
- }
+}

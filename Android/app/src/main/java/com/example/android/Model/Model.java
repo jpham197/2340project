@@ -1,23 +1,21 @@
 package com.example.android.Model;
 
-import com.example.android.Entity.SolarSystem;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class Model {
 
     /** the data repository */
-    private Repository myRepository;
+    private final Repository myRepository;
 
-    private Map<String, Object> interactorMap;
+    private final Map<String, Object> interactorMap;
 
     /** Singleton Pattern Code
      *  this allows us to get access to this class
      *  anywhere, which will allow our View models to access
      *  the "back end"  more easily
      */
-    private static  Model instance = new Model();
+    private static final Model instance = new Model();
 
     public static Model getInstance() { return instance; }
 

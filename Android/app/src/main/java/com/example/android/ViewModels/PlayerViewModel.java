@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.arch.lifecycle.AndroidViewModel;
 
 import com.example.android.Entity.Player;
-import com.example.android.Entity.Ship;
 import com.example.android.Model.Model;
 import com.example.android.Model.PlayerInteractor;
 
@@ -30,9 +29,11 @@ public class PlayerViewModel extends AndroidViewModel {
         return model.getPlayer();
     }
 
-    public void deletePlayer(Player player) {
-        model.deletePlayer(player);
-    }
+// --Commented out by Inspection START (4/11/19, 11:23 PM):
+//    public void deletePlayer(Player player) {
+//        model.deletePlayer(player);
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:23 PM)
 
 
 }

@@ -1,5 +1,7 @@
 package com.example.android.Entity;
 
+import androidx.annotation.RecentlyNonNull;
+
 public class Item {
     private final ItemType name;
 
@@ -23,19 +25,23 @@ public class Item {
         return name.getVariance();
     }
 
-    public int getTTP() {
-        return name.getTTP();
-    }
+// --Commented out by Inspection START (4/11/19, 11:23 PM):
+//    public int getTTP() {
+//        return name.getTTP();
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:23 PM)
 
     public int getMTLP() {
         return name.getMTLP();
     }
 
-    public int getMTLU() {
-        return name.getMTLU();
-    }
+// --Commented out by Inspection START (4/11/19, 11:23 PM):
+//    public int getMTLU() {
+//        return name.getMTLU();
+//    }
+// --Commented out by Inspection STOP (4/11/19, 11:23 PM)
 
-    @Override
+    @RecentlyNonNull
     public String toString() {
         return String.format("%s", name.toString());
     }

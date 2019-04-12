@@ -3,8 +3,6 @@ package com.example.android.Views;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -16,17 +14,14 @@ import com.example.android.Entity.Inventory;
 import com.example.android.Entity.Item;
 import com.example.android.Entity.ItemType;
 import com.example.android.Entity.Player;
-import com.example.android.Entity.RandomEvent;
 import com.example.android.R;
 import com.example.android.ViewModels.PlanetViewModel;
 import com.example.android.ViewModels.PlayerViewModel;
-import com.example.android.ViewModels.SolarSystemViewModel;
 import com.example.android.Entity.Market;
 import com.example.android.Entity.Planet;
-import com.example.android.Model.Repository;
 
 public class Marketplace_Sell_Startup extends AppCompatActivity {
-    Repository repo;
+    // --Commented out by Inspection (4/11/19, 11:23 PM):Repository repo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +31,7 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         final PlayerViewModel playervm = ViewModelProviders.of(this).get(PlayerViewModel.class);
-        final SolarSystemViewModel ssvm = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
+//        final SolarSystemViewModel ssvm = ViewModelProviders.of(this).get(SolarSystemViewModel.class);
         final PlanetViewModel pvm = ViewModelProviders.of(this).get(PlanetViewModel.class);
 
         Button back = findViewById(R.id.back_button);
@@ -498,16 +493,16 @@ public class Marketplace_Sell_Startup extends AppCompatActivity {
                     inventory.removeItem("narcotics", Integer.parseInt((String) selectedNarcotics.getText()));
                     inventory.removeItem("robots", Integer.parseInt((String) selectedRobots.getText()));
 
-                    market.addItem("water",  Integer.parseInt((String) selectedWater.getText()));
-                    market.addItem("furs",  Integer.parseInt((String) selectedFurs.getText()));
-                    market.addItem("food",  Integer.parseInt((String) selectedFood.getText()));
-                    market.addItem("ores",  Integer.parseInt((String) selectedOre.getText()));
-                    market.addItem("games",  Integer.parseInt((String) selectedGames.getText()));
-                    market.addItem("firearms",  Integer.parseInt((String) selectedFirearms.getText()));
-                    market.addItem("medicine",  Integer.parseInt((String) selectedMedicine.getText()));
-                    market.addItem("machines",  Integer.parseInt((String) selectedMachines.getText()));
-                    market.addItem("narcotics",  Integer.parseInt((String) selectedNarcotics.getText()));
-                    market.addItem("robots",  Integer.parseInt((String) selectedRobots.getText()));
+                    market.addItem();
+                    market.addItem();
+                    market.addItem();
+                    market.addItem();
+                    market.addItem();
+                    market.addItem();
+                    market.addItem();
+                    market.addItem();
+                    market.addItem();
+                    market.addItem();
                     total.setText("0");
                     availableWater.setText(String.valueOf(inventory.getNumOfItem(("water"))));
                     selectedWater.setText("0");
