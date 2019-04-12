@@ -18,6 +18,7 @@ import com.example.android.R;
 import com.example.android.ViewModels.PlanetViewModel;
 import com.example.android.ViewModels.PlayerViewModel;
 
+import java.util.Locale;
 import java.util.Objects;
 
 public class ConfigureCompleteActivity extends AppCompatActivity {
@@ -70,7 +71,8 @@ public class ConfigureCompleteActivity extends AppCompatActivity {
 
         xCor.setText(String.valueOf(player.getLocation().getX()));
         yCor.setText(String.valueOf(player.getLocation().getY()));
-        currPlanetName.setText("Current Planet name: " + planet.getName());
+        currPlanetName.setText(String.format(Locale.getDefault(), "Current planet name: %s",
+                planet.getName()));
 
         if (xPos != 0 && yPos != 0) {
             xCor.setText(String.valueOf(xPos));
