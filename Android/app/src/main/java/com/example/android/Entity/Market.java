@@ -121,6 +121,7 @@ public class Market {
 //            }
 //        }
         int x = 10;
+        storage.put("", x);
     }
 
     /**

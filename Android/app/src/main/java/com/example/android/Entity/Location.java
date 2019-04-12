@@ -1,5 +1,7 @@
 package com.example.android.Entity;
 
+import java.util.Locale;
+
 import androidx.annotation.RecentlyNonNull;
 
 public class Location {
@@ -50,6 +52,6 @@ public class Location {
 
     @RecentlyNonNull
     public String toString() {
-        return String.format("(%d, %d)", x, y);
+        return String.format(Locale.getDefault(), "(%d, %d)", x, y);
     }
 }

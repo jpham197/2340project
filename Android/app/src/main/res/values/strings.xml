@@ -11,7 +11,7 @@
     <string name="title_activity_player_inventory_launch">PlayerInventoryLaunch</string>
     <string name="title_activity_travel__launch">Travel_Launch</string>
 
-    <string name="space_background">Spacebackground</string>
+    <string name="space_background">Space Background</string>
     <string name="moving2">moving2</string>
     <string name="moving3">moving3</string>
     <string name="Current_Planet_Name">Current Planet Name</string>
