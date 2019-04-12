@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="background1" type="id">"Test"</item>
+    <item name="background2" type="id">"Test2"</item>
+    <item name="background3" type="id">"Test3"</item>
+    <item name="background4" type="id">"Test4"</item>
+</resources>
