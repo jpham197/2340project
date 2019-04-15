@@ -24,6 +24,14 @@ public class Ship {
     }
 
     /**
+     *
+     * @param fuel to set currentFuel value to
+     */
+    public void setCurrentFuel(int fuel) {
+        currentFuel = fuel;
+    }
+
+    /**
      * @param origin Where you're leaving from
      * @param destination Where you're going to
      * @return Returns the destination location object if fuel is sufficient, else return null

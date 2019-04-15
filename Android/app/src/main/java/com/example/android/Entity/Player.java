@@ -33,6 +33,7 @@ public class Player {
         this.skillPointsAvailable = skillPointsAvailable;
         this.credits = credits;
         this.ship = ship;
+        this.location = new Location(0, 0);
         this.inventory = new Inventory(10);
     }
 
