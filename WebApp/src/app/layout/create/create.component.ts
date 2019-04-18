@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
 import { Character } from "../../models/Character.model"
+import { DataService } from "../../services/data.service";
 
 @Component({
   selector: 'app-create',
@@ -29,7 +30,8 @@ export class CreateComponent implements OnInit {
     difficulty: ['']
   });
   
-  constructor(private fb: FormBuilder) {  }
+  constructor(private fb: FormBuilder,
+              private data: DataService) {  }
 
   ngOnInit() {
   }
@@ -82,7 +84,7 @@ export class CreateComponent implements OnInit {
 
   log() {
     this.syncModel();
-    console.log(this.c);
+    this.data.setCharacter(this.c);
   }
 
   syncModel() {

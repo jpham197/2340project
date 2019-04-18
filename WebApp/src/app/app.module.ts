@@ -9,12 +9,14 @@ import { CreateComponent } from './layout/create/create.component';
 
 import { ParticlesModule } from "angular-particle";
 import { ReactiveFormsModule } from '@angular/forms';
+import { MainComponent } from './layout/main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CreateComponent
+    CreateComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
