@@ -60,40 +60,60 @@ export class CreateComponent implements OnInit {
   }
 
   minusSkill(event) {
-    if (this.pilotSkill > 0) {
-      switch(event) {
-        case "pilot":
-        this.pilotSkill--;
-        this.availablePoints++;
-        break;
-        case "fighter":
-        this.fighterSkill--;
-        this.availablePoints++;
-        break;
-        case "trader":
-        this.traderSkill--;
-        this.availablePoints++;
-        break;
-        case "engineer":
-        this.engineerSkill--;
-        this.availablePoints++;
+    switch(event) {
+      case "pilot":
+      if (this.pilotSkill <= 0) {
         break;
       }
+      this.pilotSkill--;
+      this.availablePoints++;
+      break;
+      case "fighter":
+      if (this.fighterSkill <=0) {
+        break;
+      }
+        this.fighterSkill--;
+        this.availablePoints++;
+      break;
+      case "trader":
+      if (this.traderSkill <= 0) {
+        break;
+      }
+        this.traderSkill--;
+        this.availablePoints++;
+      break;
+      case "engineer":
+      if (this.engineerSkill <= 0) {
+        break;
+      }
+        this.engineerSkill--;
+        this.availablePoints++;
+      break;
     }
   }
 
   log() {
+    // this.syncModel().then(
+    //   response => {
+    //     this.data.setCharacter(this.c);
+    //   }
+    // );
     this.syncModel();
+    console.log(this.c);
     this.data.setCharacter(this.c);
+    
   }
 
-  syncModel() {
+  syncModel(): Promise<boolean> {
     this.c.name = this.characterForm.value.name;
     this.c.difficulty = this.characterForm.value.difficulty;
     this.c.pilot = this.pilotSkill;
     this.c.fighter = this.fighterSkill;
     this.c.trader = this.traderSkill;
     this.c.engineer = this.engineerSkill;
+    return new Promise<boolean>(response => {
+      return response;
+    });
   }
 
 }

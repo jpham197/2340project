@@ -11,6 +11,10 @@ import { ParticlesModule } from "angular-particle";
 import { ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './layout/main/main.component';
 
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +26,9 @@ import { MainComponent } from './layout/main/main.component';
     BrowserModule,
     AppRoutingModule,
     ParticlesModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
