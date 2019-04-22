@@ -8,16 +8,62 @@
     tools:context=".Views.StartUpActivity"
     tools:showIn="@layout/activity_start_up">
 
+    <!--animation section start-->
+
+    <ImageView
+        android:id="@+id/background1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="-114dp"
+        android:tint="#26ffffff"
+        android:src="@drawable/background"/>
+
+    <ImageView
+        android:id="@+id/background2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:tint="#26ffffff"
+        android:layout_marginBottom="-114dp"
+        android:src="@drawable/background"/>
+
+    <ImageView
+        android:id="@+id/background3"
+        android:layout_width="match_parent"
+        android:tint="#26ffffff"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-114dp"
+        android:src="@drawable/background"/>
+
+    <ImageView
+        android:id="@+id/background4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-114dp"
+        android:tint="#26ffffff"
+        android:src="@drawable/background"/>
+
+    <!--animation section end-->
+ <RelativeLayout
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:background="#30000000"
+     app:layout_constraintTop_toTopOf="parent"
+     app:layout_constraintStart_toStartOf="parent"
+     >
+
+ </RelativeLayout>
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="280dp"
-        android:layout_height="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="160dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:text=" SPACE TRADERS"
+        android:textSize="45dp"
+        android:textColor="@android:color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +73,7 @@
 
     <Button
         android:id="@+id/load_game_button"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
@@ -41,14 +87,14 @@
 
     <Button
         android:id="@+id/start_new_button"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:text="START NEW"
+        android:text="START NEW GAME"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

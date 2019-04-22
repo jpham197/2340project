@@ -42,7 +42,6 @@ public class MarketplaceStartup extends AppCompatActivity {
         Button buy = findViewById(R.id.Marketplace_buy);
         Button sell = findViewById(R.id.Marketplace_sell);
         Button back = findViewById(R.id.back_button);
-
         Button waterDec = findViewById(R.id.Item_Water_Selected_Dec);
         Button waterInc = findViewById(R.id.Item_Water_Selected_Inc);
         Button fursDec = findViewById(R.id.Item_Furs_Selected_Dec);
@@ -531,7 +530,8 @@ public class MarketplaceStartup extends AppCompatActivity {
         sell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (MarketplaceStartup.this, Marketplace_Sell_Startup.class);
+                Intent intent = new Intent
+                        (MarketplaceStartup.this, Marketplace_Sell_Startup.class);
                 startActivity(intent);
             }
         });
@@ -539,7 +539,8 @@ public class MarketplaceStartup extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (MarketplaceStartup.this, ConfigureCompleteActivity.class);
+                Intent intent = new Intent
+                        (MarketplaceStartup.this, ConfigureCompleteActivity.class);
                 startActivity(intent);
             }
         });

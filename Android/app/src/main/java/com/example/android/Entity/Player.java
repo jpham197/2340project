@@ -51,7 +51,8 @@ public class Player {
                 , new Ship(100, ShipType.Gnat));
     }
     public Player() {
-        this(null, 0, 0, 0, 0, 0, 0, null);
+        this(null, 0, 0,
+                0, 0, 0, 0, null);
     }
 
     /**

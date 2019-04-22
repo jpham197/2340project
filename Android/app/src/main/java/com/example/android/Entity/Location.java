@@ -31,9 +31,13 @@ public class Location {
      * @return the distance but all the decimals are chopped off, not rounded
      */
     public int calcDistance(Location destination) {
-        int distX = (this.x - destination.getX()) * (this.x - destination.getX());
-        int distY = (this.y - destination.getY()) * (this.y - destination.getY());
-        return (int) Math.floor(Math.sqrt(distX + distY));
+        int xSquared = 0;
+        int ySquared = 0;
+        if (destination != null) {
+            xSquared = (this.x - destination.getX()) * (this.x - destination.getX());
+            ySquared = (this.y - destination.getY()) * (this.y - destination.getY());
+        }
+        return (int) Math.floor(Math.sqrt(xSquared + ySquared));
     }
 
     @Override

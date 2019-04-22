@@ -9,6 +9,7 @@ public class Market {
     //<Item, Stock>
     private HashMap<String, Integer> storage;
     private TechLevel techLevel;
+//    private RandomEvent RE = new RandomEvent();
 
     /**
      * Plain constructor for Market, sets everything to base price and stock to 0
@@ -113,7 +114,7 @@ public class Market {
      * @throws java.util.NoSuchElementException when item stock is 0
      */
     public String removeItem(String item, int times) {
-        if (storage.get(item) <= 0) {
+        if (storage.get(item) < 0) {
             throw new NoSuchElementException(item + " is not in stock");
         } else {
             storage.put(item, storage.get(item) - times);

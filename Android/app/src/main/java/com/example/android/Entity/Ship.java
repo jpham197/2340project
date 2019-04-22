@@ -23,6 +23,10 @@ public class Ship {
         return this.currentFuel;
     }
 
+    public void setCurrentFuel(int currentFuel) {
+        this.currentFuel = currentFuel;
+    }
+
     /**
      *
      * @param fuel to set currentFuel value to
