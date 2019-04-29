@@ -86,4 +86,8 @@ public class Ship {
         int fuelCost = ((100 + distance) / 100);
         return fuelCost;
     }
+
+    public int getMaxFuel () {
+        return maxFuel;
+    }
 }
